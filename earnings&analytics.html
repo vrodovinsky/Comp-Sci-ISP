@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/main.css">
+        <title>My Portfolio</title>
+    </head>
+    <body>
+        <div class="loader">
+            <div class="loader-circle"></div>
+          </div>
+          
+        <aside>
+            <figure>
+                <div id="avatar"></div>
+                <figcaption>Johnny Doe</figcaption>
+            </figure>
+            <img src="images/menu.svg">
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">DASHBOARD</a></li>
+                    <li class="activeList"><a href="earnings&analytics.html">EARNINGS AND ANALYTICS</a></li>
+                    <li><a href="#">TASKS & HISTORY</a></li>
+                    <li><a href="#">PROFILE AND SETTINGS</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <h1>Performance Insights</h1>
+            <p>Analyse your earnings, customer feedback, and service trends to grow your business</p>
+            <div class="boxes-wrapper">
+                <div class="sales-widget">
+                    <div class="header">
+                        <h3>Total Sales</h3>
+                        <hr>
+                    </div>
+                    <div class="content">
+                        <div class="left-section">
+                            <h2>12.2k</h2>
+                            <span class="negative">-25%</span>
+                        </div>
+                        <div class="right-section">
+                            <canvas class="graphs" id="myChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="sales-widget">
+                    <div class="header">
+                        <h3>Total Visitors</h3>
+                        <hr>
+                    </div>
+                    <div class="content">
+                        <div class="left-section">
+                            <h2>32k</h2>
+                            <span class="negative">-25%</span>
+                        </div>
+                        <div class="right-section">
+                            <canvas class="graphs" id="visitorChart"></canvas>
+                        </div>
+                    </div>
+                </div>  
+                <div class="sales-widget">
+                    <div class="header">
+                        <h3>Total Sales</h3>
+                        <hr>
+                    </div>
+                    <div class="content">
+                        <div class="left-section">
+                            <h2>12.2k</h2>
+                            <span class="negative">-25%</span>
+                        </div>
+                        <div class="right-section">
+                                <canvas class="graphs" id="barChart"></canvas>                            
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            
+            <!-- Box Template -->
+            
+            <!-- <div class="line-graph_box">
+                    <canvas id="myChart"></canvas>
+                </div>
+            <a href="#" class="cta">view more</a>
+
+            -->
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+
+        <script>
+
+gsap.set('body > *:not(.loader)', { opacity: 0 });
+
+        setTimeout(() => {
+          gsap.to('.loader', {
+            duration: 1,
+            opacity: 0,
+            onComplete: () => {
+              document.querySelector('.loader').style.display = 'none';
+            },
+          });
+
+          gsap.to('body > *:not(.loader)', {
+            duration: 1,
+            opacity: 1,
+            delay: 1,
+            onComplete: () => {
+              // Call the initializeCharts function here
+              initializeCharts();
+            },
+          });
+        }, 3000);
+
+        gsap.to('.loader-circle', {
+          duration: 1,
+          scale: 2,
+          opacity: 0,
+          ease: 'power1.inOut',
+          repeat: -1,
+          yoyo: true,
+        });
+
+// Hide loader after 3 seconds
+setTimeout(() => {
+  gsap.to('.loader', {
+    duration: 1,
+    opacity: 0,
+    onComplete: () => {
+      document.querySelector('.loader').style.display = 'none';
+    },
+  });
+}, 3000);
+
+        
+            (function() {
+                var menu = document.querySelector('ul'),
+                    menulink = document.querySelector('img');
+                
+                menulink.addEventListener('click', function(e) {
+                    menu.classList.toggle('active');
+                    e.preventDefault();
+                });
+            })();
+        
+                const ctx = document.getElementById('myChart').getContext('2d');
+    
+                const data_sale_chartsml = {
+            
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    datasets: [{
+                label: 'Number of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+                borderColor: ['#FF2366'],
+                borderWidth: 3,
+                animation: {
+                    delay: function (context) {
+                        // Add a delay based on the dataIndex
+                        return context.dataIndex * 250;
+                    }
+                }
+            }]
+    };
+
+
+
+    const options = {
+    maintainAspectRatio: false,
+    responsive: true,
+    plugins: {
+        legend: {
+            display: false,
+        },
+        tooltip: {
+            enabled: false,
+        },
+    },
+    scales: {
+        x: {
+            display: false,
+        },
+        y: {
+            display: false,
+            beginAtZero: true,
+        },
+    },
+    elements: {
+        point: {
+            radius: 0, // Remove points
+        },
+        line: {
+            tension: 0.4, // Set the line tension for smooth curves
+        },
+    },
+    animation: {
+            duration: 1000, // Duration of the animation in milliseconds
+            onComplete: function () {
+                const chartInstance = this.chart;
+                const ctx = chartInstance.ctx;
+                ctx.font = Chart.helpers.fontString(Chart.defaults.font.size, 'normal', Chart.defaults.font.family);
+                ctx.fillStyle = this.chart.config.options.color;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'bottom';
+
+                this.data.datasets.forEach(function (dataset, i) {
+                    const meta = chartInstance.controller.getDatasetMeta(i);
+                    meta.data.forEach(function (bar, index) {
+                        const data = dataset.data[index];
+                        ctx.fillText(data, bar.x, bar.y - 5);
+                    });
+                });
+            }
+        }
+};
+
+
+    
+
+
+    const barChartData = {
+                labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                datasets: [
+                    {
+                        data: [12, 19, 3, 5, 2, 3, 7],
+                        backgroundColor: (context) => {
+                            const index = context.dataIndex;
+                            return index === 6 ? 'rgba(75, 192, 192, 1)' : 'rgba(211, 211, 211, 1)';
+                        },
+                        borderRadius: 5,
+                        borderWidth: 1,
+                        borderColor: '#FFFFFF',
+                    },
+                ],
+            };
+
+            // Bar chart's options
+            const barChartOptions = {
+    maintainAspectRatio: false,
+    responsive: true,
+    plugins: {
+        legend: {
+            display: false,
+        },
+        tooltip: {
+            enabled: false,
+        },
+    },
+    scales: {
+        x: {
+            display: false,
+            grid: {
+                display: false,
+            },
+        },
+        y: {
+            display: false,
+            grid: {
+                display: false,
+            },
+        },
+    },
+    onHover: (event, chartElement) => {
+        if (chartElement.length > 0) {
+            const index = chartElement[0].index;
+            const datasetIndex = chartElement[0].datasetIndex;
+
+            barChart.data.datasets[datasetIndex].borderWidth[index] = 2;
+            barChart.data.datasets[datasetIndex].borderColor[index] = 'rgba(128, 0, 128, 1)';
+            barChart.data.datasets[datasetIndex]._meta[0].data[index].options.hoverOffset = 5;
+            barChart.update();
+        }
+    },
+    onLeave: (event, chartElement) => {
+        if (chartElement.length > 0) {
+            const index = chartElement[0].index;
+            const datasetIndex = chartElement[0].datasetIndex;
+
+            barChart.data.datasets[datasetIndex].borderWidth[index] = 1;
+            barChart.data.datasets[datasetIndex].borderColor[index] = '#FFFFFF';
+            barChart.data.datasets[datasetIndex]._meta[0].data[index].options.hoverOffset = 0;
+            barChart.update();
+        }
+    },
+};
+
+            
+                            const visitorCtx = document.getElementById('visitorChart').getContext('2d');
+    
+                const visitorChart_data = {
+            
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    datasets: [{
+                label: 'Number of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+                borderColor: ['#02BC77'],
+                borderWidth: 3,
+                animation: {
+                    delay: function (context) {
+                        // Add a delay based on the dataIndex
+                        return context.dataIndex * 250;
+                    }
+                }
+            }]
+    };
+
+
+
+    const visitorOptions = {
+    maintainAspectRatio: false,
+    responsive: true,
+    plugins: {
+        legend: {
+            display: false,
+        },
+        tooltip: {
+            enabled: false,
+        },
+    },
+    scales: {
+        x: {
+            display: false,
+        },
+        y: {
+            display: false,
+            beginAtZero: true,
+        },
+    },
+    elements: {
+        point: {
+            radius: 0, // Remove points
+        },
+        line: {
+            tension: 0.4, // Set the line tension for smooth curves
+        },
+    },
+    animation: {
+        duration: 1000, // Duration of the animation in milliseconds
+            onComplete: function () {
+                const chartInstance = this.chart;
+                const ctx = chartInstance.ctx;
+                ctx.font = Chart.helpers.fontString(Chart.defaults.font.size, 'normal', Chart.defaults.font.family);
+                ctx.fillStyle = this.chart.config.options.color;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'bottom';
+
+                this.data.datasets.forEach(function (dataset, i) {
+                    const meta = chartInstance.controller.getDatasetMeta(i);
+                    meta.data.forEach(function (bar, index) {
+                        const data = dataset.data[index];
+                        ctx.fillText(data, bar.x, bar.y - 5);
+                    });
+                });
+                
+                initializeCharts();
+            }
+        }
+};
+
+
+
+            
+
+    document.addEventListener('click', function (event) {
+  // Create ripple element
+  const ripple = document.createElement('div');
+  ripple.classList.add('ripple');
+
+  // Set size and position of the ripple
+  ripple.style.width = ripple.style.height = '100px';
+  ripple.style.top = event.pageY - 50 + 'px';
+  ripple.style.left = event.pageX - 50 + 'px';
+
+  // Add the ripple to the DOM and remove it after the animation
+  document.body.appendChild(ripple);
+  setTimeout(function () {
+    ripple.remove();
+  }, 600);
+});
+
+function initializeCharts() {
+    const myChart = new Chart(ctx, {
+        type: 'line',
+        data: data_sale_chartsml,
+        options: options
+    });
+
+    const barChartCtx = document.getElementById('barChart').getContext('2d');
+            const barChart = new Chart(barChartCtx, {
+                type: 'bar',
+                data: barChartData,
+                options: barChartOptions,
+            });
+
+    const visitorChart = new Chart(visitorCtx, {
+        type: 'line',
+        data: visitorChart_data,
+        options: visitorOptions
+    });
+}
+
+
+        </script>
+    </body>
+</html>
