@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-const appointments = new mongoose.Schema({
+const appointmentsSchema = new mongoose.Schema({
     _id: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         required: true
     },
     Booking_date: {
@@ -10,7 +10,7 @@ const appointments = new mongoose.Schema({
         required: true
     },
     Client_id: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         required: true
     },
     Location: {
@@ -18,7 +18,7 @@ const appointments = new mongoose.Schema({
         required: true
     },
     Provider_id: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         required: true
     },
     Registered_date: {
@@ -31,6 +31,6 @@ const appointments = new mongoose.Schema({
     }
 });
 
-const Appointments = mongoose.model('appointments');
+const Appointments = mongoose.model('appointments', appointmentsSchema);
 
 module.exports = Appointments;
