@@ -132,6 +132,7 @@ p {
     margin: 2em 0;
 }
 
+
 @media only screen and (min-width: 768px) {
 
     body {
@@ -226,7 +227,7 @@ p {
 }
 
 
-  .chart-container {
+.chart-container {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -404,4 +405,45 @@ p {
 
 .large-widget .content {
     padding: 15px;
+}
+
+
+/**
+ * profile & settings 
+ */
+
+.userInfo{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+#info{
+    display: flex;
+    align-items: center;
+}
+
+#edit{
+    margin: auto;
+}
+
+#username{
+    grid-column: 1/2;
+}
+
+#number{
+    grid-column:2/3;
+}
+
+#email{
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+
+#postal{
+    grid-column:3/4;
+}
+
+#showPass{
+
 }
