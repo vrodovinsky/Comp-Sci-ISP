@@ -1,4 +1,6 @@
-var appointments = new Schema({
+const mongoose = require('mongoose');
+
+const appointments = new mongoose.Schema({
     _id: {
         type: Schema.Types.ObjectId,
         required: true
@@ -28,3 +30,7 @@ var appointments = new Schema({
         required: true
     }
 });
+
+const User = mongoose.model('users');
+
+module.exports = User;
