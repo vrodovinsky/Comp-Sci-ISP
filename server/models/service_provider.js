@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const service_provider = new Schema({
     _id: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         required: true
     },
     Description: {
@@ -20,7 +20,7 @@ const service_provider = new Schema({
         }
     ],
     User_id: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         required: true
     }
 });
