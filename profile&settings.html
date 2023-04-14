@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="css/main.css">
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <title>My Portfolio</title>
     </head>
     <body>
@@ -21,63 +23,62 @@
             <nav>
                 <ul>
                     <li><a href="dashboard.html">DASHBOARD</a></li>
-                    <li class="activeList"><a href="earnings&analytics.html">EARNINGS AND ANALYTICS</a></li>
+                    <li><a href="earnings&analytics.html">EARNINGS AND ANALYTICS</a></li>
                     <li><a href="#">TASKS & HISTORY</a></li>
-                    <li><a href="profile&settings.html">PROFILE AND SETTINGS</a></li>
+                    <li class="activeList"><a href="profile&settings.html">PROFILE AND SETTINGS</a></li>
                 </ul>
             </nav>
         </aside>
         <main>
-            <h1>Performance Insights</h1>
-            <p>Analyse your earnings, customer feedback, and service trends to grow your business</p>
-            <div class="boxes-wrapper">
-                <div class="sales-widget">
-                    <div class="header">
-                        <h3>Total Sales</h3>
-                        <hr>
-                    </div>
-                    <div class="content">
-                        <div class="left-section">
-                            <h2>12.2k</h2>
-                            <span class="negative">-25%</span>
+            <h1>Account</h1>
+            <!-- <section id="section-1"> -->
+                <div class="userInfo">
+                    <div id="username">
+                        <h2>Username</h2>
+                        <div id="info">
+                            <h3>*their user*</h3>
+                            <button id="edit"><i class="fas fa-edit" style="color: #000000;"></i></button>
                         </div>
-                        <div class="right-section">
-                            <canvas class="graphs" id="myChart"></canvas>
+                    </div>
+                    <div id="number">
+                        <h2>Phone Number</h2>
+                        <div id="info">
+                            <h3>*their number*</h3>
+                            <button id="edit"><i class="fas fa-edit" style="color: #000000;"></i></button>
+                        </div>
+                    </div>
+                    <div id="email">
+                        <h2>Email</h2>
+                        <div id="info">
+                            <h3>*their email*</h3>
+                            <button id="edit"><i class="fas fa-edit" style="color: #000000;"></i></button>
+                        </div>
+                    </div>
+                    <div id="postal">
+                        <h2>Postal Code</h2>
+                        <div id="info">
+                            <h3>*their postal*</h3>
+                            <button id="edit"><i class="fas fa-edit" style="color: #000000;"></i></button>
+                        </div>
+                    </div>
+                    <div id="showPass">
+                        <h2>Password</h2>
+                        <div id="info">
+                            <h3>*their pass*</h3>
+                            <button id="edit"><i class="fas fa-edit" style="color: #000000;"></i></button>
                         </div>
                     </div>
                 </div>
-                <div class="sales-widget">
-                    <div class="header">
-                        <h3>Total Visitors</h3>
-                        <hr>
-                    </div>
-                    <div class="content">
-                        <div class="left-section">
-                            <h2>32k</h2>
-                            <span class="negative">-25%</span>
-                        </div>
-                        <div class="right-section">
-                            <canvas class="graphs" id="visitorChart"></canvas>
-                        </div>
-                    </div>
-                </div>  
-                <div class="sales-widget">
-                    <div class="header">
-                        <h3>Total Sales</h3>
-                        <hr>
-                    </div>
-                    <div class="content">
-                        <div class="left-section">
-                            <h2>12.2k</h2>
-                            <span class="negative">-25%</span>
-                        </div>
-                        <div class="right-section">
-                                <canvas class="graphs" id="barChart"></canvas>                            
-                        </div>
-                    </div>
-                </div>  
-            </div>
-            
+                
+            <!-- </section> -->
+
+            <!-- <section id="section-2">
+                <div>
+                    <h2>Phone Number</h2>
+                    <h3>*their number*</h3>
+                </div>
+            </section> -->
+    
             <!-- Box Template -->
             
             <!-- <div class="line-graph_box">
@@ -331,80 +332,78 @@ setTimeout(() => {
             beginAtZero: true,
         },
     },
-    elements: {
-        point: {
-            radius: 0, // Remove points
+        elements: {
+            point: {
+                radius: 0, // Remove points
+            },
+            line: {
+                tension: 0.4, // Set the line tension for smooth curves
+            },
         },
-        line: {
-            tension: 0.4, // Set the line tension for smooth curves
-        },
-    },
-    animation: {
-        duration: 1000, // Duration of the animation in milliseconds
-            onComplete: function () {
-                const chartInstance = this.chart;
-                const ctx = chartInstance.ctx;
-                ctx.font = Chart.helpers.fontString(Chart.defaults.font.size, 'normal', Chart.defaults.font.family);
-                ctx.fillStyle = this.chart.config.options.color;
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'bottom';
+        animation: {
+            duration: 1000, // Duration of the animation in milliseconds
+                onComplete: function () {
+                    const chartInstance = this.chart;
+                    const ctx = chartInstance.ctx;
+                    ctx.font = Chart.helpers.fontString(Chart.defaults.font.size, 'normal', Chart.defaults.font.family);
+                    ctx.fillStyle = this.chart.config.options.color;
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'bottom';
 
-                this.data.datasets.forEach(function (dataset, i) {
-                    const meta = chartInstance.controller.getDatasetMeta(i);
-                    meta.data.forEach(function (bar, index) {
-                        const data = dataset.data[index];
-                        ctx.fillText(data, bar.x, bar.y - 5);
+                    this.data.datasets.forEach(function (dataset, i) {
+                        const meta = chartInstance.controller.getDatasetMeta(i);
+                        meta.data.forEach(function (bar, index) {
+                            const data = dataset.data[index];
+                            ctx.fillText(data, bar.x, bar.y - 5);
+                        });
                     });
-                });
-                
-                initializeCharts();
+                    
+                    initializeCharts();
+                }
             }
-        }
-};
-
-
+    };
 
             
 
-    document.addEventListener('click', function (event) {
-  // Create ripple element
-  const ripple = document.createElement('div');
-  ripple.classList.add('ripple');
+        document.addEventListener('click', function (event) {
+    // Create ripple element
+    const ripple = document.createElement('div');
+    ripple.classList.add('ripple');
 
-  // Set size and position of the ripple
-  ripple.style.width = ripple.style.height = '100px';
-  ripple.style.top = event.pageY - 50 + 'px';
-  ripple.style.left = event.pageX - 50 + 'px';
+    // Set size and position of the ripple
+    ripple.style.width = ripple.style.height = '100px';
+    ripple.style.top = event.pageY - 50 + 'px';
+    ripple.style.left = event.pageX - 50 + 'px';
 
-  // Add the ripple to the DOM and remove it after the animation
-  document.body.appendChild(ripple);
-  setTimeout(function () {
-    ripple.remove();
-  }, 600);
-});
-
-function initializeCharts() {
-    const myChart = new Chart(ctx, {
-        type: 'line',
-        data: data_sale_chartsml,
-        options: options
+    // Add the ripple to the DOM and remove it after the animation
+    document.body.appendChild(ripple);
+    setTimeout(function () {
+        ripple.remove();
+    }, 600);
     });
 
-    const barChartCtx = document.getElementById('barChart').getContext('2d');
-            const barChart = new Chart(barChartCtx, {
-                type: 'bar',
-                data: barChartData,
-                options: barChartOptions,
-            });
+    function initializeCharts() {
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: data_sale_chartsml,
+            options: options
+        });
 
-    const visitorChart = new Chart(visitorCtx, {
-        type: 'line',
-        data: visitorChart_data,
-        options: visitorOptions
-    });
-}
+        const barChartCtx = document.getElementById('barChart').getContext('2d');
+                const barChart = new Chart(barChartCtx, {
+                    type: 'bar',
+                    data: barChartData,
+                    options: barChartOptions,
+                });
+
+        const visitorChart = new Chart(visitorCtx, {
+            type: 'line',
+            data: visitorChart_data,
+            options: visitorOptions
+        });
+    }
 
 
-        </script>
+    </script>
     </body>
 </html>
