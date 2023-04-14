@@ -3,12 +3,10 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
 const db = require('./db');
-const User = require('./models/user');
+const User = require('./models/users');
 const Service_provider = require('./models/service_provider');
 const Reviews = require('./models/reviews');
 const Appointments = require('./models/appointments');
-const Reviews = require('./models/reviews');
-
 const app = express();
 
 app.get('/api/users', async (req, res) => {

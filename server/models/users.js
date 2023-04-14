@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const users = new mongoose.Schema({
+const users = new Schema({
     _id: {
         type: Schema.Types.ObjectId,
         required: true
@@ -19,6 +20,6 @@ const users = new mongoose.Schema({
     }
 });
 
-const User = mongoose.model('users');
+const User = mongoose.model('users', users);
 
 module.exports = User;
