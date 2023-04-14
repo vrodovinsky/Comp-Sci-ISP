@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
 const db = require('./db');
 const Users = require('./models/users');
-const Service_provider = require('./models/service_provider');
+const Service_providers = require('./models/service_providers');
 const Reviews = require('./models/reviews');
 const Appointments = require('./models/appointments');
 
@@ -38,28 +38,28 @@ app.post('/api/users', async (req, res) => {
     }
 });
 
-app.get('/api/service_provider', async (req, res) => {
+app.get('/api/service_providers', async (req, res) => {
     try {
-        const service_provider = await Service_provider.find({});
-        res.json(service_provider);
+        const service_providers = await Service_providers.find({});
+        res.json(service_providers);
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
 });
 
-app.get('/api/service_provider/:id', async (req, res) => {
+app.get('/api/service_providers/:id', async (req, res) => {
     try {
-        const service_provider = await Service_provider.findByID(req.params.id);
-        res.json(service_provider);
+        const service_providers = await Service_providers.findByID(req.params.id);
+        res.json(service_providers);
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
 });
 
-app.post('/api/service_provider', async (req, res) => {
+app.post('/api/service_providers', async (req, res) => {
     try {
-        const service_provider = await Service_provider(req.body);
-        await service_provider.save();
+        const service_providers = await Service_providers(req.body);
+        await service_providers.save();
         res.json(users);
     } catch (err) {
         res.status(500).json;
