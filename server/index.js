@@ -28,7 +28,7 @@ app.get('/api/users/:id', async (req, res) => {
     }
 });
 
-app.post('/api/users/:id', async (req, res) => {
+app.post('/api/users', async (req, res) => {
     try {
         const users = await Users(req.body);
         await users.save();
@@ -56,7 +56,7 @@ app.get('/api/service_provider/:id', async (req, res) => {
     }
 });
 
-app.post('/api/service_provider/:id', async (req, res) => {
+app.post('/api/service_provider', async (req, res) => {
     try {
         const service_provider = await Service_provider(req.body);
         await service_provider.save();
@@ -84,7 +84,7 @@ app.get('/api/reviews/:id', async (req, res) => {
     }
 });
 
-app.post('/api/reviews/:id', async (req, res) => {
+app.post('/api/reviews', async (req, res) => {
     try {
         const reviews = await Reviews(req.body);
         await reviews.save();
@@ -112,7 +112,7 @@ app.get('/api/appointments/:id', async (req, res) => {
     }
 });
 
-app.post('/api/appointments/:id', async (req, res) => {
+app.post('/api/appointments', async (req, res) => {
     try {
         const appointments = await Appointments(req.body);
         await appointments.save();
