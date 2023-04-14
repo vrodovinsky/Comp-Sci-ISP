@@ -21,7 +21,7 @@ app.get('/api/users', async (req, res) => {
 
 app.get('/api/users/:id', async (req, res) => {
     try {
-        const users = await Users.findByID(req.params.id);
+        const users = await Users.findById(req.params.id);
         res.json(users);
     } catch (err) {
         res.status(500).json({ error: err.message });
@@ -49,7 +49,7 @@ app.get('/api/service_providers', async (req, res) => {
 
 app.get('/api/service_providers/:id', async (req, res) => {
     try {
-        const service_providers = await Service_providers.findByID(req.params.id);
+        const service_providers = await Service_providers.findById(req.params.id);
         res.json(service_providers);
     } catch (err) {
         res.status(500).json({ error: err.message });
@@ -77,8 +77,8 @@ app.get('/api/reviews', async (req, res) => {
 
 app.get('/api/reviews/:id', async (req, res) => {
     try {
-        const reviews = await Reviews.findByID(req.params.id);
-        res.json(reviews);
+        const reviewss = await Reviews.findById(req.params.id);
+        res.json(reviewss);
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
@@ -105,7 +105,7 @@ app.get('/api/appointments', async (req, res) => {
 
 app.get('/api/appointments/:id', async (req, res) => {
     try {
-        const appointments = await Appointments.findByID(req.params.id);
+        const appointments = await Appointments.findById(req.params.id);
         res.json(appointments);
     } catch (err) {
         res.status(500).json({ error: err.message });
