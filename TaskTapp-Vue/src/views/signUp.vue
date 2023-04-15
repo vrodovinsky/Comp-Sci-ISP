@@ -45,11 +45,11 @@
                                 <h1>I want to use TaskTapp to</h1>
                                 <div id="selections">
                                     <label  for="">
-                                        <input id="checkbox" type="checkbox">
+                                        <input id="isProvider" type="checkbox">
                                         Sell my services
                                     </label>
                                     <label for="">
-                                        <input id="checkbox2" type="checkbox">
+                                        <input id="isUser" type="checkbox">
                                         Find help
                                     </label>
                                 </div>
@@ -116,11 +116,11 @@
             padding: 1em 1.4em;
         }
 
-        body, html {npm
+        /* body, html {npm
             height: calc(100% - 2em);
             margin: 0;
             font-family: 'Montserrat';
-        }
+        } */
 
         /* body > *:not(.loader) {
             opacity: 0;
