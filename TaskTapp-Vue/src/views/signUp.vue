@@ -8,7 +8,7 @@
             <div class="hero-body">
                <div class="container has-text-centered">
                 <div>
-                    <img src = "logo1.svg" alt="logo"/> <!--logo overlaps with the box??-->
+                    <img src = "../assets/logo1.svg" alt="logo"/> <!--logo overlaps with the box??-->
                 </div>
                 
                     <div class="box">
@@ -86,10 +86,10 @@
             float: right;
         } */
 
-        #checkbox{
+        #isProvider{
             margin: 0px 5px 0px 0px;
         }
-        #checkbox2{
+        #isUser{
             margin: 0px 5px 0px 20px;
         }
 
