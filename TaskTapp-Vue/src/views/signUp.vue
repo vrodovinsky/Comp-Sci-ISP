@@ -34,11 +34,11 @@
                             </div>
 
                             <div class="field">
-                                <input style="font-family: Montserrat" class="input is-medium" type="password" placeholder="Phone Number"> 
+                                <input style="font-family: Montserrat" class="input is-medium" type="tel" placeholder="Phone Number"> 
                             </div>
 
                             <div class="field">
-                                <input style="font-family: Montserrat" class="input is-medium" type="email" placeholder="Password">
+                                <input style="font-family: Montserrat" class="input is-medium" type="password" placeholder="Password">
                             </div>
 
                             <div class="field">
@@ -59,7 +59,7 @@
                                 aria-hidden="true"></i></button>
                             </form>
                             <br>
-                            <a href="../">Already have an account?</a>
+                            <a href="/logIn">Already have an account?</a>
                     </div>
                 </div>
             </div>
@@ -101,10 +101,10 @@
             font-size: large;
         }
 
-        hr{
+        .login-hr{
             background-color: black;
             border: none;
-            margin: 12px 0px;
+            /* margin: 12px 0px; */
         }
         .box{
             width: 60%;
