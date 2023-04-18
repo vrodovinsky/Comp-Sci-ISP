@@ -2,10 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const appointments = new Schema({
-    _id: {
-        type: Schema.Types.ObjectId,
-        required: true
-    },
     Booking_date: {
         type: Date,
         required: true
