@@ -10,6 +10,10 @@ const Appointments = require('./models/appointments');
 
 const app = express();
 
+
+app.use(cors());
+app.use(bodyParser.json());
+
 app.get('/api/users', async (req, res) => {
     try {
         const users = await Users.find({});
@@ -31,10 +35,14 @@ app.get('/api/users/:id', async (req, res) => {
 app.post('/api/users', async (req, res) => {
     try {
         const users = await Users(req.body);
+        console.log(req);
+
         await users.save();
         res.json(users);
     } catch (err) {
-        res.status(500).json;
+        //console.log(err);
+        console.log("Hello");
+        res.status(500).json({ error: err.message });
     }
 });
 
@@ -125,8 +133,7 @@ app.post('/api/appointments', async (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
-app.use(bodyParser.json());
+
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

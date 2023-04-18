@@ -2,10 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const reviews = new Schema({
-    _id: {
-        type: Schema.Types.ObjectId,
-        required: true
-    },
     Body: {
         type: String,
         required: true
