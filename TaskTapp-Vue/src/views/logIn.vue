@@ -25,7 +25,7 @@
                                <input style="font-family: Montserrat" class="input is-medium" type="password" placeholder="Password">
                            </div>
 
-                           <button class="button is-block is-dark is-large is-fullwidth"  style="font-family: Montserrat">Sign Up<i class="fa fa-sign-in"
+                           <button class="button is-block is-dark is-large is-fullwidth"  style="font-family: Montserrat">Log In<i class="fa fa-sign-in"
                                aria-hidden="true"></i></button>
                            </form>
                            <br>
