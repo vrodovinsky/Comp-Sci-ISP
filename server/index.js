@@ -46,6 +46,16 @@ app.post('/api/users', async (req, res) => {
     }
 });
 
+app.post('/api/signup', async (req, res) => {
+    try {
+        const users = await Users(req.body);
+        await users.save();
+        res.json(users);
+    } catch (err) {
+        res.status(500).json;
+    }
+});
+
 app.get('/api/service_providers', async (req, res) => {
     try {
         const service_providers = await Service_providers.find({});
