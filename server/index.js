@@ -74,9 +74,9 @@ app.post('/api/service_providers', async (req, res) => {
     try {
         const service_providers = await Service_providers(req.body);
         await service_providers.save();
-        res.json(users);
+        res.json(service_providers);
     } catch (err) {
-        res.status(500).json;
+        res.status(500).json({ error: err.message });
     }
 });
 
@@ -104,7 +104,7 @@ app.post('/api/reviews', async (req, res) => {
         await reviews.save();
         res.json(reviews);
     } catch (err) {
-        res.status(500).json;
+        res.status(500).json({ error: err.message });
     }
 });
 
@@ -130,9 +130,9 @@ app.post('/api/appointments', async (req, res) => {
     try {
         const appointments = await Appointments(req.body);
         await appointments.save();
-        res.json(Appointments);
+        res.json(appointments);
     } catch (err) {
-        res.status(500).json;
+        res.status(500).json({ error: err.message });
     }
 });
 
