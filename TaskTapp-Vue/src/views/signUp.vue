@@ -18,38 +18,38 @@
 
                             <div class="field">
                                 <div class="control">
-                                    <div class="names" id="firstName">
-                                        <input style="font-family: Montserrat" class="input is-medium" type="firstName" placeholder="First Name">
+                                    <div class="names" id="firstStyle">
+                                        <input style="font-family: Montserrat" class="input is-medium" id="firstName" type="firstName" placeholder="First Name">
                                     </div>
-                                    <div class="names" id="lastName">
-                                        <input style="font-family: Montserrat" class="input is-medium" type="lastName" placeholder="Last Name">
+                                    <div class="names" id="lastStyle">
+                                        <input style="font-family: Montserrat" class="input is-medium" id="lastName" type="lastName" placeholder="Last Name">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="field">
                                 <div class="control">
-                                    <input style="font-family: Montserrat" class="input is-medium" type="email" placeholder="Email">
+                                    <input style="font-family: Montserrat" class="input is-medium" id="email" type="email" placeholder="Email">
                                 </div>
                             </div>
 
                             <div class="field">
-                                <input style="font-family: Montserrat" class="input is-medium" type="tel" placeholder="Phone Number"> 
+                                <input style="font-family: Montserrat" class="input is-medium" id="phoneNumber" type="tel" placeholder="Phone Number"> 
                             </div>
 
                             <div class="field">
-                                <input style="font-family: Montserrat" class="input is-medium" type="password" placeholder="Password">
+                                <input style="font-family: Montserrat" class="input is-medium" id="password" type="password" placeholder="Password">
                             </div>
 
                             <div class="field">
                                 <h1>I want to use TaskTapp to</h1>
                                 <div id="selections">
                                     <label  for="">
-                                        <input id="isProvider" type="checkbox">
+                                        <input id="isProvider" type="radio" name="accType">
                                         Sell my services
                                     </label>
                                     <label for="">
-                                        <input id="isUser" type="checkbox">
+                                        <input id="isUser" type="radio" name="accType">
                                         Find help
                                     </label>
                                 </div>
@@ -78,7 +78,7 @@
             /* margin: 0px 28px 0px 0px; */
         }
 
-        #firstName{
+        #firstStyle{
             float: left;
         }
 
