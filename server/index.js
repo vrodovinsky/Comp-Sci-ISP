@@ -35,13 +35,9 @@ app.get('/api/users/:id', async (req, res) => {
 app.post('/api/users', async (req, res) => {
     try {
         const users = await Users(req.body);
-        console.log(req);
-
         await users.save();
         res.json(users);
     } catch (err) {
-        //console.log(err);
-        console.log("Hello");
         res.status(500).json({ error: err.message });
     }
 });
