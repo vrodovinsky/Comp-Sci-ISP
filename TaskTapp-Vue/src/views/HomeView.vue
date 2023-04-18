@@ -1,80 +1,55 @@
-<script>
-import Navbar from '@/components/Navbar.vue';
-
-export default {
-  name: 'Home',
-  components: {
-    Navbar,
-  },
-  // Add any necessary logic here
-};
-</script>
-
-
-<script setup>
-
-</script>
-
 
 <template>
-  <navbar></navbar>
-  <main>
-              <h1>Your TaskTapp Overview</h1>
-              <p>Monitor your progress, upcoming tasks, and latest earnings at a glance</p>
-              <div class="boxes-wrapper">
-                  <div class="sales-widget">
-                      <div class="header">
-                          <h3>Total Sales</h3>
-                          <hr>
-                      </div>
-                      <div class="content">
-                          <div class="left-section">
-                              <h2>12.2k</h2>
-                              <span class="negative">-25%</span>
-                          </div>
-                          <div class="right-section">
-                              <canvas class="graphs" id="myChart"></canvas>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="sales-widget">
-                      <div class="header">
-                          <h3>Total Visitors</h3>
-                          <hr>
-                      </div>
-                      <div class="content">
-                          <div class="left-section">
-                              <h2>32k</h2>
-                              <span class="positive">+25%</span>
-                          </div>
-                          <div class="right-section">
-                              <canvas class="graphs" id="visitorChart"></canvas>
-                          </div>
-                      </div>
-                  </div>  
-                  <div class="sales-widget">
-                      <div class="header">
-                          <h3>Total Sales</h3>
-                          <hr>
-                      </div>
-                      <div class="content">
-                          <div class="left-section">
-                              <h2>12.2k</h2>
-                              <span class="negative">-25%</span>
-                          </div>
-                          <div class="right-section">
-                                  <canvas class="graphs" id="barChart"></canvas>                            
-                          </div>
-                      </div>
-                  </div>  
-              </div>
-              
-            
-          </main>
-  </template>
+  <nav>
+      <ul>
+        <li><a href="#home">Sign Up</a></li>
+        <li><a href="#login">Login</a></li>
+      </ul>
+    </nav>
+
+    <div class="banner-wrapper">
+      <div class="welcome-banner">
+        <h1>Find and Book Local Services with Ease</h1>
+        <p>Discover trusted professionals, compare prices, and schedule appointments on TaskTapp - all in one convenient place.</p>
+        <a href="#discover" class="cta">Get Started Now</a>
+      </div>
+  </div>
   
-<style scoped>
-    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+  <div class="info-boxes">
+    <div class="info-box">
+      <h2>About Us</h2>
+    </div>
+    <div class="info-box">
+      <h2>FAQ</h2>
+    </div>
+    <div class="info-box">
+      <h2>What We Do</h2>
+    </div>
+  </div>
+
+
+    <svg class="svgHeader" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="951.75" viewBox="0 0 1920 951.75">
+      <defs>
+        <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnitas="objectBoundingBox">
+          <stop offset="0" stop-color="#32279e"/>
+          <stop offset="1" stop-color="#b756a3"/>
+        </linearGradient>
+      </defs>
+      <path id="Path_380" data-name="Path 380" d="M1199.13,606.015s.819,83.808,0,130.614c7.39,81.407,168.228,80.582,489.2,47.659,639.705-67.148,941.146,61.3,1091.2,436.542s339.6,335.74,339.6,335.74V606.256Z" transform="translate(-1199.13 -606.015)" fill="url(#linear-gradient)"/>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" class="svgHeader" xmlns:xlink="http://www.w3.org/1999/xlink" width="1800.97" height="2005.834" viewBox="0 0 1800.97 2005.834">
+      <defs>
+        <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+          <stop offset="0" stop-color="#32279e"/>
+          <stop offset="1" stop-color="#b756a3"/>
+        </linearGradient>
+      </defs>
+      <path id="Path_381" data-name="Path 381" d="M2088.713,14.073c294,171.508,732.654,62.513,626.328,278.459s279.62,220.059,285.057,368.486c.741,104.145-370.172,123.271-370.172,123.271s-940.812-8.273-1090.866,366.966-339.931,405.316-339.931,405.316V-105.006s47.745-314.117,339.931-342.482S1794.718-157.435,2088.713,14.073Z" transform="translate(-1199.129 449.263)" fill="url(#linear-gradient)"/>
+    </svg>
+    
+</template>
+
+<style scoped> 
 
 body, html {
     height: calc(100% - 2em);
@@ -82,446 +57,137 @@ body, html {
     font-family: 'Montserrat';
 }
 
-body > *:not(.loader) {
-    opacity: 0;
-  }
-  
 
 body {
-    background: #823696; /* Old browsers */
-    background: -moz-linear-gradient(45deg, #32279E 0%, #B756A3 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg, #32279E 0%,#B756A3 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg, #32279E 0%,#B756A3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32279E', endColorstr='#B756A3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+        background-color: #EEC9F4;
 }
 
-aside {
-    color: #fff;
-    display: grid;
-    grid-template-columns: auto 40px;
-    padding: 2em;
-}
-     
-img {
-    width: 40px;
-    cursor: pointer;
-}
-
-figure {
-    margin: 0;
-}
-
-figcaption {
-    font-size: 1.3em;
-    font-weight: bold;
-}
-
-nav {
-    background: #b24343;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav li {
-    position: relative;
-
-}
-
-nav a {
-    display: block;
-    padding: 8px 16px;
-    text-decoration: none;
-    color: #333;
-    background-color: #f1f1f1;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-nav a:hover {
-    background-color: #333;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transform: translateX(-10px);
-}
-
-
-.active {
-    position: absolute;
-    display: block;
-    background: #fff;
-    width: 50%;
-    left: 0;
-    top: 0;
-    height: 100%;
-}
-
-ul {
-    display: none;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-ul li a {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: .8em;
-    display: block;
-    padding: 1.5em 3em;
-    background-color: rgba(255,255,255,.35);
-    color: #000;
-}
-
-.activeList{
-    background-color: white;
-}
-
-main {
-    background: #fff;
-    padding: 1em 1.4em;
-}
-
-h1 {
-    margin: 0;
-}
-
-p {
-    font-size: 1.1em;
-    line-height: 1.5em;
-}
-
-.cta {
-    display: block;
-    color: #fff;
-    background: #32279E;
-    text-decoration: none;
-    padding: 8px 50px;
-    font-size: 1.2em;
-    text-align: center;
-    font-weight: bold;
-    border-radius: 4px;
-    margin: 2em 0;
-}
-
-
-@media only screen and (min-width: 768px) {
-
-    body {
-        display: grid;
-        grid-template-columns: 20% auto;
-        padding: 2em;
-    }
-
-    img {
-        display: none;
-    }
-
-    aside {
-        background: #DCE1F6;
-        grid-template-columns: auto;
-        grid-template-rows: 20% auto;
-        padding: 0;
-    }
-
-    main {
-        padding: 4em;
-        background: white url('../images/bg.svg') no-repeat bottom right;
-        background-size: 70%;
-    }
-
-    #avatar {
-        border-radius: 50%;
-        background: #fff;
-        width: 50px;
-        height: 50px;
-        margin: 2em auto 1em auto;
-    }
-
-    figcaption {
-        text-align: center;
-        color: #000;
-    }
-
-    ul {
-        display: block;
-        margin-top: 2em;
-        position: relative !important;
-        background: none !important;
-        width: 100% !important;
-    }
-
-    ul li a:hover {
-        background-color: #fff;
-    }
-
-    nav {
-        background: none;
-    }
-
-    .cta {
-        display: inline-block;
-        font-size: 1.3em;
-        padding: .8em 3em;
-    }
-
-    h1 {
-        font-size: 3em;
-        margin-top: 2em;
-    }
-
-    p {
-        font-size: 1.5em;
-    }
-
-}
-
-/* .line-graph_box {
-    width: 320px;
-    padding: 10px;
-    border: 5px solid gray;
-    margin: 0; 
-  }
-*/
-
-  .line-graph_box {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 600px;
-    margin: 20px auto;
-    transition: box-shadow 0.3s ease-in-out;
-  }
-
-  .line-graph_box:hover {
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-}
-
-
-.chart-container {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 600px;
-    margin: 20px auto;
-    transition: box-shadow 0.3s ease-in-out;
-}
-
-.chart-container:hover {
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-}
-
-.sales-widget {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 100%;
-    margin: 20px auto;
-    transition: box-shadow 0.3s ease-in-out;
-    flex: 0 0 250px;
-}
-
-/** sales widget GLASS MORPHISM if you decide to go that way */
-
-.sales-widget-GLASSMORPH {
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
-  border-radius: 10px; /* Rounded corners */
-  padding: 20px;
-  max-width: 100%;
-  margin: 20px auto;
-  flex: 0 0 250px;
-  backdrop-filter: blur(10px); /* Blur the background behind the element */
-  -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle drop shadow */
-}
-
-.sales-widget:hover {
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-}
-
-.sales-widget .header {
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.sales-widget .header h3 {
-    font-size: 16px;
-    font-weight: 400;
-    margin-bottom: 5px;
-    color: grey;
-}
-
-.sales-widget .header hr {
-    border: none;
-    border-top: 1px solid #ddd;
-    width: 100%;
-}
-
-.sales-widget .content {
-    display: flex;
-}
-
-.sales-widget .left-section {
-    flex: 1;
-    text-align: left;
-    padding-left: 5px;
-}
-
-.sales-widget .left-section h2 {
-    font-size: 24px;
-    font-weight: 400;
-    margin-bottom: 5px;
-    margin-top: 5px;
-}
-
-.sales-widget .left-section .negative {
-    font-size: 12px;
-    color: red;
-}
-
-.sales-widget .left-section .positive{
-    font-size: 12px;
-    color: green;
-}
-
-.sales-widget .right-section {
-    flex: 1;
-    text-align: center;
-}
-
-.graphs {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.boxes-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-@media (max-width: 767px) {
-    .boxes-wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-.ripple {
-    position: absolute;
-    border-radius: 50%;
-    background-color: rgba(128, 0, 128, 0.05);
-    transform: scale(0);
-    animation: ripple 0.6s linear;
-    pointer-events: none;
-  }
-  
-  @keyframes ripple {
-    to {
-      transform: scale(2);
-      opacity: 0;
-    }
-  }
-  
-  .loader {
+header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    z-index: 100;
   }
   
-  .loader-circle {
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-    border-radius: 50%;
-  }
-  
-  .large-widget {
+  .svgHeader {
+    display: block;
     width: 100%;
-    background: #fff;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
+    height: auto;
+  }
 
-.large-widget .header {
-    background: #f6f6f6;
-    padding: 15px;
-    text-align: left;
-}
-
-.large-widget .header h3 {
-    font-size: 18px;
-    color: #555;
-    margin: 0;
-}
-
-.large-widget .header hr {
-    border: 0;
-    height: 1px;
-    background: #ddd;
-    margin-top: 10px;
-}
-
-.large-widget .content {
-    padding: 15px;
-}
-
-
-/**
- * profile & settings 
- */
-
-.userInfo{
-    display: grid;
-    grid-template-columns:1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-}
-
-#info{
+nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 200;
+    padding-right: 5vw;
+  }
+  
+  nav ul {
     display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 20px 0;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding-left: 5vw;
+  }
+  
+  nav a:hover {
+    color: #ccc;
+  }
+  
+
+
+
+.welcome-banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 50vh;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 1);
+  padding: 60px;
+  padding-left: 75px;
+  padding-right: 75px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 200;
+  display: inline-block;
+  text-align: center;
+  width: 50%;
+}
+
+.welcome-banner h1,
+.welcome-banner p {
+  margin: 0;
+  padding: 0;
+}
+
+.welcome-banner h1 {
+  margin-bottom: 10px;
+  font-size: 45px;
+}
+
+.welcome-banner p {
+    font-size: 25px;
+    padding-top: 25px;
+}
+
+
+.cta {
+    position: absolute;
+    bottom: -25px;
+    display: inline-block;
+    padding: 15px 24px;
+    font-size: 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #32279E;
+    border-radius: 5px;
+    width: 50%;
+    text-align: center;
+    box-sizing: border-box;
+    left: 25%;
+    
+  }
+
+  .cta a {
+    font-weight: 500;
+  }
+
+  .info-boxes {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-}
+    position: absolute;
+    top: calc(50% + 50vh);
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 200;
+    width: 100%;
+  }
 
-#edit{
-    margin: auto;
-}
+  .info-box {
+    width: 80%;
+    max-width: 600px;
+    background-color: white;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
 
-#username{
-    grid-column: 1/2;
-}
-
-#number{
-    grid-column:2/3;
-}
-
-#email{
-    grid-row: 2/3;
-    grid-column: 1/2;
-}
-
-#postal{
-    grid-column:3/4;
-}
-
-#showPass{
-
-}
+  .info-box h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 28px;
+  }
 
 </style>
