@@ -14,22 +14,17 @@
                     <div class="box">
                         <h3 class="title has-text-black">Sign Up</h3>
                         <hr class="login-hr">
-                        <form>
+                        <form @submit.prevent="signUp">
 
                             <div class="field">
-                                <div class="control">
-                                    <div class="names" id="firstStyle">
-                                        <input style="font-family: Montserrat" class="input is-medium" id="firstName" type="firstName" placeholder="First Name">
-                                    </div>
-                                    <div class="names" id="lastStyle">
-                                        <input style="font-family: Montserrat" class="input is-medium" id="lastName" type="lastName" placeholder="Last Name">
-                                    </div>
+                                <div class="control"> 
+                                    <input style="font-family: Montserrat" class="input is-medium" v-model="name" type="name" placeholder="Name">
                                 </div>
                             </div>
 
                             <div class="field">
                                 <div class="control">
-                                    <input style="font-family: Montserrat" class="input is-medium" id="email" type="email" placeholder="Email">
+                                    <input style="font-family: Montserrat" class="input is-medium" v-model="email" type="email" placeholder="Email">
                                 </div>
                             </div>
 
@@ -45,17 +40,17 @@
                                 <h1>I want to use TaskTapp to</h1>
                                 <div id="selections">
                                     <label  for="">
-                                        <input id="isProvider" type="radio" name="accType">
+                                        <input v-model="userType" id="serviceProvider" value="Provider" type="radio" name="accType">
                                         Sell my services
                                     </label>
                                     <label for="">
-                                        <input id="isUser" type="radio" name="accType">
+                                        <input v-model="userType" id="customer" value="Customer" type="radio" name="accType">
                                         Find help
                                     </label>
                                 </div>
                             </div>
 
-                            <button class="button is-block is-dark is-large is-fullwidth"  style="font-family: Montserrat">Sign Up<i class="fa fa-sign-in"
+                            <button class="button is-block is-dark is-large is-fullwidth" style="font-family: Montserrat">Sign Up<i class="fa fa-sign-in"
                                 aria-hidden="true"></i></button>
                             </form>
                             <br>
@@ -138,3 +133,35 @@
             height: 100%;
         }
 </style>
+
+<script>
+import axios from 'axios'
+export default {
+   
+   data() {
+    return{
+        name: '',
+        email:'',
+        userType:''
+    }
+   },
+
+   methods: {
+    signUp () {
+        console.log('test');
+         axios
+        .post("http://localhost:3000/api/signup", {
+          Name: this.name,
+          Email: this.email,
+          User_type: this.userType
+        })
+        .then((response) => {
+          const data = response.data;
+          console.log(data._id)
+    }).catch(err => {
+        console.log(err)
+})
+    }
+   }
+}
+</script>
