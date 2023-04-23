@@ -36,8 +36,8 @@ const userSchema = new mongoose.Schema({
     },
     user_type: {
         type: String,
-        enum: ["user", "admin"],
-        default: "user",
+        enum: ["Customer", "Provider", "admin"],
+        default: "Customer",
     },
 }, { timestamps: true });
 //For get fullName from when we get data from database
