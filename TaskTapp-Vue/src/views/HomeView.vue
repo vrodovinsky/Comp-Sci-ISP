@@ -2,8 +2,8 @@
 <template>
   <nav>
       <ul>
-        <li><a href="#home">Sign Up</a></li>
-        <li><a href="#login">Login</a></li>
+        <li><a href="/signUp">Sign Up</a></li>
+        <li><a href="/logIn">Login</a></li>
       </ul>
     </nav>
 
@@ -11,7 +11,7 @@
       <div class="welcome-banner">
         <h1>Find and Book Local Services with Ease</h1>
         <p>Discover trusted professionals, compare prices, and schedule appointments on TaskTapp - all in one convenient place.</p>
-        <a href="#discover" class="cta">Get Started Now</a>
+        <a href="/logIn" class="cta">Get Started Now</a>
       </div>
   </div>
   
