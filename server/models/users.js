@@ -1,25 +1,52 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-
-const users = new Schema({
-    _id: {
-        type: Schema.Types.ObjectId,
-        required: true
-    },
-    Name: {
+const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+const userSchema = new mongoose.Schema({
+    firstName: {
         type: String,
-        required: true
+        require: true,
+        trim: true,
+        min: 3,
+        max: 20,
     },
-    User_type: {
+    lastName: {
         type: String,
-        required: true
+        require: true,
+        trim: true,
+        min: 3,
+        max: 20,
     },
-    Location: {
+    username: {
         type: String,
-        required: true
-    }
+        require: true,
+        trim: true,
+        unique: true,
+        lowercase: true,
+        index: true,
+    },
+    email: {
+        type: String,
+        require: true,
+        trim: true,
+        unique: true,
+        lowercase: true,
+    },
+    hash_password: {
+        type: String,
+        require: true,
+    },
+    user_type: {
+        type: String,
+        enum: ["Customer", "Provider", "admin"],
+        default: "Customer",
+    },
+}, { timestamps: true });
+//For get fullName from when we get data from database
+userSchema.virtual("fullName").get(function () {
+    return `${this.firstName} ${this.lastName}`;
 });
-
-const User = mongoose.model('users', users);
-
-module.exports = User;
+userSchema.method({
+    async authenticate(password) {
+        return bcrypt.compare(password, this.hash_password);
+    },
+});
+module.exports = mongoose.model("User", userSchema);

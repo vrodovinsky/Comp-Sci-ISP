@@ -1,4 +1,82 @@
+<script>
+import Navbar from '@/components/Navbar.vue';
 
+export default {
+  name: 'Home',
+  components: {
+    Navbar,
+  },
+};
+</script>
+
+
+<script setup>
+
+</script>
+
+
+<template>
+    <div class="navbar">
+        <navbar></navbar>
+    </div>
+  
+  <main>
+              <h1>Your TaskTapp Overview</h1>
+              <p>Monitor your progress, upcoming tasks, and latest earnings at a glance</p>
+              <div class="boxes-wrapper">
+                  <div class="sales-widget">
+                      <div class="header">
+                          <h3>Total Sales</h3>
+                          <hr>
+                      </div>
+                      <div class="content">
+                          <div class="left-section">
+                              <h2>12.2k</h2>
+                              <span class="negative">-25%</span>
+                          </div>
+                          <div class="right-section">
+                              <canvas class="graphs" id="myChart"></canvas>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="sales-widget">
+                      <div class="header">
+                          <h3>Total Visitors</h3>
+                          <hr>
+                      </div>
+                      <div class="content">
+                          <div class="left-section">
+                              <h2>32k</h2>
+                              <span class="positive">+25%</span>
+                          </div>
+                          <div class="right-section">
+                              <canvas class="graphs" id="visitorChart"></canvas>
+                          </div>
+                      </div>
+                  </div>  
+                  <div class="sales-widget">
+                      <div class="header">
+                          <h3>Total Sales</h3>
+                          <hr>
+                      </div>
+                      <div class="content">
+                          <div class="left-section">
+                              <h2>12.2k</h2>
+                              <span class="negative">-25%</span>
+                          </div>
+                          <div class="right-section">
+                                  <canvas class="graphs" id="barChart"></canvas>                            
+                          </div>
+                      </div>
+                  </div>  
+              </div>
+              
+            
+          </main>
+  </template>
+  
+<style scoped>
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
 body, html {
     height: calc(100% - 2em);
@@ -16,6 +94,11 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32279E', endColorstr='#B756A3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     background-repeat: no-repeat;
     background-attachment: fixed;
+    padding-left: 20%;
+}
+
+main {
+    margin-left: 20vw;
 }
 
 aside {
@@ -337,40 +420,7 @@ p {
     }
 }
 
-.ripple {
-    position: absolute;
-    border-radius: 50%;
-    background-color: rgba(128, 0, 128, 0.05);
-    transform: scale(0);
-    animation: ripple 0.6s linear;
-    pointer-events: none;
-  }
-  
-  @keyframes ripple {
-    to {
-      transform: scale(2);
-      opacity: 0;
-    }
-  }
-  
-  .loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .loader-circle {
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-    border-radius: 50%;
-  }
+
   
   .large-widget {
     width: 100%;
@@ -444,3 +494,14 @@ p {
 #showPass{
 
 }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 100;
+}
+
+
+</style>
