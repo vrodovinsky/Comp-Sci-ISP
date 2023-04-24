@@ -8,7 +8,7 @@
             <div class="hero-body">
                <div class="container has-text-centered">
                 <div>
-                    <img src = "../assets/logo1.svg" alt="logo"/> <!--logo overlaps with the box??-->
+                    <a href="/"><img src = "../assets/logo1.svg" alt="logo"/></a> <!--logo overlaps with the box??-->
                 </div>
                 
                     <div class="box">
