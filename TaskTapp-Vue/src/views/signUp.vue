@@ -8,7 +8,7 @@
             <div class="hero-body">
                <div class="container has-text-centered">
                 <div>
-                    <img src = "../assets/logo1.svg" alt="logo"/> <!--logo overlaps with the box??-->
+                    <a href="/"><img src = "../assets/logo1.svg" alt="logo"/></a> <!--logo overlaps with the box??-->
                 </div>
                 
                     <div class="box">
@@ -222,7 +222,7 @@ export default {
         .post("http://localhost:3000/api/signup", {
           firstName: this.firstName,
           lastName: this.lastName,
-          Email: this.email,
+          email: this.email,
           user_type: this.userType
         })
         .then((response) => {
