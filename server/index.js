@@ -10,6 +10,10 @@ const Appointments = require('./models/appointments');
 
 const app = express();
 
+
+app.use(cors());
+app.use(bodyParser.json());
+
 app.get('/api/users', async (req, res) => {
     try {
         const users = await Users.find({});
@@ -34,7 +38,7 @@ app.post('/api/users', async (req, res) => {
         await users.save();
         res.json(users);
     } catch (err) {
-        res.status(500).json;
+        res.status(500).json({ error: err.message });
     }
 });
 
@@ -70,9 +74,9 @@ app.post('/api/service_providers', async (req, res) => {
     try {
         const service_providers = await Service_providers(req.body);
         await service_providers.save();
-        res.json(users);
+        res.json(service_providers);
     } catch (err) {
-        res.status(500).json;
+        res.status(500).json({ error: err.message });
     }
 });
 
@@ -100,7 +104,7 @@ app.post('/api/reviews', async (req, res) => {
         await reviews.save();
         res.json(reviews);
     } catch (err) {
-        res.status(500).json;
+        res.status(500).json({ error: err.message });
     }
 });
 
@@ -126,17 +130,16 @@ app.post('/api/appointments', async (req, res) => {
     try {
         const appointments = await Appointments(req.body);
         await appointments.save();
-        res.json(Appointments);
+        res.json(appointments);
     } catch (err) {
-        res.status(500).json;
+        res.status(500).json({ error: err.message });
     }
 });
 
 
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
-app.use(bodyParser.json());
+
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
