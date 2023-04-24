@@ -14,37 +14,49 @@
                     <div class="box">
                         <h3 class="title has-text-black">Sign Up</h3>
                         <hr class="login-hr">
-                        <form @submit.prevent="signUp">
-
-                            <div class="field">
-                                <div class="control"> 
-                                    <input style="font-family: Montserrat" class="input is-medium" v-model="name" type="name" placeholder="Name">
-                                </div>
-                            </div>
+                        <Form @submit="signUp">
 
                             <div class="field">
                                 <div class="control">
-                                    <input style="font-family: Montserrat" class="input is-medium" v-model="email" type="email" placeholder="Email">
+                                    <div class="names" id="firstStyle">
+                                        <Field style="font-family: Montserrat" v-model="firstName" :rules="validateName" class="input is-medium" name="firstName" type="firstName" placeholder="First Name" />
+                                        <ErrorMessage name="firstName" />
+                                    </div>
+                                    <div class="names" id="lastStyle">
+                                        <Field style="font-family: Montserrat" v-model="lastName" class="input is-medium" :rules="validateName" name="lastName" type="lastName" placeholder="Last Name" />
+                                        <ErrorMessage name="lastName" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="field">
+                                <div class="control">
+                                    <Field style="font-family: Montserrat" class="input is-medium" :rules="validateEmail" v-model="email" name="email" type="email" placeholder="Email" />
+                                    <ErrorMessage name="email" />
                                 </div>
                             </div>
 
                             <div class="field">
-                                <input style="font-family: Montserrat" class="input is-medium" id="phoneNumber" type="tel" placeholder="Phone Number"> 
+                                <Field style="font-family: Montserrat" class="input is-medium" name="phoneNumber" v-model="phoneNumber" :rules="validatePhoneNumber" type="tel" placeholder="Phone Number" /> 
+                                <ErrorMessage name="phoneNumber" />
                             </div>
 
                             <div class="field">
-                                <input style="font-family: Montserrat" class="input is-medium" id="password" type="password" placeholder="Password">
+                                <Field style="font-family: Montserrat" class="input is-medium" name="password" v-model="password" :rules="validatePassword" type="password" placeholder="Password" />
+                                <ErrorMessage name="password" />
                             </div>
 
                             <div class="field">
                                 <h1>I want to use TaskTapp to</h1>
                                 <div id="selections">
                                     <label  for="">
-                                        <input v-model="userType" id="serviceProvider" value="Provider" type="radio" name="accType">
+                                        <Field v-model="userType" id="serviceProvider" value="Provider" :rules="validateUserType" type="radio" name="accType" />
                                         Sell my services
                                     </label>
                                     <label for="">
-                                        <input v-model="userType" id="customer" value="Customer" type="radio" name="accType">
+                                        <Field v-model="userType" id="customer" value="Customer" :rules="validateUserType" type="radio" name="accType" />
+                                        <ErrorMessage name="accType" />
                                         Find help
                                     </label>
                                 </div>
@@ -52,7 +64,7 @@
 
                             <button class="button is-block is-dark is-large is-fullwidth" style="font-family: Montserrat">Sign Up<i class="fa fa-sign-in"
                                 aria-hidden="true"></i></button>
-                            </form>
+                            </Form>
                             <br>
                             <a href="/logIn">Already have an account?</a>
                     </div>
@@ -136,32 +148,92 @@
 
 <script>
 import axios from 'axios'
+import { Form, Field, ErrorMessage } from 'vee-validate';
+import validator from 'validator';
 export default {
    
    data() {
+    
     return{
-        name: '',
+        firstName: '',
+        lastName: '',
         email:'',
-        userType:''
+        userType:'',
+        phoneNumber:'',
+        password:'',
     }
    },
 
+   components: {
+    Form,
+    Field,
+    ErrorMessage
+  },
+
    methods: {
+    validateName (value) {
+        if (validator.isEmpty(value))
+        return 'This field is required'
+
+        if (!validator.isAlpha(value))
+        return 'This field can only letters'
+
+        
+        return true
+    },
+    validateEmail (value) {
+        if (validator.isEmpty(value))
+        return 'This field is required'
+
+        if (!validator.isEmail(value))
+        return 'Not a valid email'
+
+        
+        return true
+    },
+    validatePhoneNumber (value) {
+        if (validator.isEmpty(value))
+        return 'This field is required'
+
+        if (!validator.isMobilePhone(value, 'en-CA'))
+        return 'Not a valid phone number'
+
+        
+        return true
+    },
+    validatePassword (value) {
+        if (validator.isEmpty(value))
+        return 'This field is required'
+
+        
+        return true
+    },
+    validateUserType (value) {
+        if (validator.isEmpty(value))
+        return 'Please select a user type'
+
+        
+        return true
+    },
+
     signUp () {
         console.log('test');
          axios
         .post("http://localhost:3000/api/signup", {
-          Name: this.name,
+          firstName: this.firstName,
+          lastName: this.lastName,
           Email: this.email,
-          User_type: this.userType
+          user_type: this.userType
         })
         .then((response) => {
           const data = response.data;
           console.log(data._id)
+          const redirectPath = this.$route.query.redirect || '/logIn'
+            this.$router.push(redirectPath)
     }).catch(err => {
         console.log(err)
-})
-    }
+    })
+    },
    }
 }
 </script>
