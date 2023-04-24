@@ -222,7 +222,7 @@ export default {
         .post("http://localhost:3000/api/signup", {
           firstName: this.firstName,
           lastName: this.lastName,
-          Email: this.email,
+          email: this.email,
           user_type: this.userType
         })
         .then((response) => {
