@@ -1,7 +1,9 @@
 <template> 
         <aside>
             <figure>
-                <div id="avatar"></div>
+                <div id="avatar">
+                    <img src="static/images/fi-vill-JOHN-DOE.jpg">
+                </div>
                 <figcaption>Johnny Doe</figcaption>
             </figure>
             <img src="images/menu.svg">

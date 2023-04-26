@@ -244,6 +244,7 @@ p {
         width: 50px;
         height: 50px;
         margin: 2em auto 1em auto;
+        
     }
 
     figcaption {
