@@ -1,8 +1,4 @@
-<template>
-    <div class="loader">
-            <div class="loader-circle"></div>
-          </div>
-          
+<template> 
         <aside>
             <figure>
                 <div id="avatar"></div>
@@ -106,7 +102,7 @@ nav a {
 nav a:hover {
     background-color: #333;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transform: translateX(-10px);
+    transform: translateX(10px);
 }
 
 

@@ -16,7 +16,10 @@ export default {
 
 
 <template>
-  <navbar></navbar>
+    <div class="navbar">
+        <navbar></navbar>
+    </div>
+  
   <main>
               <h1>Your TaskTapp Overview</h1>
               <p>Monitor your progress, upcoming tasks, and latest earnings at a glance</p>
@@ -81,9 +84,6 @@ body, html {
     font-family: 'Montserrat';
 }
 
-body > *:not(.loader) {
-    opacity: 0;
-  }
   
 
 body {
@@ -94,6 +94,11 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32279E', endColorstr='#B756A3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     background-repeat: no-repeat;
     background-attachment: fixed;
+    padding-left: 20%;
+}
+
+main {
+    margin-left: 20vw;
 }
 
 aside {
@@ -415,40 +420,7 @@ p {
     }
 }
 
-.ripple {
-    position: absolute;
-    border-radius: 50%;
-    background-color: rgba(128, 0, 128, 0.05);
-    transform: scale(0);
-    animation: ripple 0.6s linear;
-    pointer-events: none;
-  }
-  
-  @keyframes ripple {
-    to {
-      transform: scale(2);
-      opacity: 0;
-    }
-  }
-  
-  .loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .loader-circle {
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-    border-radius: 50%;
-  }
+
   
   .large-widget {
     width: 100%;
@@ -522,5 +494,14 @@ p {
 #showPass{
 
 }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 100;
+}
+
 
 </style>
