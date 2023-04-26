@@ -25,17 +25,15 @@ const router = createRouter({
       component: () => import('../views/search.vue')
     },
     {
-<<<<<<< HEAD
       path: '/header',
       name: 'header',
       component: () => import('../components/Header.vue')
-    }
-=======
+    },
+    {
       path: '/dashboard',
       name: 'dashboard',
       component: () => import('../views/Dashboard.vue')
     },
->>>>>>> ae016937e6a47b35b381e5b94adeb86e89635fe8
   ]
 })
 
