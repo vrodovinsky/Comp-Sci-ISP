@@ -38,14 +38,8 @@
 </template>
 
 <style>
-   /* .button{
-        background-color: #d6a7de;
-        /* color: #d6a7de; 
-    } */
-
     .names{
         display: inline-block;
-        /* margin: 0px 28px 0px 0px; */
     }
 
     #firstName{
@@ -59,7 +53,7 @@
         margin: 0px 5px 0px 20px;
     }
 
-     #selections{
+    #selections{
        align-items: center;
     }
 
