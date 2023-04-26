@@ -25,6 +25,11 @@ const router = createRouter({
       component: () => import('../views/search.vue')
     },
     {
+      path: '/header',
+      name: 'header',
+      component: () => import('../components/Header.vue')
+    },
+    {
       path: '/dashboard',
       name: 'dashboard',
       component: () => import('../views/Dashboard.vue')
