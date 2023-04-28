@@ -1,22 +1,28 @@
-<script setup>
-    import header from '@/components/Header.vue'
+<script>
+    import Header from '../components/Header.vue'
+
+    export default {
+        components: {
+            Header
+        }
+    }
 </script>
 
 <template>
-    <header></header>
-
-    <!-- <body>
-        <div class="container">
-            <div id="searchBar">
-                <div class="field">
+    <body>
+        <Header></Header>
+        <div class="container box" id="body">
+            <!-- <h1>Search Service Providers</h1> -->
+            <div id="search">
+                <div class="field" id="searchBar">
                     <div class="control">
                         <input style="font-family: Montserrat" class="input is-medium" type="text" placeholder="Search services...">
                     </div>
                 </div>  
-                <a href=""><i class="fa-solid fa-magnifying-glass" style="color: black;"></i></a>
-                <a href=""><img src="../assets/search.svg" alt=""></a>
+                <div id="searchBar">
+                    <button id="searchButton" class="button">Search</button>
+                </div>
             </div>
-
 
             <div id="filter">
                 <h1 style="font-family: Montserrat">Filter by </h1>
@@ -29,12 +35,44 @@
                 </div>
             </div>
 
-        </div>  
-    </body> -->
+         </div>
+    </body>
 </template>
 
 <style>
-    
+    body{
+        background-color: #EEC9F4;
+    }
+
+    #body{
+        position: absolute;
+        top: 140px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #searchBar{
+        display: inline-block;
+    }
+
+    #search{
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 80%;
+    }
+
+    #searchButton{
+        margin: 5px 0px;
+    }
+
+    .field{
+        width: 90%;
+    }
+
+
 /* 
     #filter{
         font-family: Montserrat;
