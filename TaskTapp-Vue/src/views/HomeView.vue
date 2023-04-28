@@ -1,68 +1,76 @@
+<script>
+  import Header from '../components/Header.vue'
+
+  export default {
+    components: {
+      Header
+    }
+  }
+</script>
 
 <template>
-  <nav>
-      <ul>
-        <li><a href="/signUp">Sign Up</a></li>
-        <li><a href="/logIn">Login</a></li>
-      </ul>
-    </nav>
+  <body>
+    <Header></Header>
 
-    <div class="banner-wrapper">
-      <div class="welcome-banner">
-        <h1>Find and Book Local Services with Ease</h1>
-        <p>Discover trusted professionals, compare prices, and schedule appointments on TaskTapp - all in one convenient place.</p>
-        <a href="/logIn" class="cta">Get Started Now</a>
+    <div id="body">
+      <div class="banner-wrapper">
+        <div class="welcome-banner">
+          <h1>Find and Book Local Services with Ease</h1>
+          <p>Discover trusted professionals, compare prices, and schedule appointments on TaskTapp - all in one convenient place.</p>
+          <a href="/logIn" class="cta">Get Started Now</a>
+        </div>
       </div>
-  </div>
-  
-  <div class="info-boxes">
-    <div class="info-box">
-      <h2>About Us</h2>
-    </div>
-    <div class="info-box">
-      <h2>FAQ</h2>
-    </div>
-    <div class="info-box">
-      <h2>What We Do</h2>
-    </div>
-  </div>
-
-
-    <svg class="svgHeader" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="951.75" viewBox="0 0 1920 951.75">
-      <defs>
-        <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnitas="objectBoundingBox">
-          <stop offset="0" stop-color="#32279e"/>
-          <stop offset="1" stop-color="#b756a3"/>
-        </linearGradient>
-      </defs>
-      <path id="Path_380" data-name="Path 380" d="M1199.13,606.015s.819,83.808,0,130.614c7.39,81.407,168.228,80.582,489.2,47.659,639.705-67.148,941.146,61.3,1091.2,436.542s339.6,335.74,339.6,335.74V606.256Z" transform="translate(-1199.13 -606.015)" fill="url(#linear-gradient)"/>
-    </svg>
-    <svg xmlns="http://www.w3.org/2000/svg" class="svgHeader" xmlns:xlink="http://www.w3.org/1999/xlink" width="1800.97" height="2005.834" viewBox="0 0 1800.97 2005.834">
-      <defs>
-        <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
-          <stop offset="0" stop-color="#32279e"/>
-          <stop offset="1" stop-color="#b756a3"/>
-        </linearGradient>
-      </defs>
-      <path id="Path_381" data-name="Path 381" d="M2088.713,14.073c294,171.508,732.654,62.513,626.328,278.459s279.62,220.059,285.057,368.486c.741,104.145-370.172,123.271-370.172,123.271s-940.812-8.273-1090.866,366.966-339.931,405.316-339.931,405.316V-105.006s47.745-314.117,339.931-342.482S1794.718-157.435,2088.713,14.073Z" transform="translate(-1199.129 449.263)" fill="url(#linear-gradient)"/>
-    </svg>
     
+      <div class="info-boxes">
+        <div class="info-box">
+          <h2>About Us</h2>
+        </div>
+        <div class="info-box">
+          <h2>FAQ</h2>
+        </div>
+        <div class="info-box">
+          <h2>What We Do</h2>
+        </div>
+      </div>
+    </div>
+
+
+      <svg xmlns="http://www.w3.org/2000/svg" class="svgHeader" xmlns:xlink="http://www.w3.org/1999/xlink" width="1800.97" height="2005.834" viewBox="0 0 1800.97 2005.834">
+        <defs>
+          <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#32279e"/>
+            <stop offset="1" stop-color="#b756a3"/>
+          </linearGradient>
+        </defs>
+        <path id="Path_381" data-name="Path 381" d="M2088.713,14.073c294,171.508,732.654,62.513,626.328,278.459s279.62,220.059,285.057,368.486c.741,104.145-370.172,123.271-370.172,123.271s-940.812-8.273-1090.866,366.966-339.931,405.316-339.931,405.316V-105.006s47.745-314.117,339.931-342.482S1794.718-157.435,2088.713,14.073Z" transform="translate(-1199.129 449.263)" fill="url(#linear-gradient)"/>
+      </svg>
+  </body>    
 </template>
 
 <style scoped> 
+  #body{
+    position: absolute;
+    top: 140px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-body, html {
+
+  body, html {
     height: calc(100% - 2em);
     margin: 0;
     font-family: 'Montserrat';
-}
+  }
 
 
-body {
-        background-color: #EEC9F4;
-}
+  body {
+    background-color: #EEC9F4;
+  }
 
-header {
+  header {
     position: fixed;
     top: 0;
     left: 0;
@@ -76,7 +84,7 @@ header {
     height: auto;
   }
 
-nav {
+  nav {
     position: absolute;
     top: 0;
     right: 0;
@@ -102,14 +110,11 @@ nav {
     color: #ccc;
   }
   
-
-
-
 .welcome-banner {
-  position: absolute;
-  top: 50%;
+  /* position: absolute; */
+  /* top: 50%; */
   left: 50%;
-  margin-top: 50vh;
+  margin-top: 250px;
   transform: translate(-50%, -50%);
   background: rgba(255, 255, 255, 1);
   padding: 60px;
@@ -166,7 +171,7 @@ nav {
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: calc(50% + 50vh);
+    /* top: calc(50% + 50vh); */
     left: 50%;
     transform: translate(-50%, 0);
     z-index: 200;

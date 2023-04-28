@@ -71,17 +71,4 @@
     .field{
         width: 90%;
     }
-
-
-/* 
-    #filter{
-        font-family: Montserrat;
-        display: inline-block;
-        align-items: end;
-    } */
-
-    /* .body-text {
-        margin-left: 150px;
-        font-size: 18px;
-    }  */
 </style>
