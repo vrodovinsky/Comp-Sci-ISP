@@ -52,6 +52,26 @@ app.post('/api/signup', async (req, res) => {
     }
 });
 
+app.put('/api/updateAccount/:id', async (req, res) => {
+    try {
+        const users = await Users.findById(req.params.id);
+
+        if (req.body.firstName)
+            users.firstName = req.body.firstName
+        if (req.body.lastName)
+            users.lastName = req.body.lastName
+        if (req.body.email)
+            users.email = req.body.email
+
+        const updatedUser = await users.save();
+
+
+        res.json(updatedUser);
+    } catch (err) {
+        res.status(500).json;
+    }
+});
+
 app.get('/api/service_providers', async (req, res) => {
     try {
         const service_providers = await Service_providers.find({});

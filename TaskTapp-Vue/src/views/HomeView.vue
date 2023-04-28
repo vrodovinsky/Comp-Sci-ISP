@@ -1,8 +1,21 @@
-<script setup>
-import navBarButtons from '@/components/navigation/navBarButtons.vue'
+<script>
+import Header from '../components/Header.vue'
+
+export default {
+  components: {
+    Header
+  }
+}
 </script>
+
 <template>
-  <nav-bar-buttons />
+  <nav>
+    <ul>
+      <li><a href="/signUp">Sign Up</a></li>
+      <li><a href="/logIn">Login</a></li>
+    </ul>
+  </nav>
+
   <div class="banner-wrapper">
     <div class="welcome-banner">
       <h1>Find and Book Local Services with Ease</h1>
@@ -137,10 +150,10 @@ nav a:hover {
 }
 
 .welcome-banner {
-  position: absolute;
-  top: 50%;
+  /* position: absolute; */
+  /* top: 50%; */
   left: 50%;
-  margin-top: 50vh;
+  margin-top: 250px;
   transform: translate(-50%, -50%);
   background: rgba(255, 255, 255, 1);
   padding: 60px;
