@@ -9,12 +9,7 @@ export default {
 </script>
 
 <template>
-  <nav>
-    <ul>
-      <li><a href="/signUp">Sign Up</a></li>
-      <li><a href="/logIn">Login</a></li>
-    </ul>
-  </nav>
+  <Header />
 
   <div class="banner-wrapper">
     <div class="welcome-banner">
