@@ -1,5 +1,5 @@
 <template>
-  <button class="button__login" @click="handleLogin">Log In</button>
+  <a class="button__login" @click="handleLogin">Log In</a>
 </template>
 
 <script setup>
