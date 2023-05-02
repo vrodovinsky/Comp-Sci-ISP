@@ -17,7 +17,7 @@ const router = createRouter({
     {
       path: '/logIn',
       name: 'logIn',
-      component: () => import('../views/logIn.vue')
+      component: () => import('../views/login.vue')
     },
     {
       path: '/search',
@@ -28,6 +28,11 @@ const router = createRouter({
       path: '/header',
       name: 'header',
       component: () => import('../components/Header.vue')
+    },
+    {
+      path: "/callback",
+      name: "callback",
+      component: () => import("../views/callback.vue")
     },
     {
       path: '/dashboard',
