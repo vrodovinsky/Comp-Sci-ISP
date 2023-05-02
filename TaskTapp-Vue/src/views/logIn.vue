@@ -5,7 +5,7 @@
          </div> -->
           
        <section class="hero is-fullheight">
-           <div class="body"> <!--hero-body to center it all -->
+           <div class="hero-body"> <!--hero-body to center it all -->
               <div class="container has-text-centered">
                <div>
                     <a href="/"><img src = "../assets/logo1.svg" alt="logo"/></a> <!--logo overlaps with the box-->
