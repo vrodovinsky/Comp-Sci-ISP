@@ -11,6 +11,7 @@ import navBarButtons from '@/components/navigation/navBarButtons.vue'
       </ul>
       <ul>
         <li id="links"><a href="/search">Search Services</a></li>
+        <li id="links"><a href="/search">Map Search</a></li>
         <li id="links"><nav-bar-buttons /></li>
       </ul>
     </ul>

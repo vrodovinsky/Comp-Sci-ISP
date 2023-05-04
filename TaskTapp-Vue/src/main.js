@@ -2,6 +2,7 @@ import { createAuth0 } from "@auth0/auth0-vue";
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import VueGoogleMaps from '@fawmi/vue-google-maps'
 
 import './assets/main.css'
 
@@ -18,5 +19,11 @@ app.use(
         }
     })
 )
+
+app.use(VueGoogleMaps, {
+    load: {
+        key: import.meta.env.GOOGLE_API_KEY,
+    }
+})
 
 app.mount('#app')
