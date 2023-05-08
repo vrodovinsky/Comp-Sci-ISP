@@ -6,12 +6,13 @@ import navBarButtons from '@/components/navigation/navBarButtons.vue'
     <ul id="full">
       <ul>
         <li>
-          <a href="/"><img src="../assets/logo1.svg" /></a>
+          <router-link to="/"><img src="../assets/logo1.svg" /></router-link>
         </li>
       </ul>
       <ul>
-        <li id="links"><a href="/search">Search Services</a></li>
-        <li id="links"><a href="/search">Map Search</a></li>
+        <li id="links"><router-link to="/search">Search Services</router-link></li>
+        <li id="links"><router-link to="/search">Map Search</router-link></li>
+        <li id="links"><router-link to="/dashboard">Dashboard</router-link></li>
         <li id="links"><nav-bar-buttons /></li>
       </ul>
     </ul>

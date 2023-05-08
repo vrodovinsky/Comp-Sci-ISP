@@ -9,15 +9,18 @@ export default {
 </script>
 
 <template>
- <body>
+  <body>
     <Header></Header>
 
     <div id="body">
       <div class="banner-wrapper">
         <div class="welcome-banner">
           <h1>Find and Book Local Services with Ease</h1>
-          <p>Discover trusted professionals, compare prices, and schedule appointments on TaskTapp - all in one convenient place.</p>
-          <a href="/logIn" class="cta">Get Started Now</a>
+          <p>
+            Discover trusted professionals, compare prices, and schedule appointments on TaskTapp -
+            all in one convenient place.
+          </p>
+          <router-link to="/login" class="cta">Get Started Now</router-link>
         </div>
       </div>
 
@@ -34,29 +37,47 @@ export default {
       </div>
     </div>
 
-
-      <svg xmlns="http://www.w3.org/2000/svg" class="svgHeader" xmlns:xlink="http://www.w3.org/1999/xlink" width="1800.97" height="2005.834" viewBox="0 0 1800.97 2005.834">
-        <defs>
-          <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
-            <stop offset="0" stop-color="#32279e"/>
-            <stop offset="1" stop-color="#b756a3"/>
-          </linearGradient>
-        </defs>
-        <path id="Path_381" data-name="Path 381" d="M2088.713,14.073c294,171.508,732.654,62.513,626.328,278.459s279.62,220.059,285.057,368.486c.741,104.145-370.172,123.271-370.172,123.271s-940.812-8.273-1090.866,366.966-339.931,405.316-339.931,405.316V-105.006s47.745-314.117,339.931-342.482S1794.718-157.435,2088.713,14.073Z" transform="translate(-1199.129 449.263)" fill="url(#linear-gradient)"/>
-      </svg>
-    </body>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="svgHeader"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="1800.97"
+      height="2005.834"
+      viewBox="0 0 1800.97 2005.834"
+    >
+      <defs>
+        <linearGradient
+          id="linear-gradient"
+          x1="0.5"
+          x2="0.5"
+          y2="1"
+          gradientUnits="objectBoundingBox"
+        >
+          <stop offset="0" stop-color="#32279e" />
+          <stop offset="1" stop-color="#b756a3" />
+        </linearGradient>
+      </defs>
+      <path
+        id="Path_381"
+        data-name="Path 381"
+        d="M2088.713,14.073c294,171.508,732.654,62.513,626.328,278.459s279.62,220.059,285.057,368.486c.741,104.145-370.172,123.271-370.172,123.271s-940.812-8.273-1090.866,366.966-339.931,405.316-339.931,405.316V-105.006s47.745-314.117,339.931-342.482S1794.718-157.435,2088.713,14.073Z"
+        transform="translate(-1199.129 449.263)"
+        fill="url(#linear-gradient)"
+      />
+    </svg>
+  </body>
 </template>
 
 <style scoped>
-  #body{
-    position: absolute;
-    top: 140px;
-    width: 100%;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-  }
+#body {
+  position: absolute;
+  top: 140px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 body,
 html {

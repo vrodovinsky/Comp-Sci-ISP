@@ -1,336 +1,331 @@
 <script>
-import Navbar from '@/components/Navbar.vue';
+import Navbar from '@/components/Navbar.vue'
 
 export default {
   name: 'Home',
   components: {
-    Navbar,
-  },
-};
+    Navbar
+  }
+}
 </script>
 
-
-<script setup>
-
-</script>
-
+<script setup></script>
 
 <template>
-    <div class="navbar">
-        <navbar></navbar>
-    </div>
-  
-  <main>
-              <h1>Your TaskTapp Overview</h1>
-              <p>Monitor your progress, upcoming tasks, and latest earnings at a glance</p>
-              <div class="boxes-wrapper">
-                  <div class="sales-widget">
-                      <div class="header">
-                          <h3>Total Sales</h3>
-                          <hr>
-                      </div>
-                      <div class="content">
-                          <div class="left-section">
-                              <h2>12.2k</h2>
-                              <span class="negative">-25%</span>
-                          </div>
-                          <div class="right-section">
-                              <canvas class="graphs" id="myChart"></canvas>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="sales-widget">
-                      <div class="header">
-                          <h3>Total Visitors</h3>
-                          <hr>
-                      </div>
-                      <div class="content">
-                          <div class="left-section">
-                              <h2>32k</h2>
-                              <span class="positive">+25%</span>
-                          </div>
-                          <div class="right-section">
-                              <canvas class="graphs" id="visitorChart"></canvas>
-                          </div>
-                      </div>
-                  </div>  
-                  <div class="sales-widget">
-                      <div class="header">
-                          <h3>Total Sales</h3>
-                          <hr>
-                      </div>
-                      <div class="content">
-                          <div class="left-section">
-                              <h2>12.2k</h2>
-                              <span class="negative">-25%</span>
-                          </div>
-                          <div class="right-section">
-                                  <canvas class="graphs" id="barChart"></canvas>                            
-                          </div>
-                      </div>
-                  </div>  
-              </div>
-              
-            
-          </main>
-  </template>
-  
-<style scoped>
-    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+  <div class="navbar">
+    <navbar></navbar>
+  </div>
 
-body, html {
-    height: calc(100% - 2em);
-    margin: 0;
-    font-family: 'Montserrat';
+  <main>
+    <h1>Your TaskTapp Overview</h1>
+    <p>Monitor your progress, upcoming tasks, and latest earnings at a glance</p>
+    <div class="boxes-wrapper">
+      <div class="sales-widget">
+        <div class="header">
+          <h3>Total Sales</h3>
+          <hr />
+        </div>
+        <div class="content">
+          <div class="left-section">
+            <h2>12.2k</h2>
+            <span class="negative">-25%</span>
+          </div>
+          <div class="right-section">
+            <canvas class="graphs" id="myChart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="sales-widget">
+        <div class="header">
+          <h3>Total Visitors</h3>
+          <hr />
+        </div>
+        <div class="content">
+          <div class="left-section">
+            <h2>32k</h2>
+            <span class="positive">+25%</span>
+          </div>
+          <div class="right-section">
+            <canvas class="graphs" id="visitorChart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="sales-widget">
+        <div class="header">
+          <h3>Total Sales</h3>
+          <hr />
+        </div>
+        <div class="content">
+          <div class="left-section">
+            <h2>12.2k</h2>
+            <span class="negative">-25%</span>
+          </div>
+          <div class="right-section">
+            <canvas class="graphs" id="barChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</template>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+body,
+html {
+  height: calc(100% - 2em);
+  margin: 0;
+  font-family: 'Montserrat';
 }
 
-  
-
 body {
-    background: #823696; /* Old browsers */
-    background: -moz-linear-gradient(45deg, #32279E 0%, #B756A3 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg, #32279E 0%,#B756A3 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg, #32279E 0%,#B756A3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32279E', endColorstr='#B756A3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    padding-left: 20%;
+  background: #823696; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #32279e 0%, #b756a3 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    45deg,
+    #32279e 0%,
+    #b756a3 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    45deg,
+    #32279e 0%,
+    #b756a3 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32279E', endColorstr='#B756A3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-left: 20%;
 }
 
 main {
-    margin-left: 20vw;
+  margin-left: 17vw;
 }
 
 aside {
-    color: #fff;
-    display: grid;
-    grid-template-columns: auto 40px;
-    padding: 2em;
+  color: #fff;
+  display: grid;
+  grid-template-columns: auto 40px;
+  padding: 2em;
 }
-     
+
 img {
-    width: 40px;
-    cursor: pointer;
+  width: 40px;
+  cursor: pointer;
 }
 
 figure {
-    margin: 0;
+  margin: 0;
 }
 
 figcaption {
-    font-size: 1.3em;
-    font-weight: bold;
+  font-size: 1.3em;
+  font-weight: bold;
 }
 
 nav {
-    background: #b24343;
+  background: #b24343;
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 nav li {
-    position: relative;
-
+  position: relative;
 }
 
 nav a {
-    display: block;
-    padding: 8px 16px;
-    text-decoration: none;
-    color: #333;
-    background-color: #f1f1f1;
-    border-radius: 4px;
-    transition: all 0.3s ease;
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #333;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
 nav a:hover {
-    background-color: #333;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transform: translateX(-10px);
+  background-color: #333;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateX(-10px);
 }
 
-
 .active {
-    position: absolute;
-    display: block;
-    background: #fff;
-    width: 50%;
-    left: 0;
-    top: 0;
-    height: 100%;
+  position: absolute;
+  display: block;
+  background: #fff;
+  width: 50%;
+  left: 0;
+  top: 0;
+  height: 100%;
 }
 
 ul {
-    display: none;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  display: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 ul li a {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: .8em;
-    display: block;
-    padding: 1.5em 3em;
-    background-color: rgba(255,255,255,.35);
-    color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  display: block;
+  padding: 1.5em 3em;
+  background-color: rgba(255, 255, 255, 0.35);
+  color: #000;
 }
 
-.activeList{
-    background-color: white;
+.activeList {
+  background-color: white;
 }
 
 main {
-    background: #fff;
-    padding: 1em 1.4em;
+  background: #fff;
+  padding: 1em 1.4em;
 }
 
 h1 {
-    margin: 0;
+  margin: 0;
 }
 
 p {
-    font-size: 1.1em;
-    line-height: 1.5em;
+  font-size: 1.1em;
+  line-height: 1.5em;
 }
 
 .cta {
-    display: block;
-    color: #fff;
-    background: #32279E;
-    text-decoration: none;
-    padding: 8px 50px;
-    font-size: 1.2em;
-    text-align: center;
-    font-weight: bold;
-    border-radius: 4px;
-    margin: 2em 0;
+  display: block;
+  color: #fff;
+  background: #32279e;
+  text-decoration: none;
+  padding: 8px 50px;
+  font-size: 1.2em;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 4px;
+  margin: 2em 0;
 }
 
-
 @media only screen and (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-columns: 20% auto;
+    padding: 2em;
+  }
 
-    body {
-        display: grid;
-        grid-template-columns: 20% auto;
-        padding: 2em;
-    }
+  img {
+    display: none;
+  }
 
-    img {
-        display: none;
-    }
+  aside {
+    background: #dce1f6;
+    grid-template-columns: auto;
+    grid-template-rows: 20% auto;
+    padding: 0;
+  }
 
-    aside {
-        background: #DCE1F6;
-        grid-template-columns: auto;
-        grid-template-rows: 20% auto;
-        padding: 0;
-    }
+  main {
+    padding: 4em;
+    background: white url('../assets/images/bg.svg') no-repeat bottom right;
+    background-size: 70%;
+    height: 100vh;
+  }
 
-    main {
-        padding: 4em;
-        background: white url('../images/bg.svg') no-repeat bottom right;
-        background-size: 70%;
-    }
+  #avatar {
+    border-radius: 50%;
+    background: #fff;
+    width: 50px;
+    height: 50px;
+    margin: 2em auto 1em auto;
+  }
 
-    #avatar {
-        border-radius: 50%;
-        background: #fff;
-        width: 50px;
-        height: 50px;
-        margin: 2em auto 1em auto;
-        
-    }
+  figcaption {
+    text-align: center;
+    color: #000;
+  }
 
-    figcaption {
-        text-align: center;
-        color: #000;
-    }
+  ul {
+    display: block;
+    margin-top: 2em;
+    position: relative !important;
+    background: none !important;
+    width: 100% !important;
+  }
 
-    ul {
-        display: block;
-        margin-top: 2em;
-        position: relative !important;
-        background: none !important;
-        width: 100% !important;
-    }
+  ul li a:hover {
+    background-color: #fff;
+  }
 
-    ul li a:hover {
-        background-color: #fff;
-    }
+  nav {
+    background: none;
+  }
 
-    nav {
-        background: none;
-    }
+  .cta {
+    display: inline-block;
+    font-size: 1.3em;
+    padding: 0.8em 3em;
+  }
 
-    .cta {
-        display: inline-block;
-        font-size: 1.3em;
-        padding: .8em 3em;
-    }
+  h1 {
+    font-size: 3em;
+    margin-top: 2em;
+  }
 
-    h1 {
-        font-size: 3em;
-        margin-top: 2em;
-    }
-
-    p {
-        font-size: 1.5em;
-    }
-
+  p {
+    font-size: 1.5em;
+  }
 }
 
 /* .line-graph_box {
     width: 320px;
     padding: 10px;
     border: 5px solid gray;
-    margin: 0; 
+    margin: 0;
   }
 */
 
-  .line-graph_box {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 600px;
-    margin: 20px auto;
-    transition: box-shadow 0.3s ease-in-out;
-  }
-
-  .line-graph_box:hover {
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+.line-graph_box {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
+.line-graph_box:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
 
 .chart-container {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 600px;
-    margin: 20px auto;
-    transition: box-shadow 0.3s ease-in-out;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .chart-container:hover {
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
 .sales-widget {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 100%;
-    margin: 20px auto;
-    transition: box-shadow 0.3s ease-in-out;
-    flex: 0 0 250px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 100%;
+  margin: 20px auto;
+  transition: box-shadow 0.3s ease-in-out;
+  flex: 0 0 250px;
 }
 
 /** sales widget GLASS MORPHISM if you decide to go that way */
@@ -348,152 +343,148 @@ p {
 }
 
 .sales-widget:hover {
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
 .sales-widget .header {
-    margin-bottom: 20px;
-    text-align: left;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 .sales-widget .header h3 {
-    font-size: 16px;
-    font-weight: 400;
-    margin-bottom: 5px;
-    color: grey;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  color: grey;
 }
 
 .sales-widget .header hr {
-    border: none;
-    border-top: 1px solid #ddd;
-    width: 100%;
+  border: none;
+  border-top: 1px solid #ddd;
+  width: 100%;
 }
 
 .sales-widget .content {
-    display: flex;
+  display: flex;
 }
 
 .sales-widget .left-section {
-    flex: 1;
-    text-align: left;
-    padding-left: 5px;
+  flex: 1;
+  text-align: left;
+  padding-left: 5px;
 }
 
 .sales-widget .left-section h2 {
-    font-size: 24px;
-    font-weight: 400;
-    margin-bottom: 5px;
-    margin-top: 5px;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .sales-widget .left-section .negative {
-    font-size: 12px;
-    color: red;
+  font-size: 12px;
+  color: red;
 }
 
-.sales-widget .left-section .positive{
-    font-size: 12px;
-    color: green;
+.sales-widget .left-section .positive {
+  font-size: 12px;
+  color: green;
 }
 
 .sales-widget .right-section {
-    flex: 1;
-    text-align: center;
+  flex: 1;
+  text-align: center;
 }
 
 .graphs {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .boxes-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 @media (max-width: 767px) {
-    .boxes-wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
+  .boxes-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-
-  
-  .large-widget {
-    width: 100%;
-    background: #fff;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+.large-widget {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .large-widget .header {
-    background: #f6f6f6;
-    padding: 15px;
-    text-align: left;
+  background: #f6f6f6;
+  padding: 15px;
+  text-align: left;
 }
 
 .large-widget .header h3 {
-    font-size: 18px;
-    color: #555;
-    margin: 0;
+  font-size: 18px;
+  color: #555;
+  margin: 0;
 }
 
 .large-widget .header hr {
-    border: 0;
-    height: 1px;
-    background: #ddd;
-    margin-top: 10px;
+  border: 0;
+  height: 1px;
+  background: #ddd;
+  margin-top: 10px;
 }
 
 .large-widget .content {
-    padding: 15px;
+  padding: 15px;
 }
-
 
 /**
- * profile & settings 
+ * profile & settings
  */
 
-.userInfo{
-    display: grid;
-    grid-template-columns:1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+.userInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
 
-#info{
-    display: flex;
-    align-items: center;
+#info {
+  display: flex;
+  align-items: center;
 }
 
-#edit{
-    margin: auto;
+#edit {
+  margin: auto;
 }
 
-#username{
-    grid-column: 1/2;
+#username {
+  grid-column: 1/2;
 }
 
-#number{
-    grid-column:2/3;
+#number {
+  grid-column: 2/3;
 }
 
-#email{
-    grid-row: 2/3;
-    grid-column: 1/2;
+#email {
+  grid-row: 2/3;
+  grid-column: 1/2;
 }
 
-#postal{
-    grid-column:3/4;
+#postal {
+  grid-column: 3/4;
 }
 
-#showPass{
-
+#showPass {
 }
 
 .navbar {
@@ -503,6 +494,4 @@ p {
   height: 100%;
   z-index: 100;
 }
-
-
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="page-layout">
-    <NavBar />
+    <Header />
     <div class="page-layout__content">
       <slot />
     </div>
@@ -8,5 +8,5 @@
 </template>
 
 <script setup>
-import Navbar from '@/components/Navbar.vue'
+import Header from '@/components/Header.vue'
 </script>
