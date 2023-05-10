@@ -1,5 +1,9 @@
 <script setup>
 import navBarButtons from '@/components/navigation/navBarButtons.vue'
+import { useAuth0 } from '@auth0/auth0-vue'
+import PageLoader from '@/components/pageLoader.vue'
+
+const { isLoading } = useAuth0()
 </script>
 <template>
   <nav>
@@ -13,7 +17,10 @@ import navBarButtons from '@/components/navigation/navBarButtons.vue'
         <li id="links"><router-link to="/search">Search Services</router-link></li>
         <li id="links"><router-link to="/searchMap">Map Search</router-link></li>
         <li id="links"><router-link to="/dashboard">Dashboard</router-link></li>
-        <li id="links"><nav-bar-buttons /></li>
+        <div v-if="isLoading" class="page-layout">
+          <PageLoader />
+        </div>
+        <li v-else id="links"><nav-bar-buttons /></li>
       </ul>
     </ul>
   </nav>
