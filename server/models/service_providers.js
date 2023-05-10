@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const service_providers = new Schema({
+    _id: {
+        type: Schema.Types.ObjectId,
+        required: true
+    },
     Description: {
         type: String,
         required: true
@@ -11,13 +15,30 @@ const service_providers = new Schema({
         required: true
     },
     Services: [
-        {
-            type: String
-        }
+        new Schema({
+            Name: {
+                type: String,
+                required: true
+            },
+            Description: {
+                type: String,
+                required: true
+            },
+            Price: {
+                type: String,
+                required: true
+            }
+        })
     ],
     User_id: {
         type: Schema.Types.ObjectId,
         required: true
+    },
+    Location: {
+        type: String
+    },
+    __v: {
+        type: Number
     }
 });
 
