@@ -1,5 +1,6 @@
 <template>
   <footer>
+    <p style="position: absolute; right: 10px; color: lightgray">Copyright &copy; 2023</p>
     <ul class="container">
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/search">Search our services</router-link></li>
@@ -11,7 +12,6 @@
         <li><LogoutButton /></li>
       </template>
     </ul>
-    <p>Copyright &copy; 2023</p>
   </footer>
 </template>
 
