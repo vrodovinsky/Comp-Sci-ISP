@@ -1,13 +1,13 @@
 <template> 
-        <aside>
-            <figure>
-                <div id="avatar">
-                    <img src="static/images/fi-vill-JOHN-DOE.jpg">
+        <container class="aside">
+            <div id="figure">
+                <div class="container">
+                    <figure style="display: inline-block;">
+                        <div id="avatar"></div> 
+                        <figcaption>Johnny Doe</figcaption>
+                    </figure>
                 </div>
-                <figcaption>Johnny Doe</figcaption>
-            </figure>
-            <img src="images/menu.svg">
-            <nav>
+                <nav>
                 <ul>
                     <li class="activeList"><a href="dashboard.html">DASHBOARD</a></li>
                     <li><a href="earnings&analytics.html">EARNINGS AND ANALYTICS</a></li>
@@ -15,25 +15,10 @@
                     <li><a href="profile&settings.html">PROFILE AND SETTINGS</a></li>
                 </ul>
             </nav>
-        </aside>
+            </div>
+            
+        </container>
 </template>
-
-<script>
-
-
-    (function() {
-        var menu = document.querySelector('ul'),
-            menulink = document.querySelector('img');
-        
-        /* menulink.addEventListener('click', function(e) {
-            menu.classList.toggle('active');
-            e.preventDefault();
-        }); */
-        
-    })();
-
-
-</script>
 
 
 <style scoped>
@@ -45,21 +30,15 @@ body, html {
     font-family: 'Montserrat';
 }
 
-body {
-    background: #823696; /* Old browsers */
-    background: -moz-linear-gradient(45deg, #32279E 0%, #B756A3 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg, #32279E 0%,#B756A3 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg, #32279E 0%,#B756A3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32279E', endColorstr='#B756A3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+.aside {
+    color: #fff;
+    display: flex;
+    /* grid-template-columns: auto 40px; */
+    /* display: flex; */
 }
 
-aside {
-    color: #fff;
-    display: grid;
-    grid-template-columns: auto 40px;
-    padding: 2em;
+.container{
+    justify-content: center;
 }
      
 img {
@@ -67,28 +46,38 @@ img {
     cursor: pointer;
 }
 
+#figure{
+   /* height: 200px;*/
+   background: #EEC9F4;
+}
+
 figure {
-    margin: 0;
+    /* margin: auto;
+    justify-content: center; */
 }
 
 figcaption {
     font-size: 1.3em;
     font-weight: bold;
+    text-align: center;
+}
+
+#avatar {
+    margin: auto;
 }
 
 nav {
-    background: #b24343;
+    display: contents;
 }
 
 nav ul {
     list-style-type: none;
-    padding: 0;
+    /* padding: 0; */
     margin: 0;
 }
 
 nav li {
-    position: relative;
-
+    background: #EEC9F4;
 }
 
 nav a {
@@ -108,7 +97,7 @@ nav a:hover {
 }
 
 
-.active {
+/* .active {
     position: absolute;
     display: block;
     background: #fff;
@@ -116,20 +105,20 @@ nav a:hover {
     left: 0;
     top: 0;
     height: 100%;
-}
+} */
 
 ul {
     display: none;
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    /* padding: 0; */
 }
 
 ul li a {
     text-decoration: none;
     text-transform: uppercase;
     font-size: .8em;
-    display: block;
+    /* display: block; */
     padding: 1.5em 3em;
     background-color: rgba(255,255,255,.35);
     color: #000;

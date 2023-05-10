@@ -48,15 +48,15 @@ export default {
 </template>
 
 <style scoped>
-  #body{
-    position: absolute;
-    top: 140px;
-    width: 100%;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-  }
+#body{
+  position: absolute;
+  top: 140px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 body,
 html {

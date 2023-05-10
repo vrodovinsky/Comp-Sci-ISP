@@ -22,10 +22,7 @@ const { isAuthenticated } = useAuth0()
 </script>
 
 <style>
-  /* ul {
-    display: flex;
-    list-style: none;
-  } */
+  
 
   #links {
     margin: 0px 20px;
