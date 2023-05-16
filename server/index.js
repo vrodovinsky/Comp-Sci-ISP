@@ -186,7 +186,7 @@ app.post('/api/appointments', async (req, res) => {
 });
 
 // requires an authorization paramater with the API Access Token
-app.get('/api/setprovider', async (req, res) => {
+app.get('/api/auth0', async (req, res) => {
     var request = require("request");
 
     var options = {
