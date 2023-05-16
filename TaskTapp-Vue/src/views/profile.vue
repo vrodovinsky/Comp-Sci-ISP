@@ -23,13 +23,7 @@ export default {
                         <h2>Username</h2>
                         <div id="info">
                             <h3>*their user*</h3>
-                            <button id="edit"><i class="fas fa-edit" style="color: #000000;"></i></button>
-                        </div>
-                    </div>
-                    <div id="number">
-                        <h2>Phone Number</h2>
-                        <div id="info">
-                            <h3>*their number*</h3>
+                            <!-- <h3>{{ user.name }}</h3> -->
                             <button id="edit"><i class="fas fa-edit" style="color: #000000;"></i></button>
                         </div>
                     </div>
@@ -37,13 +31,6 @@ export default {
                         <h2>Email</h2>
                         <div id="info">
                             <h3>*their email*</h3>
-                            <button id="edit"><i class="fas fa-edit" style="color: #000000;"></i></button>
-                        </div>
-                    </div>
-                    <div id="postal">
-                        <h2>Postal Code</h2>
-                        <div id="info">
-                            <h3>*their postal*</h3>
                             <button id="edit"><i class="fas fa-edit" style="color: #000000;"></i></button>
                         </div>
                     </div>
@@ -172,7 +159,7 @@ export default {
     }
 
 </style>
-<template>
+<!-- <template>
   <Header />
   <div class="content-layout" id="">
     <h1 id="page-title" class="content__title">Profile Page</h1>
@@ -207,4 +194,4 @@ import { useAuth0 } from '@auth0/auth0-vue'
 const { user } = useAuth0()
 
 const code = JSON.stringify(user.value, null, 2)
-</script>
+</script> -->

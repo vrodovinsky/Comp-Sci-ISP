@@ -237,7 +237,7 @@ p {
 }
 </style>
 
-<template> 
+<!-- <template> 
         <container class="aside">
             <div id="figure">
                 <div class="container">
@@ -465,4 +465,4 @@ p {
     }
 
 }
-</style>
+</style> -->
