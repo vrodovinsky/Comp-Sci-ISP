@@ -237,29 +237,6 @@ p {
 }
 </style>
 
-<template> 
-        <container class="aside">
-            <div id="figure">
-                <div class="container">
-                    <figure style="display: inline-block;">
-                        <div id="avatar"></div> 
-                        <figcaption>Johnny Doe</figcaption>
-                    </figure>
-                </div>
-                <nav>
-                <ul>
-                    <li class="activeList"><a href="dashboard.html">DASHBOARD</a></li>
-                    <li><a href="earnings&analytics.html">EARNINGS AND ANALYTICS</a></li>
-                    <li><a href="#">TASKS & HISTORY</a></li>
-                    <li><a href="profile&settings.html">PROFILE AND SETTINGS</a></li>
-                </ul>
-            </nav>
-            </div>
-            
-        </container>
-</template>
-
-
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 

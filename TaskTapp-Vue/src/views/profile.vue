@@ -9,162 +9,170 @@ export default {
 </script>
 
 <template>
-    <body>
-        <div class="box p-0" id="box">
-            <aside>
-                <Navbar></Navbar>
-            </aside>
+  <body>
+    <div class="box p-0" id="box">
+      <aside>
+        <Navbar></Navbar>
+      </aside>
 
-            <div id="main">
-            <h1 id="title" class="is-size-1 has-text-weight-bold">Account</h1>
-            <!-- <section id="section-1"> -->
-                <div class="userInfo">
-                    <div id="username">
-                        <h2>Username</h2>
-                        <div id="info">
-                            <h3>*their user*</h3>
-                            <!-- <h3>{{ user.name }}</h3> -->
-                            <button id="edit"><i class="fas fa-edit" style="color: #000000;"></i></button>
-                        </div>
-                    </div>
-                    <div id="email">
-                        <h2>Email</h2>
-                        <div id="info">
-                            <h3>*their email*</h3>
-                            <button id="edit"><i class="fas fa-edit" style="color: #000000;"></i></button>
-                        </div>
-                    </div>
-                    <div id="showPass">
-                        <h2>Password</h2>
-                        <div id="info">
-                            <h3>*their pass*</h3>
-                            <button id="edit"><i class="fas fa-edit" style="color: #000000;"></i></button>
-                        </div>
-                    </div>
-                </div>
+      <div id="main">
+        <h1 id="title" class="is-size-1 has-text-weight-bold">Account</h1>
+        <!-- <section id="section-1"> -->
+        <div class="userInfo">
+          <div id="username">
+            <h2>Username</h2>
+            <div id="info">
+              <h3>{{ user.name }}</h3>
+              <!-- <h3>{{ user.name }}</h3> -->
+              <button id="edit"><i class="fas fa-edit" style="color: #000000"></i></button>
             </div>
-        </div>                
-    </body>
+          </div>
+          <div id="email">
+            <h2>Email</h2>
+            <div id="info">
+              <h3>{{ user.email }}</h3>
+              <button id="edit"><i class="fas fa-edit" style="color: #000000"></i></button>
+            </div>
+          </div>
+          <div id="showPass">
+            <h2>Password</h2>
+            <div id="info">
+              <!--Dont show actual password-->
+              <h3>*their pass*</h3>
+              <button id="edit"><i class="fas fa-edit" style="color: #000000"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </template>
 
 <style>
-    body {
-        background: #823696; /* Old browsers */
-        background: -moz-linear-gradient(45deg, #32279E 0%, #B756A3 100%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(45deg, #32279E 0%,#B756A3 100%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(45deg, #32279E 0%,#B756A3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32279E', endColorstr='#B756A3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
+body {
+  background: #823696; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #32279e 0%, #b756a3 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    45deg,
+    #32279e 0%,
+    #b756a3 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    45deg,
+    #32279e 0%,
+    #b756a3 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32279E', endColorstr='#B756A3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 
-    #box {
-        top: 60px;
-        margin: auto;
-        width: 90%;
-        display: grid;
-        grid-template-columns: 1fr 4fr;
-        height: 70%;
-    }
-    
-    aside {
-        color: #fff;
-        display: grid;
-        grid-column: 1/2;
-        /* padding: 2em; */        
-    }
+#box {
+  top: 60px;
+  margin: auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  height: 70%;
+}
 
-    body, html {
-        height: calc(100% - 2em);
-        margin: 0;
-        font-family: 'Montserrat';
-        background-color: lightgray;
-    }
+aside {
+  color: #fff;
+  display: grid;
+  grid-column: 1/2;
+  /* padding: 2em; */
+}
 
-    #main {
-        background: #fff;
-        padding: 1em 1.4em;
-        grid-column: 2/3;
-        
-    }
+body,
+html {
+  height: calc(100% - 2em);
+  margin: 0;
+  font-family: 'Montserrat';
+  background-color: lightgray;
+}
 
-    .userInfo{
-        display: grid;  
-        grid-template-columns:1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-    }
+#main {
+  background: #fff;
+  padding: 1em 1.4em;
+  grid-column: 2/3;
+}
 
-    #info{
-        display: flex;
-        align-items: center;
-    }
+.userInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
 
-    #edit{
-        margin: auto;
-    }
+#info {
+  display: flex;
+  align-items: center;
+}
 
-    #username{
-        grid-column: 1/2;
-    }
+#edit {
+  margin: auto;
+}
 
-    #number{
-        grid-column:2/3;
-    }
+#username {
+  grid-column: 1/2;
+}
 
-    #email{
-        grid-row: 2/3;
-        grid-column: 1/2;
-    }
+#number {
+  grid-column: 2/3;
+}
 
-    #postal{
-        grid-column:3/4;
-    }
+#email {
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
 
-    img {
-        width: 40px;
-        cursor: pointer;
-    }
+#postal {
+  grid-column: 3/4;
+}
 
-    figure {
-        margin: 0;
-    }
+img {
+  width: 40px;
+  cursor: pointer;
+}
 
-    figcaption {
-        font-size: 1.3em;
-        font-weight: bold;
-    }
+figure {
+  margin: 0;
+}
 
-    .active {
-        position: absolute;
-        display: block;
-        background: #fff;
-        width: 50%;
-        left: 0;
-        top: 0;
-        height: 100%;
-    }
+figcaption {
+  font-size: 1.3em;
+  font-weight: bold;
+}
 
-    .activeList{
-        background-color: white;
-    }
+.active {
+  position: absolute;
+  display: block;
+  background: #fff;
+  width: 50%;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
 
-    main {
-        background: #fff;
-        padding: 1em 1.4em;
-    }
+.activeList {
+  background-color: white;
+}
 
-    #title {
-        /* margin: 0; */
-        padding: 20px 0px;
-    }
+main {
+  background: #fff;
+  padding: 1em 1.4em;
+}
 
+#title {
+  /* margin: 0; */
+  padding: 20px 0px;
+}
 </style>
 
-<!-- <script setup>
+<script setup>
 import Header from '../components/Header.vue'
 import { useAuth0 } from '@auth0/auth0-vue'
 
 const { user } = useAuth0()
 
 const code = JSON.stringify(user.value, null, 2)
-</script>  -->
+</script>
