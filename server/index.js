@@ -208,6 +208,6 @@ const PORT = 3000;
 console.log(listEndpoints(app));
 
 
-app.listen(PORT, '127.0.0.1', () => {
+app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 })
