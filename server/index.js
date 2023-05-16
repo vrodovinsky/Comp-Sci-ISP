@@ -186,7 +186,7 @@ app.post('/api/appointments', async (req, res) => {
 });
 
 // requires an authorization paramater with the API Access Token
-app.get('/api/setprovider', async (req, res) => {
+app.get('/api/auth0', async (req, res) => {
     var request = require("request");
 
     var options = {
@@ -208,6 +208,6 @@ const PORT = 3000;
 console.log(listEndpoints(app));
 
 
-app.listen(PORT, '127.0.0.1', () => {
+app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 })
