@@ -23,7 +23,6 @@ export default {
             <h2>Username</h2>
             <div id="info">
               <h3>{{ user.name }}</h3>
-              <!-- <h3>{{ user.name }}</h3> -->
               <button id="edit"><i class="fas fa-edit" style="color: #000000"></i></button>
             </div>
           </div>
@@ -169,7 +168,6 @@ main {
 </style>
 
 <script setup>
-import Header from '../components/Header.vue'
 import { useAuth0 } from '@auth0/auth0-vue'
 
 const { user } = useAuth0()

@@ -2,7 +2,7 @@
   <aside>
     <figure>
       <div id="avatar">
-        <img src="../assets/images/fi-vill-JOHN-DOE.jpg" />
+        <img :src="user.picture" />
       </div>
       <figcaption>Johnny Doe</figcaption>
     </figure>
@@ -17,6 +17,14 @@
     </nav>
   </aside>
 </template>
+
+<script setup>
+import { useAuth0 } from '@auth0/auth0-vue'
+
+const { user } = useAuth0()
+
+const code = JSON.stringify(user.value, null, 2)
+</script>
 
 <script>
 ;(function () {
