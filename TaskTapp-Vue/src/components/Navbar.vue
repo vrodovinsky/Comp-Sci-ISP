@@ -237,104 +237,81 @@ p {
 }
 </style>
 
-<template> 
-        <container class="aside">
-            <div id="figure">
-                <div class="container">
-                    <figure style="display: inline-block;">
-                        <div id="avatar"></div> 
-                        <figcaption>Johnny Doe</figcaption>
-                    </figure>
-                </div>
-                <nav>
-                <ul>
-                    <li class="activeList"><a href="dashboard.html">DASHBOARD</a></li>
-                    <li><a href="earnings&analytics.html">EARNINGS AND ANALYTICS</a></li>
-                    <li><a href="#">TASKS & HISTORY</a></li>
-                    <li><a href="profile&settings.html">PROFILE AND SETTINGS</a></li>
-                </ul>
-            </nav>
-            </div>
-            
-        </container>
-</template>
-
-
 <style scoped>
-    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 
-body, html {
-    height: calc(100% - 2em);
-    margin: 0;
-    font-family: 'Montserrat';
+body,
+html {
+  height: calc(100% - 2em);
+  margin: 0;
+  font-family: 'Montserrat';
 }
 
 .aside {
-    color: #fff;
-    display: flex;
-    /* grid-template-columns: auto 40px; */
-    /* display: flex; */
+  color: #fff;
+  display: flex;
+  /* grid-template-columns: auto 40px; */
+  /* display: flex; */
 }
 
-.container{
-    justify-content: center;
+.container {
+  justify-content: center;
 }
-     
+
 img {
-    width: 40px;
-    cursor: pointer;
+  width: 40px;
+  cursor: pointer;
 }
 
-#figure{
-   /* height: 200px;*/
-   background: #EEC9F4;
+#figure {
+  /* height: 200px;*/
+  background: #eec9f4;
 }
 
 figure {
-    /* margin: auto;
+  /* margin: auto;
     justify-content: center; */
 }
 
 figcaption {
-    font-size: 1.3em;
-    font-weight: bold;
-    text-align: center;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
 }
 
 #avatar {
-    margin: auto;
+  margin: auto;
 }
 
 nav {
-    display: contents;
+  display: contents;
 }
 
 nav ul {
-    list-style-type: none;
-    /* padding: 0; */
-    margin: 0;
+  list-style-type: none;
+  /* padding: 0; */
+  margin: 0;
 }
 
 nav li {
-    background: #EEC9F4;
+  background: #eec9f4;
 }
 
 nav a {
-    display: block;
-    padding: 8px 16px;
-    text-decoration: none;
-    color: #333;
-    background-color: #f1f1f1;
-    border-radius: 4px;
-    transition: all 0.3s ease;
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #333;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
 nav a:hover {
-    background-color: #333;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transform: translateX(10px);
+  background-color: #333;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateX(10px);
 }
-
 
 /* .active {
     position: absolute;
@@ -347,122 +324,119 @@ nav a:hover {
 } */
 
 ul {
-    display: none;
-    list-style-type: none;
-    margin: 0;
-    /* padding: 0; */
+  display: none;
+  list-style-type: none;
+  margin: 0;
+  /* padding: 0; */
 }
 
 ul li a {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: .8em;
-    /* display: block; */
-    padding: 1.5em 3em;
-    background-color: rgba(255,255,255,.35);
-    color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  /* display: block; */
+  padding: 1.5em 3em;
+  background-color: rgba(255, 255, 255, 0.35);
+  color: #000;
 }
 
-.activeList{
-    background-color: white;
+.activeList {
+  background-color: white;
 }
 
 main {
-    background: #fff;
-    padding: 1em 1.4em;
+  background: #fff;
+  padding: 1em 1.4em;
 }
 
 h1 {
-    margin: 0;
+  margin: 0;
 }
 
 p {
-    font-size: 1.1em;
-    line-height: 1.5em;
+  font-size: 1.1em;
+  line-height: 1.5em;
 }
 
 .cta {
-    display: block;
-    color: #fff;
-    background: #32279E;
-    text-decoration: none;
-    padding: 8px 50px;
-    font-size: 1.2em;
-    text-align: center;
-    font-weight: bold;
-    border-radius: 4px;
-    margin: 2em 0;
+  display: block;
+  color: #fff;
+  background: #32279e;
+  text-decoration: none;
+  padding: 8px 50px;
+  font-size: 1.2em;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 4px;
+  margin: 2em 0;
 }
 
-
 @media only screen and (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-columns: 20% auto;
+    padding: 2em;
+  }
 
-    body {
-        display: grid;
-        grid-template-columns: 20% auto;
-        padding: 2em;
-    }
+  img {
+    display: none;
+  }
 
-    img {
-        display: none;
-    }
+  aside {
+    background: #dce1f6;
+    grid-template-columns: auto;
+    grid-template-rows: 20% auto;
+    padding: 0;
+  }
 
-    aside {
-        background: #DCE1F6;
-        grid-template-columns: auto;
-        grid-template-rows: 20% auto;
-        padding: 0;
-    }
+  main {
+    padding: 4em;
+    background: white url('TaskTapp-Vue/src/assets/images/bg.svg') no-repeat bottom right;
+    background-size: 70%;
+  }
 
-    main {
-        padding: 4em;
-        background: white url('TaskTapp-Vue/src/assets/images/bg.svg') no-repeat bottom right;
-        background-size: 70%;
-    }
+  #avatar {
+    border-radius: 50%;
+    background: #fff;
+    width: 50px;
+    height: 50px;
+    margin: 2em auto 1em auto;
+  }
 
-    #avatar {
-        border-radius: 50%;
-        background: #fff;
-        width: 50px;
-        height: 50px;
-        margin: 2em auto 1em auto;
-    }
+  figcaption {
+    text-align: center;
+    color: #000;
+  }
 
-    figcaption {
-        text-align: center;
-        color: #000;
-    }
+  ul {
+    display: block;
+    margin-top: 2em;
+    position: relative !important;
+    background: none !important;
+    width: 100% !important;
+  }
 
-    ul {
-        display: block;
-        margin-top: 2em;
-        position: relative !important;
-        background: none !important;
-        width: 100% !important;
-    }
+  ul li a:hover {
+    background-color: #fff;
+  }
 
-    ul li a:hover {
-        background-color: #fff;
-    }
+  nav {
+    background: none;
+  }
 
-    nav {
-        background: none;
-    }
+  .cta {
+    display: inline-block;
+    font-size: 1.3em;
+    padding: 0.8em 3em;
+  }
 
-    .cta {
-        display: inline-block;
-        font-size: 1.3em;
-        padding: .8em 3em;
-    }
+  h1 {
+    font-size: 3em;
+    margin-top: 2em;
+  }
 
-    h1 {
-        font-size: 3em;
-        margin-top: 2em;
-    }
-
-    p {
-        font-size: 1.5em;
-    }
-
+  p {
+    font-size: 1.5em;
+  }
 }
 </style>
