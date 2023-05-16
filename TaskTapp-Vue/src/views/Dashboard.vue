@@ -76,7 +76,7 @@ body,
 html {
   height: calc(100% - 2em);
   margin: 0;
-  font-family: 'Montserrat';
+  font-family: 'Montserrat' !important;
 }
 
 body {
