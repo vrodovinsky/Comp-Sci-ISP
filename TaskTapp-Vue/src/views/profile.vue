@@ -2,9 +2,9 @@
 import Navbar from '../components/Navbar.vue'
 
 export default {
-    components: {
-        Navbar
-    }
+  components: {
+    Navbar
+  }
 }
 </script>
 
@@ -179,13 +179,130 @@ export default {
             <span class="profile__description">{{ user.email }}</span>
           </div>
         </div>
-        <div class="profile__details">
-          <span title="Decoded ID Token" :code="code"></span>
-        </div>
       </div>
     </div>
-  </div>
+  </body>
 </template>
+
+<style>
+body {
+  background: #823696; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #32279e 0%, #b756a3 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    45deg,
+    #32279e 0%,
+    #b756a3 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    45deg,
+    #32279e 0%,
+    #b756a3 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32279E', endColorstr='#B756A3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#box {
+  top: 60px;
+  margin: auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  height: 70%;
+}
+
+aside {
+  color: #fff;
+  display: grid;
+  grid-column: 1/2;
+  /* padding: 2em; */
+}
+
+body,
+html {
+  height: calc(100% - 2em);
+  margin: 0;
+  font-family: 'Montserrat';
+  background-color: lightgray;
+}
+
+#main {
+  background: #fff;
+  padding: 1em 1.4em;
+  grid-column: 2/3;
+}
+
+.userInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+#info {
+  display: flex;
+  align-items: center;
+}
+
+#edit {
+  margin: auto;
+}
+
+#username {
+  grid-column: 1/2;
+}
+
+#number {
+  grid-column: 2/3;
+}
+
+#email {
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+
+#postal {
+  grid-column: 3/4;
+}
+
+img {
+  width: 40px;
+  cursor: pointer;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.active {
+  position: absolute;
+  display: block;
+  background: #fff;
+  width: 50%;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+.activeList {
+  background-color: white;
+}
+
+main {
+  background: #fff;
+  padding: 1em 1.4em;
+}
+
+#title {
+  /* margin: 0; */
+  padding: 20px 0px;
+}
+</style>
 
 <script setup>
 import Header from '../components/Header.vue'
