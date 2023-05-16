@@ -156,8 +156,25 @@ app.post('/api/appointments', async (req, res) => {
     }
 });
 
+// requires an authorization paramater with the API Access Token
+app.get('/api/setprovider', async (req, res) => {
+    var request = require("request");
 
-const PORT = process.env.PORT || 3000;
+    var options = {
+        method: 'GET',
+        url: 'https://tasktapp.us.auth0.com/api/v2/users',
+        headers: { "authorization": req.headers.authorization },
+        params: { q: `id:${req.body.id}`, search_engine: 'v3' },
+    }
+    request(options, function (error, response, body) {
+        if (error)
+            res.status(500).json({ error: err.message });
+        res.json(body);
+        console.log(body);
+    });
+});
+
+const PORT = 3000;
 
 
 
