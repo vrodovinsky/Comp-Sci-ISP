@@ -89,7 +89,9 @@ export default {
                 <li v-for="provider in providers" :key="provider._id">
                   {{ provider.Name }}
                   <li v-for="service in provider.Services" :key="service._id">
-                  - {{ service.Price }} - {{ service.Description }}
+                    <p v-if="service.Name == searchServices">
+                    - {{ service.Price }} - {{ service.Description }}
+                    </p>
                   </li>
                 </li>
                 
