@@ -92,6 +92,7 @@ export default {
                   - {{ service.Price }} - {{ service.Description }}
                   </li>
                 </li>
+                
               </ul>
       </div>
     </div>
