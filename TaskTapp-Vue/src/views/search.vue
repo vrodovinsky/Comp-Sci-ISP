@@ -87,7 +87,10 @@ export default {
       <div id="displayProviders">
         <ul>
                 <li v-for="provider in providers" :key="provider._id">
-                  {{ provider.Name }} {{ searchServices }} {{ provider.Services}}
+                  {{ provider.Name }}
+                  <li v-for="service in provider.Services" :key="service._id">
+                  - {{ service.Price }} - {{ service.Description }}
+                  </li>
                 </li>
               </ul>
       </div>
