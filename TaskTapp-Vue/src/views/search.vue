@@ -13,25 +13,6 @@ export default {
     }
   },
   methods: {
-    displayProviders() {
-      let card = document.createElement("div");
-      card.classList.add("card", "mb-3", "has-background-link-light");
-      let cardContent = document.createElement("div");
-      cardContent.classList.add("card-content");
-      card.append(cardContent);
-      let content = document.createElement("div");
-      content.classList.add("content");
-      cardContent.append(content);
-      let cardContentPage = document.createElement("div");
-      cardContentPage.classList.add("card-content");
-      content.append(cardContentPage);
-      let cardContentOpp = document.createElement("div");
-      cardContentOpp.classList.add("card-content");
-      content.append(cardContentOpp);
-
-      let games = document.getElementById("displayProviders");
-      games.append(card);
-    },
     findProviders() {
       axios.get('http://127.0.0.1:3000/api/service_providers', { params: { service_name: this.searchServices }})
         .then(response => {
@@ -72,7 +53,7 @@ export default {
         </div>
       </div>
 
-      <div id="filter">
+      <div id="filter" class="mb-3">
         <h1 style="font-family: Montserrat">Filter by</h1>
         <div class="select">
           <select>
@@ -86,15 +67,19 @@ export default {
 
       <div id="displayProviders">
         <ul>
-                <li v-for="provider in providers" :key="provider._id">
-                  {{ provider.Name }}
-                  <li v-for="service in provider.Services" :key="service._id">
-                    <p v-if="service.Name == searchServices">
-                    - {{ service.Price }} - {{ service.Description }}
-                    </p>
-                  </li>
-                </li>
-              </ul>
+          <li v-for="provider in providers" :key="provider._id" class="card mb-3 has-background-link-light">
+            <div class="card-content">
+              <h1 class="is-size-4 has-text-weight-semibold">{{ provider.Name }}</h1>
+              <li v-for="service in provider.Services" :key="service._id">
+              <p v-if="service.Name == searchServices">
+                {{ service.Description }}
+                <br>
+                {{ service.Price }}
+              </p>
+            </li>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </body>
