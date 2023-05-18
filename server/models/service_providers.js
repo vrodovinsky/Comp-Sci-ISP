@@ -37,9 +37,6 @@ const service_providers = new Schema({
     Location: {
         type: String
     },
-    __v: {
-        type: Number
-    }
 });
 
 const Service_providers = mongoose.model('service_providers', service_providers);
