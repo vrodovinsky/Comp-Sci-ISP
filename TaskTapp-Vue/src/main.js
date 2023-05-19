@@ -23,7 +23,7 @@ app.use(
 
 app.use(VueGoogleMaps, {
     load: {
-        key: import.meta.env.VITE_GOOGLE_API_KEY,
+        key: 'AIzaSyCzlTz7mrfzO6qPQrJ5CTwvfjJvEphmMhQ',
     }
 })
 
