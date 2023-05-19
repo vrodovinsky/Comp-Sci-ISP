@@ -80,13 +80,19 @@ app.get('/api/service_providers', async (req, res) => {
             query = {
                 Services: {
                     '$elemMatch': {
-                        Name: req.query.service_name
+                        Name: { $regex: req.query.service_name, $options: 'i' }
                     }
                 }
             };
         }
         const service_providers = await Service_providers.find(query);
-        res.json(service_providers);
+
+        const filtered = service_providers.map((p) => {
+            const ss = p.Services.filter(s => s.Name.toLowerCase().indexOf(req.query.service_name.toLowerCase()) >= 0)
+            p.Services = ss;
+            return p;
+        });
+        res.json(filtered);
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
