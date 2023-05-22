@@ -10,36 +10,40 @@ export default {
 
 <template>
   <body>
-    <div class="box p-0" id="box">
-      <aside>
-        <Navbar></Navbar>
-      </aside>
+    <!-- <div class="box p-0" id="box"> -->
+    <div id="aside">
+      <Navbar></Navbar>
+    </div>
 
-      <div id="main">
-        <h1 id="title" class="is-size-1 has-text-weight-bold">Account</h1>
+    <div id="main">
+      <h1 id="title" class="is-size-1 has-text-weight-bold pl-3">Account</h1>
         <!-- <section id="section-1"> -->
-        <div class="userInfo">
-          <div id="username">
-            <h2>Username</h2>
-            <div id="info">
-              <h3>{{ user.name }}</h3>
-              <button id="edit"><i class="fas fa-edit" style="color: #000000"></i></button>
-            </div>
+      <div class="userInfo">
+        <div id="username">
+            <!-- <div class="field">
+              <label class="label is-size-4 has-text-weight-semibold">Display Name</label>
+                <div class="control">
+                  <input class="input" type="text">
+                  ngValue="user.name"
+                </div> -->
+            <!-- </div> -->
+          <h2 class="is-size-4 has-text-weight-semibold">Display Name</h2>
+          <div id="info">
+            <h3>{{ user.name }}</h3>
+          </div>           
           </div>
-          <div id="email">
-            <h2>Email</h2>
-            <div id="info">
-              <h3>{{ user.email }}</h3>
-              <button id="edit"><i class="fas fa-edit" style="color: #000000"></i></button>
-            </div>
+        <div id="email">
+          <h2 class="is-size-4 has-text-weight-semibold">Email</h2>
+          <div id="info">
+            <h3>{{ user.email }}</h3>
           </div>
+        </div>
           <div id="showPass">
-            <h2>Password</h2>
-            <div id="info">
-              <!--Dont show actual password-->
-              <h3>*their pass*</h3>
-              <button id="edit"><i class="fas fa-edit" style="color: #000000"></i></button>
-            </div>
+          <h2 class="is-size-4 has-text-weight-semibold">Password</h2>
+          <div id="info">
+            <!--Dont show actual password-->
+            <h3>*their pass*</h3>
+            <button id="edit"><i class="fas fa-edit" style="color: #000000"></i></button>
           </div>
         </div>
       </div>
@@ -66,34 +70,31 @@ body {
   background-attachment: fixed;
 }
 
-#box {
+/* #box {
   top: 60px;
   margin: auto;
   width: 90%;
   display: grid;
   grid-template-columns: 1fr 4fr;
   height: 70%;
-}
+  border-radius: 0px;
+} */
 
-aside {
-  color: #fff;
+#aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 100;
+
   display: grid;
   grid-column: 1/2;
-  /* padding: 2em; */
-}
-
-body,
-html {
-  height: calc(100% - 2em);
-  margin: 0;
-  font-family: 'Montserrat';
-  background-color: lightgray;
 }
 
 #main {
-  background: #fff;
   padding: 1em 1.4em;
   grid-column: 2/3;
+
 }
 
 .userInfo {
@@ -113,20 +114,19 @@ html {
 
 #username {
   grid-column: 1/2;
-}
-
-#number {
-  grid-column: 2/3;
+  padding: 10px;
 }
 
 #email {
   grid-row: 2/3;
   grid-column: 1/2;
+  padding: 10px;
 }
 
-#postal {
-  grid-column: 3/4;
+#showPass{
+  padding: 10px;
 }
+
 
 img {
   width: 40px;
@@ -144,8 +144,8 @@ figcaption {
 
 .active {
   position: absolute;
-  display: block;
-  background: #fff;
+  /* display: block; */
+  /* background: #fff; */
   width: 50%;
   left: 0;
   top: 0;
@@ -153,18 +153,52 @@ figcaption {
 }
 
 .activeList {
-  background-color: white;
-}
-
-main {
-  background: #fff;
-  padding: 1em 1.4em;
+  /* background-color: white; */
 }
 
 #title {
   /* margin: 0; */
   padding: 20px 0px;
 }
+
+@media only screen and (min-width: 768px) {
+  /* body {
+    display: grid;
+    grid-template-columns: 20% auto;
+    padding: 2em;
+  } */
+
+  img {
+    display: none;
+  }
+
+  #main {
+    /* padding: 4em; */
+    background: white url('../assets/images/bg.svg') no-repeat bottom right;
+    background-size: 70%;
+    height: 100vh;
+  }
+
+  #avatar {
+    border-radius: 50%;
+    background: #fff;
+    width: 50px;
+    height: 50px;
+    margin: 2em auto 1em auto;
+  }
+
+  figcaption {
+    text-align: center;
+    color: #000;
+  }
+
+  .cta {
+    display: inline-block;
+    font-size: 1.3em;
+    padding: 0.8em 3em;
+  }
+}
+
 </style>
 
 <script setup>

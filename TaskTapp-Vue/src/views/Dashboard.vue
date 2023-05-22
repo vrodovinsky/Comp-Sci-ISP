@@ -102,13 +102,6 @@ main {
   margin-left: 17vw;
 }
 
-aside {
-  color: #fff;
-  display: grid;
-  grid-template-columns: auto 40px;
-  padding: 2em;
-}
-
 img {
   width: 40px;
   cursor: pointer;
@@ -121,67 +114,6 @@ figure {
 figcaption {
   font-size: 1.3em;
   font-weight: bold;
-}
-
-nav {
-  background: #b24343;
-}
-
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav li {
-  position: relative;
-}
-
-nav a {
-  display: block;
-  padding: 8px 16px;
-  text-decoration: none;
-  color: #333;
-  background-color: #f1f1f1;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-nav a:hover {
-  background-color: #333;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transform: translateX(-10px);
-}
-
-.active {
-  position: absolute;
-  display: block;
-  background: #fff;
-  width: 50%;
-  left: 0;
-  top: 0;
-  height: 100%;
-}
-
-ul {
-  display: none;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-ul li a {
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 0.8em;
-  display: block;
-  padding: 1.5em 3em;
-  background-color: rgba(255, 255, 255, 0.35);
-  color: #000;
-}
-
-.activeList {
-  background-color: white;
 }
 
 main {
@@ -198,19 +130,6 @@ p {
   line-height: 1.5em;
 }
 
-.cta {
-  display: block;
-  color: #fff;
-  background: #32279e;
-  text-decoration: none;
-  padding: 8px 50px;
-  font-size: 1.2em;
-  text-align: center;
-  font-weight: bold;
-  border-radius: 4px;
-  margin: 2em 0;
-}
-
 @media only screen and (min-width: 768px) {
   body {
     display: grid;
@@ -220,13 +139,6 @@ p {
 
   img {
     display: none;
-  }
-
-  aside {
-    background: #dce1f6;
-    grid-template-columns: auto;
-    grid-template-rows: 20% auto;
-    padding: 0;
   }
 
   main {

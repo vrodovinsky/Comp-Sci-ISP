@@ -34,7 +34,7 @@ export default {
 <template>
   <body>
     <Header></Header>
-    <div class="container box" id="body">
+    <div class="box" id="body">
       <!-- <h1>Search Service Providers</h1> -->
       <div id="search">
         <div class="field" id="searchBar">
