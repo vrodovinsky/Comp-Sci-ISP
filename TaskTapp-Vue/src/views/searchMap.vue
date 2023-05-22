@@ -34,7 +34,6 @@
          
   
     <div id="info">
-    <img src="https://pbs.twimg.com/profile_images/909810540632989701/euLZVIXL_400x400.jpg"  alt="photo" width="50" height="50">
 
 <div class="nameplusservice">
             <p class="name">Name: {{marker.name}} </p>

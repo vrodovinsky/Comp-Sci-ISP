@@ -19,7 +19,6 @@ export default {
           const providers = response.data;
           console.log(providers);
           this.providers = providers
-          this.displayProviders()
         })
         .catch(error => {
           console.log(error);
@@ -71,7 +70,7 @@ export default {
             <div class="card-content">
               <h1 class="is-size-4 has-text-weight-semibold">{{ provider.Name }}</h1>
               <li v-for="service in provider.Services" :key="service._id">
-              <p v-if="service.Name == searchServices">
+              <p>
                 {{ service.Description }}
                 <br>
                 {{ service.Price }}
