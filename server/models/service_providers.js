@@ -26,8 +26,8 @@ const service_providers = new Schema({
             }
         })
     ],
-    User_id: {
-        type: Schema.Types.ObjectId,
+    Email: {
+        type: String,
         required: true
     },
     Location: {
