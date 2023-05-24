@@ -31,7 +31,7 @@ const service_providers = new Schema({
         required: true
     },
     Location: {
-        type: String
+        type: Object
     },
 });
 
