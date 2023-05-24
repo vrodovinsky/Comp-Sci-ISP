@@ -31,7 +31,12 @@ const service_providers = new Schema({
         required: true
     },
     Location: {
-        type: Object
+        Latitute: {
+            type: Double
+        },
+        Longitude: {
+            type: Double
+        }
     },
 });
 
