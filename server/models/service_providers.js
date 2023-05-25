@@ -26,12 +26,17 @@ const service_providers = new Schema({
             }
         })
     ],
-    User_id: {
-        type: Schema.Types.ObjectId,
+    Login_email: {
+        type: String,
         required: true
     },
     Location: {
-        type: String
+        Latitude: {
+            type: Schema.Types.Decimal128
+        },
+        Longitude: {
+            type: Schema.Types.Decimal128
+        }
     },
 });
 
