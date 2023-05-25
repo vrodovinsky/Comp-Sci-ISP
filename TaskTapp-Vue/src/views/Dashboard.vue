@@ -235,7 +235,7 @@ p {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   max-width: 100%;
-  margin: 20px auto;
+  margin-top: 20px;
   transition: box-shadow 0.3s ease-in-out;
   flex: 0 0 250px;
 }
@@ -316,15 +316,15 @@ p {
 
 .boxes-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+  width: 80%;
 }
 
 @media (max-width: 767px) {
   .boxes-wrapper {
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
   }
 }
 
