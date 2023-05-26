@@ -1,6 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { authGuard } from "@auth0/auth0-vue";
-
+import { authGuard } from "@auth0/auth0-vue"
+import HomeView from '../views/HomeView.vue'
+import SignUp from '../views/signUp.vue'
+import Login from '../views/login.vue'
+import Search from '../views/search.vue'
+import SearchMap from '../views/searchMap.vue'
+import Header from '../components/header.vue'
+import Callback from '../views/callback.vue'
+import Dashboard from '../views/dashboard.vue'
+import Profile from '../views/profile.vue'
+import Navbar from '../components/navBar.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,59 +17,54 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('../views/HomeView.vue')
+      component: HomeView
     },
     {
       path: '/signup',
       name: 'signup',
-      component: () => import('../views/signUp.vue')
+      component: SignUp
     },
     {
       path: '/login',
       name: 'login',
-      component: () => import('../views/login.vue')
+      component: Login
     },
     {
       path: '/search',
       name: 'search',
-      component: () => import('../views/search.vue')
+      component: Search
     },
     {
       path: '/searchMap',
       name: 'searchMap',
-      component: () => import('../views/searchMap.vue')
+      component: SearchMap
     },
     {
       path: '/header',
       name: 'header',
-      component: () => import('../components/Header.vue')
+      component: Header
     },
     {
       path: "/callback",
       name: "callback",
-      component: () => import("../views/callback.vue")
+      component: Callback
     },
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: () => import('../views/Dashboard.vue'),
+      component: Dashboard,
       beforeEnter: authGuard,
     },
     {
       path: '/profile',
       name: 'profile',
-      component: () => import('../views/profile.vue'),
+      component: Profile,
       beforeEnter: authGuard,
-    },
-    {
-      path: '/profile',
-      name: 'profile',
-      component: () => import('../views/profile.vue')
     },
     {
       path: '/Navbar',
       name: 'navbar',
-      component: () => import('../components/Navbar.vue')
+      component: Navbar
     }
   ]
 })
