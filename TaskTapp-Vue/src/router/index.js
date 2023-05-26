@@ -18,49 +18,49 @@ const router = createRouter({
     {
       path: '/login',
       name: 'login',
-      component: () => import('../views/login.vue')
+      component: () => import('/src/views/login.vue')
     },
     {
       path: '/search',
       name: 'search',
-      component: () => import('../views/search.vue')
+      component: () => import('/src/views/search.vue')
     },
     {
       path: '/searchMap',
       name: 'searchMap',
-      component: () => import('../views/searchMap.vue')
+      component: () => import('/src/views/searchMap.vue')
     },
     {
       path: '/header',
       name: 'header',
-      component: () => import('../components/Header.vue')
+      component: () => import('/src/components/Header.vue')
     },
     {
       path: "/callback",
       name: "callback",
-      component: () => import("../views/callback.vue")
+      component: () => import("/src/views/callback.vue")
     },
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: () => import('../views/Dashboard.vue'),
+      component: () => import('/src/views/Dashboard.vue'),
       beforeEnter: authGuard,
     },
     {
       path: '/profile',
       name: 'profile',
-      component: () => import('../views/profile.vue'),
+      component: () => import('/src/views/profile.vue'),
       beforeEnter: authGuard,
     },
     {
       path: '/profile',
       name: 'profile',
-      component: () => import('../views/profile.vue')
+      component: () => import('/src/views/profile.vue')
     },
     {
       path: '/Navbar',
       name: 'navbar',
-      component: () => import('../components/Navbar.vue')
+      component: () => import('/src/components/Navbar.vue')
     }
   ]
 })
