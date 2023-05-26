@@ -14,9 +14,9 @@ const { isLoading } = useAuth0()
         </li>
       </ul>
       <ul>
-        <li id="links"><router-link to="/search">Search Services</router-link></li>
-        <li id="links"><router-link to="/searchMap">Map Search</router-link></li>
-        <li id="links"><router-link to="/dashboard">Dashboard</router-link></li>
+        <li id="links"><RouterLink to="/search">Search Services</RouterLink></li>
+        <li id="links"><RouterLink to="/searchMap">Map Search</RouterLink></li>
+        <li id="links"><RouterLink to="/dashboard">Dashboard</RouterLink></li>
         <div v-if="isLoading" class="page-layout">
           <PageLoader />
         </div>
@@ -73,6 +73,7 @@ header {
 
 .svgHeader {
   display: block;
+  top: 0;
   width: 100%;
   height: auto;
 }

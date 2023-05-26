@@ -17,28 +17,28 @@ export default {
 
     <div id="main">
       <h1 id="title" class="is-size-1 has-text-weight-bold pl-3">Account</h1>
-        <!-- <section id="section-1"> -->
+      <!-- <section id="section-1"> -->
       <div class="userInfo">
         <div id="username">
-            <!-- <div class="field">
+          <!-- <div class="field">
               <label class="label is-size-4 has-text-weight-semibold">Display Name</label>
                 <div class="control">
                   <input class="input" type="text">
                   ngValue="user.name"
                 </div> -->
-            <!-- </div> -->
+          <!-- </div> -->
           <h2 class="is-size-4 has-text-weight-semibold">Display Name</h2>
           <div id="info">
             <h3>{{ user.name }}</h3>
-          </div>           
           </div>
+        </div>
         <div id="email">
           <h2 class="is-size-4 has-text-weight-semibold">Email</h2>
           <div id="info">
             <h3>{{ user.email }}</h3>
           </div>
         </div>
-          <div id="showPass">
+        <div id="showPass">
           <h2 class="is-size-4 has-text-weight-semibold">Password</h2>
           <div id="info">
             <!--Dont show actual password-->
@@ -51,7 +51,7 @@ export default {
   </body>
 </template>
 
-<style>
+<style scoped>
 body {
   background: #823696; /* Old browsers */
   background: -moz-linear-gradient(45deg, #32279e 0%, #b756a3 100%); /* FF3.6-15 */
@@ -94,7 +94,6 @@ body {
 #main {
   padding: 1em 1.4em;
   grid-column: 2/3;
-
 }
 
 .userInfo {
@@ -123,10 +122,9 @@ body {
   padding: 10px;
 }
 
-#showPass{
+#showPass {
   padding: 10px;
 }
-
 
 img {
   width: 40px;
@@ -198,7 +196,6 @@ figcaption {
     padding: 0.8em 3em;
   }
 }
-
 </style>
 
 <script setup>

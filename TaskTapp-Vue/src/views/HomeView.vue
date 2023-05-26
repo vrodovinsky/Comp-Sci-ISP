@@ -84,6 +84,7 @@ html {
   height: calc(100% - 2em);
   margin: 0;
   font-family: 'Montserrat';
+  color: black;
 }
 
 body {
