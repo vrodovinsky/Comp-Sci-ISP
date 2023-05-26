@@ -77,7 +77,7 @@ export default {
               <h1 class="is-size-4 has-text-weight-semibold">{{ provider.Name }}</h1>
               <li v-for="service in provider.Services" :key="service._id">
                 <p>
-                  {{ service.Description }}
+                  {{ service.Name }} - {{ service.Description }}
                   <br />
                   {{ service.Price }}
                 </p>

@@ -10,44 +10,38 @@ export default {
 
 <template>
   <body>
-    <!-- <div class="box p-0" id="box"> -->
-    <div id="aside">
-      <Navbar></Navbar>
-    </div>
+    <!-- <div id="aside">-->
+
+    <Navbar></Navbar>
 
     <div id="main">
       <h1 id="title" class="is-size-1 has-text-weight-bold pl-3">Account</h1>
       <!-- <section id="section-1"> -->
       <div class="userInfo">
         <div id="username">
-          <!-- <div class="field">
-              <label class="label is-size-4 has-text-weight-semibold">Display Name</label>
-                <div class="control">
-                  <input class="input" type="text">
-                  ngValue="user.name"
-                </div> -->
-          <!-- </div> -->
-          <h2 class="is-size-4 has-text-weight-semibold">Display Name</h2>
-          <div id="info">
-            <h3>{{ user.name }}</h3>
-          </div>
-        </div>
-        <div id="email">
-          <h2 class="is-size-4 has-text-weight-semibold">Email</h2>
-          <div id="info">
-            <h3>{{ user.email }}</h3>
-          </div>
-        </div>
-        <div id="showPass">
-          <h2 class="is-size-4 has-text-weight-semibold">Password</h2>
-          <div id="info">
-            <!--Dont show actual password-->
-            <h3>*their pass*</h3>
-            <button id="edit"><i class="fas fa-edit" style="color: #000000"></i></button>
+          <div class="field">
+            <label class="label is-size-4 has-text-weight-semibold">Display Name</label>
+            <div class="control">
+              <input v-model="user.name" class="input" type="text" />
+            </div>
           </div>
         </div>
       </div>
+      <div id="email">
+        <h2 class="is-size-4 has-text-weight-semibold">Email</h2>
+        <div id="info">
+          <h3>{{ user.email }}</h3>
+        </div>
+      </div>
+      <div id="showPass">
+        <h2 class="is-size-4 has-text-weight-semibold">Password</h2>
+        <div id="info">
+          <!--Dont show actual password-->
+          <input v-model="user.name" class="input" type="text" />
+        </div>
+      </div>
     </div>
+    <button class="button">Update Info</button>
   </body>
 </template>
 
@@ -68,32 +62,26 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32279E', endColorstr='#B756A3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
-
-/* #box {
-  top: 60px;
-  margin: auto;
-  width: 90%;
   display: grid;
-  grid-template-columns: 1fr 4fr;
-  height: 70%;
-  border-radius: 0px;
-} */
+  grid-template-columns: 1fr 5fr;
+}
 
 #aside {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
-  z-index: 100;
+  /* z-index: 100; */
 
   display: grid;
   grid-column: 1/2;
 }
 
 #main {
+  display: grid;
   padding: 1em 1.4em;
-  grid-column: 2/3;
+
+  grid-column: 2/4;
 }
 
 .userInfo {
