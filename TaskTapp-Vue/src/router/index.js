@@ -8,12 +8,12 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('../views/HomeView.vue')
+      component: () => import('/src/views/HomeView.vue')
     },
     {
       path: '/signup',
       name: 'signup',
-      component: () => import('../views/signUp.vue')
+      component: () => import('/src/views/signUp.vue')
     },
     {
       path: '/login',
@@ -51,11 +51,6 @@ const router = createRouter({
       name: 'profile',
       component: () => import('../views/profile.vue'),
       beforeEnter: authGuard,
-    },
-    {
-      path: "/:catchAll(.*)",
-      name: "Not Found",
-      component: () => import('../views/HomeView.vue'),
     },
     {
       path: '/profile',
