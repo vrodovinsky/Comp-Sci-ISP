@@ -55,19 +55,30 @@ app.post('/api/signup', async (req, res) => {
 
 app.put('/api/updateAccount/:id', async (req, res) => {
     try {
-        const users = await Users.findById(req.params.id);
+        const data = {
+            "name": req.body.name,
+            "phone_Number": req.body.phoneNumber,
+        }
 
-        if (req.body.firstName)
-            users.firstName = req.body.firstName
-        if (req.body.lastName)
-            users.lastName = req.body.lastName
-        if (req.body.email)
-            users.email = req.body.email
+        const ManagementClient = require('auth0').ManagementClient;
+        const management = new ManagementClient({
+            domain: 'tasktapp.us.auth0.com',
+            clientId: 'crsovDxspuUB20DmHNY2QP3Fzw0IKYgy',
+            clientSecret: 'fZfw9pZCyzhvRLHaXmlYMvmBJBdJqfgSQMc_yWekTleCqFzwsEGo67b3oQsF5baR',
+            scope: 'read:users update:users',
+        });
 
-        const updatedUser = await users.save();
+        const params = { id: req.params.id };
 
+        management.updateUser(params, data, function (err, user) {
+            if (err) {
+                console.log(err)
+            }
 
-        res.json(updatedUser);
+            // Updated user.
+            console.log(user);
+            res.json(user);
+        });
     } catch (err) {
         res.status(500).json;
     }
