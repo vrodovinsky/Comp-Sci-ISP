@@ -62,9 +62,9 @@ app.put('/api/updateAccount/:id', async (req, res) => {
 
         const ManagementClient = require('auth0').ManagementClient;
         const management = new ManagementClient({
-            domain: 'tasktapp.us.auth0.com',
-            clientId: 'crsovDxspuUB20DmHNY2QP3Fzw0IKYgy',
-            clientSecret: 'fZfw9pZCyzhvRLHaXmlYMvmBJBdJqfgSQMc_yWekTleCqFzwsEGo67b3oQsF5baR',
+            domain: '{YOUR_ACCOUNT}.auth0.com',
+            clientId: '{ YOUR_NON_INTERACTIVE_CLIENT_ID }',
+            clientSecret: '{YOUR_NON_INTERACTIVE_CLIENT_SECRET}',
             scope: 'read:users update:users',
         });
 
