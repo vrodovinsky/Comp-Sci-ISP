@@ -1,21 +1,23 @@
 <script>
-import Navbar from '../components/Navbar.vue'
+import Navbar from '@/components/Navbar.vue'
 
 export default {
+  name: 'Home',
   components: {
     Navbar
   }
 }
 </script>
 
-<template>
-  <body>
-   <!-- <div id="aside">-->
+<script setup></script>
 
-    <Navbar></Navbar>
+<template>
+    <div class="navbar">
+      <navbar></navbar>
+    </div>
     
 
-    <div id="main">
+    <main>
       <h1 id="title" class="is-size-1 has-text-weight-bold pl-3">Account</h1>
       <div class="userInfo">
         <div id="username">
@@ -41,48 +43,13 @@ export default {
         </div>
       </div>
       <button class="button">Update Info</button>
-    </div>
-  </body>
+    </main>
 </template>
 
-<style>
-body {
-  background: #823696; /* Old browsers */
-  background: -moz-linear-gradient(45deg, #32279e 0%, #b756a3 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    45deg,
-    #32279e 0%,
-    #b756a3 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    45deg,
-    #32279e 0%,
-    #b756a3 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32279E', endColorstr='#B756A3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-}
+<style scoped>
 
-#aside {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  /* z-index: 100; */
-
-  display: grid;
-  grid-column: 1/2;
-}
-
-#main {
-  display: grid;
-  padding: 1em 1.4em;
-
-  grid-column: 2/4;
-
+main{
+  margin-left: 17vw;
 }
 
 .userInfo {
@@ -94,10 +61,6 @@ body {
 #info {
   display: flex;
   align-items: center;
-}
-
-#edit {
-  margin: auto;
 }
 
 #username {
@@ -114,7 +77,6 @@ body {
 #showPass{
   padding: 10px;
 }
-
 
 img {
   width: 40px;
@@ -150,18 +112,18 @@ figcaption {
 }
 
 @media only screen and (min-width: 768px) {
-  /* body {
+  body {
     display: grid;
     grid-template-columns: 20% auto;
     padding: 2em;
-  } */
+  }
 
   img {
     display: none;
   }
 
-  #main {
-    /* padding: 4em; */
+  main {
+    padding: 4em;
     background: white url('../assets/images/bg.svg') no-repeat bottom right;
     background-size: 70%;
     height: 100vh;
@@ -185,6 +147,14 @@ figcaption {
     font-size: 1.3em;
     padding: 0.8em 3em;
   }
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 100;
 }
 
 </style>

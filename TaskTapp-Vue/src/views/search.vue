@@ -34,7 +34,6 @@ export default {
   <body>
     <Header></Header>
     <div class="box" id="body">
-      <!-- <h1>Search Service Providers</h1> -->
       <div id="search">
         <div class="field" id="searchBar">
           <div class="control">
@@ -92,11 +91,12 @@ body {
 #body {
   position: absolute;
   top: 140px;
-  width: 100%;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
+  width: 80%;
+  left: 10%;
+  /* left: 0;
+  right: 0; */
+  /* margin-left: auto;
+  margin-right: auto; */
 }
 
 #searchBar {
@@ -114,6 +114,7 @@ body {
 }
 
 .field {
-  width: 90%;
+  width: 80%;
+  margin-right: 10px;
 }
 </style>
