@@ -1,9 +1,37 @@
 <script>
 import Navbar from '../components/Navbar.vue'
+import axios from 'axios'
+import { useAuth0 } from '@auth0/auth0-vue'
 
 export default {
   components: {
     Navbar
+  },
+  data() {
+    return {
+      user: this.$auth0.user,
+    }
+  },
+  methods: {
+    updateInfo() {
+      const name = document.querySelector("#name").value
+      const email = document.querySelector(".email").value
+      const phoneNumber = document.querySelector("#phoneNumber").value
+      console.log(this.$auth0)
+      console.log(this.$auth0.user)
+      console.log(JSON.stringify(this.$auth0.user))
+      console.log(JSON.stringify())
+      axios.put('http://localhost:3000/updateAccount/' + this.$auth0.user._value.sub, {
+        "name": name,
+        "email": email,
+      })
+        .then((response) => {
+          
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    }
   }
 }
 </script>
@@ -22,7 +50,7 @@ export default {
           <div class="field">
             <label class="label is-size-4 has-text-weight-semibold">Display Name</label>
             <div class="control">
-              <input v-model="user.name" class="input" type="text" />
+              <input v-model="user.name" id="name" class="input" type="text" />
             </div>
           </div>
         </div>
@@ -30,18 +58,18 @@ export default {
       <div id="email">
         <h2 class="is-size-4 has-text-weight-semibold">Email</h2>
         <div id="info">
-          <h3>{{ user.email }}</h3>
+          <input v-model="user.email" class="input email" type="text" />
         </div>
       </div>
       <div id="showPass">
-        <h2 class="is-size-4 has-text-weight-semibold">Password</h2>
+        <h2 class="is-size-4 has-text-weight-semibold">Display Phone Number</h2>
         <div id="info">
           <!--Dont show actual password-->
-          <input v-model="user.name" class="input" type="text" />
+          <input v-model="user.phoneNumber" id="phoneNumber" class="input" type="text" />
         </div>
       </div>
     </div>
-    <button class="button">Update Info</button>
+    <button @click="updateInfo" class="button">Update Info</button>
   </body>
 </template>
 
@@ -186,10 +214,4 @@ figcaption {
 }
 </style>
 
-<script setup>
-import { useAuth0 } from '@auth0/auth0-vue'
 
-const { user } = useAuth0()
-
-const code = JSON.stringify(user.value, null, 2)
-</script>
