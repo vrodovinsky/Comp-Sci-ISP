@@ -11,8 +11,12 @@ import Footer from './components/Footer.vue'
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
-  <RouterView />
-  <Footer></Footer>
+  <div id="container">
+  <div class="main">
+    <RouterView />
+  </div>
+  <div id="foot"><Footer></Footer></div>
+</div>
 </template>
 
 <script>
@@ -29,4 +33,18 @@ export default {
 body {
   font-family: 'Montserrat', sans-serif;
 }
+#container{
+  display: grid;
+  grid-template-areas: "main"
+                      "footer";
+  grid-template-rows: 2fr 50px;
+ 
+  width:100%;
+  height: auto;
+}
+#foot{
+  padding: 0px;
+}
+
+
 </style>

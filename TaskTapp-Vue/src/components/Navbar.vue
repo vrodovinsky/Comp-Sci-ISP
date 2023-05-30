@@ -17,10 +17,10 @@
     <img src="../assets/images/menu.svg" />
     <nav>
       <ul>
-        <li class="activeList"><router-link to="/dashboard">DASHBOARD</router-link></li>
-        <li><router-link to="earnings&analytics.html">EARNINGS AND ANALYTICS</router-link></li>
-        <li><router-link to="#">TASKS & HISTORY</router-link></li>
-        <li><router-link to="/profile">PROFILE AND SETTINGS</router-link></li>
+        <!-- <li><router-link to="/dashboard">DASHBOARD</router-link></li> -->
+        <li class="activeList"><router-link to="/profile">PROFILE AND SETTINGS</router-link></li>
+        <li><router-link to="/search">SEARCH PROVIDERS</router-link></li>
+        <li><router-link to="/searchMap">MAP SEARCH</router-link></li>
       </ul>
     </nav>
   </aside>
