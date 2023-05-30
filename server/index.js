@@ -7,6 +7,7 @@ const Users = require('./models/users');
 const Service_providers = require('./models/service_providers');
 const Reviews = require('./models/reviews');
 const Appointments = require('./models/appointments');
+const listEndpoints = require('express-list-endpoints')
 
 const app = express();
 
@@ -74,12 +75,40 @@ app.put('/api/updateAccount/:id', async (req, res) => {
 
 app.get('/api/service_providers', async (req, res) => {
     try {
-        const service_providers = await Service_providers.find({});
+        let query = {};
+        if (req.query.service_name) {
+            query = {
+                Services: {
+                    '$elemMatch': {
+                        Name: req.query.service_name
+                    }
+                }
+            };
+        }
+        const service_providers = await Service_providers.find(query);
         res.json(service_providers);
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
 });
+
+// app.get('/api/service_providers/services/:service_name', async (req, res) => {
+//     try {
+//         const query = {
+//             Services: {
+//                 '$elemMatch': {
+//                     Name: req.params.service_name
+//                 }
+//             }
+//         };
+//         console.log('Searching Providers' + req.params.service_name)
+//         const service_providers = await Service_providers.find(query);
+//         res.json(service_providers);
+
+//     } catch (err) {
+//         res.status(500).json({ error: err.message });
+//     }
+// });
 
 app.get('/api/service_providers/:id', async (req, res) => {
     try {
@@ -157,7 +186,7 @@ app.post('/api/appointments', async (req, res) => {
 });
 
 // requires an authorization paramater with the API Access Token
-app.get('/api/setprovider', async (req, res) => {
+app.get('/api/auth0', async (req, res) => {
     var request = require("request");
 
     var options = {
@@ -176,6 +205,7 @@ app.get('/api/setprovider', async (req, res) => {
 
 const PORT = 3000;
 
+console.log(listEndpoints(app));
 
 
 app.listen(PORT, () => {

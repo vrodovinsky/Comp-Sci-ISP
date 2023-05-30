@@ -9,20 +9,21 @@ import './assets/main.css'
 const app = createApp(App)
 
 app.use(router)
-console.log(import.meta.env.VITE_AUTH0_CALLBACK_URL)
 app.use(
     createAuth0({
         domain: import.meta.env.VITE_AUTH0_DOMAIN,
         clientId: import.meta.env.VITE_AUTH0_CLIENT_ID,
         authorizationParams: {
+            audience: import.meta.env.VITE_AUTH0_AUDIENCE,
             redirect_uri: import.meta.env.VITE_AUTH0_CALLBACK_URL,
         }
     })
 )
 
+
 app.use(VueGoogleMaps, {
     load: {
-        key: import.meta.env.GOOGLE_API_KEY,
+        key: import.meta.env.VITE_GOOGLE_API_KEY,
     }
 })
 

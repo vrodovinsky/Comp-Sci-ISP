@@ -1,18 +1,26 @@
 <script setup>
 import navBarButtons from '@/components/navigation/navBarButtons.vue'
+import { useAuth0 } from '@auth0/auth0-vue'
+import PageLoader from '@/components/pageLoader.vue'
+
+const { isLoading } = useAuth0()
 </script>
 <template>
   <nav>
     <ul id="full">
       <ul>
         <li>
-          <a href="/"><img src="../assets/logo1.svg" /></a>
+          <router-link to="/"><img src="../assets/logo1.svg" /></router-link>
         </li>
       </ul>
       <ul>
-        <li id="links"><a href="/search">Search Services</a></li>
-        <li id="links"><a href="/searchMap">Map Search</a></li>
-        <li id="links"><nav-bar-buttons /></li>
+        <li id="links"><router-link to="/search">Search Services</router-link></li>
+        <li id="links"><router-link to="/searchMap">Map Search</router-link></li>
+        <li id="links"><router-link to="/dashboard">Dashboard</router-link></li>
+        <div v-if="isLoading" class="page-layout">
+          <PageLoader />
+        </div>
+        <li v-else id="links"><nav-bar-buttons /></li>
       </ul>
     </ul>
   </nav>
