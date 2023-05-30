@@ -268,7 +268,7 @@ export default {
     signUp() {
       console.log('test')
       axios
-        .post('http://localhost:3000/api/signup', {
+        .post('https://api.tasktapp.com/signup', {
           firstName: this.firstName,
           lastName: this.lastName,
           email: this.email,

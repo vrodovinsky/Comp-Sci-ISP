@@ -15,7 +15,7 @@ export default {
   methods: {
     findProviders() {
       axios
-        .get('https://tasktapp.com/api/service_providers', {
+        .get('https://api.tasktapp.com/service_providers', {
           params: { service_name: this.searchServices }
         })
         .then((response) => {
