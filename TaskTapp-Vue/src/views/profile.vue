@@ -61,13 +61,6 @@ export default {
           <input v-model="user.email" class="input email" type="text" />
         </div>
       </div>
-      <div id="showPass">
-        <h2 class="is-size-4 has-text-weight-semibold">Display Phone Number</h2>
-        <div id="info">
-          <!--Dont show actual password-->
-          <input v-model="user.phoneNumber" id="phoneNumber" class="input" type="text" />
-        </div>
-      </div>
     </div>
     <button @click="updateInfo" class="button">Update Info</button>
   </body>
