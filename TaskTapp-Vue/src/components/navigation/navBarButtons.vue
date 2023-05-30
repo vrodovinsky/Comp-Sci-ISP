@@ -22,16 +22,13 @@ const { isAuthenticated } = useAuth0()
 </script>
 
 <style>
-  
+#links {
+  margin: 0px 20px;
+}
 
-  #links {
-    margin: 0px 20px;
-  }
-
-  ul #full {
-    padding: 0px;
-    display: flex;
-    justify-content: space-between;
-  }
-
+ul #full {
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+}
 </style>

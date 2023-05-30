@@ -14,19 +14,20 @@ export default {
   },
   methods: {
     findProviders() {
-      axios.get('http://127.0.0.1:3000/api/service_providers', { params: { service_name: this.searchServices }})
-        .then(response => {
-          const providers = response.data;
-          console.log(providers);
+      axios
+        .get('https://api.tasktapp.com/service_providers', {
+          params: { service_name: this.searchServices }
+        })
+        .then((response) => {
+          const providers = response.data
+          console.log(providers)
           this.providers = providers
         })
-        .catch(error => {
-          console.log(error);
-        });
-    },
-  
+        .catch((error) => {
+          console.log(error)
+        })
+    }
   }
-
 }
 </script>
 
@@ -38,6 +39,7 @@ export default {
         <div class="field" id="searchBar">
           <div class="control">
             <input
+              @keypress.enter="findProviders"
               style="font-family: Montserrat"
               class="input is-medium"
               v-model="searchServices"
@@ -65,16 +67,20 @@ export default {
 
       <div id="displayProviders">
         <ul>
-          <li v-for="provider in providers" :key="provider._id" class="card mb-3 has-background-link-light">
+          <li
+            v-for="provider in providers"
+            :key="provider._id"
+            class="card mb-3 has-background-link-light"
+          >
             <div class="card-content">
               <h1 class="is-size-4 has-text-weight-semibold">{{ provider.Name }}</h1>
               <li v-for="service in provider.Services" :key="service._id">
-              <p>
-                {{ service.Name}} - {{ service.Description }}
-                <br>
-                {{ service.Price }}
-              </p>
-            </li>
+                <p>
+                  {{ service.Name }} - {{ service.Description }}
+                  <br />
+                  {{ service.Price }}
+                </p>
+              </li>
             </div>
           </li>
         </ul>
@@ -83,7 +89,7 @@ export default {
   </body>
 </template>
 
-<style>
+<style scoped>
 body {
   background-color: #eec9f4;
 }

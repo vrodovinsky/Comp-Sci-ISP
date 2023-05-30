@@ -15,7 +15,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.get('/api/users', async (req, res) => {
+app.get('/users', async (req, res) => {
     try {
         const users = await Users.find({});
         res.json(users);
@@ -24,7 +24,7 @@ app.get('/api/users', async (req, res) => {
     }
 });
 
-app.get('/api/users/:id', async (req, res) => {
+app.get('/users/:id', async (req, res) => {
     try {
         const users = await Users.findById(req.params.id);
         res.json(users);
@@ -33,7 +33,7 @@ app.get('/api/users/:id', async (req, res) => {
     }
 });
 
-app.post('/api/users', async (req, res) => {
+app.post('/users', async (req, res) => {
     try {
         const users = await Users(req.body);
         await users.save();
@@ -43,7 +43,7 @@ app.post('/api/users', async (req, res) => {
     }
 });
 
-app.post('/api/signup', async (req, res) => {
+app.post('/signup', async (req, res) => {
     try {
         const users = await Users(req.body);
         await users.save();
@@ -53,27 +53,38 @@ app.post('/api/signup', async (req, res) => {
     }
 });
 
-app.put('/api/updateAccount/:id', async (req, res) => {
+app.put('/updateAccount/:id', async (req, res) => {
     try {
-        const users = await Users.findById(req.params.id);
+        const data = {
+            "name": req.body.name,
+            "phone_Number": req.body.phoneNumber,
+        }
 
-        if (req.body.firstName)
-            users.firstName = req.body.firstName
-        if (req.body.lastName)
-            users.lastName = req.body.lastName
-        if (req.body.email)
-            users.email = req.body.email
+        const ManagementClient = require('auth0').ManagementClient;
+        const management = new ManagementClient({
+            domain: '{YOUR_ACCOUNT}.auth0.com',
+            clientId: '{ YOUR_NON_INTERACTIVE_CLIENT_ID }',
+            clientSecret: '{YOUR_NON_INTERACTIVE_CLIENT_SECRET}',
+            scope: 'read:users update:users',
+        });
 
-        const updatedUser = await users.save();
+        const params = { id: req.params.id };
 
+        management.updateUser(params, data, function (err, user) {
+            if (err) {
+                console.log(err)
+            }
 
-        res.json(updatedUser);
+            // Updated user.
+            console.log(user);
+            res.json(user);
+        });
     } catch (err) {
         res.status(500).json;
     }
 });
 
-app.get('/api/service_providers', async (req, res) => {
+app.get('/service_providers', async (req, res) => {
     try {
         let query = {};
         if (req.query.service_name) {
@@ -88,7 +99,7 @@ app.get('/api/service_providers', async (req, res) => {
         const service_providers = await Service_providers.find(query);
 
         const filtered = service_providers.map((p) => {
-            const ss = p.Services.filter(s => s.Name.toLowerCase().indexOf(req.query.service_name.toLowerCase()) >= 0)
+            const ss = p.Services.filter(s => s.Name.indexOf(req.query.service_name) >= 0)
             p.Services = ss;
             return p;
         });
@@ -116,7 +127,7 @@ app.get('/api/service_providers', async (req, res) => {
 //     }
 // });
 
-app.get('/api/service_providers/:id', async (req, res) => {
+app.get('/service_providers/:id', async (req, res) => {
     try {
         const service_providers = await Service_providers.findById(req.params.id);
         res.json(service_providers);
@@ -125,7 +136,7 @@ app.get('/api/service_providers/:id', async (req, res) => {
     }
 });
 
-app.post('/api/service_providers', async (req, res) => {
+app.post('/service_providers', async (req, res) => {
     try {
         const service_providers = await Service_providers(req.body);
         await service_providers.save();
@@ -135,7 +146,7 @@ app.post('/api/service_providers', async (req, res) => {
     }
 });
 
-app.get('/api/reviews', async (req, res) => {
+app.get('/reviews', async (req, res) => {
     try {
         const reviews = await Reviews.find({});
         res.json(reviews);
@@ -144,7 +155,7 @@ app.get('/api/reviews', async (req, res) => {
     }
 });
 
-app.get('/api/reviews/:id', async (req, res) => {
+app.get('/reviews/:id', async (req, res) => {
     try {
         const reviewss = await Reviews.findById(req.params.id);
         res.json(reviewss);
@@ -153,7 +164,7 @@ app.get('/api/reviews/:id', async (req, res) => {
     }
 });
 
-app.post('/api/reviews', async (req, res) => {
+app.post('/reviews', async (req, res) => {
     try {
         const reviews = await Reviews(req.body);
         await reviews.save();
@@ -163,7 +174,7 @@ app.post('/api/reviews', async (req, res) => {
     }
 });
 
-app.get('/api/appointments', async (req, res) => {
+app.get('/appointments', async (req, res) => {
     try {
         const appointments = await Appointments.find({});
         res.json(appointments);
@@ -172,7 +183,7 @@ app.get('/api/appointments', async (req, res) => {
     }
 });
 
-app.get('/api/appointments/:id', async (req, res) => {
+app.get('/appointments/:id', async (req, res) => {
     try {
         const appointments = await Appointments.findById(req.params.id);
         res.json(appointments);
@@ -181,7 +192,7 @@ app.get('/api/appointments/:id', async (req, res) => {
     }
 });
 
-app.post('/api/appointments', async (req, res) => {
+app.post('/appointments', async (req, res) => {
     try {
         const appointments = await Appointments(req.body);
         await appointments.save();
@@ -192,7 +203,7 @@ app.post('/api/appointments', async (req, res) => {
 });
 
 // requires an authorization paramater with the API Access Token
-app.get('/api/auth0', async (req, res) => {
+app.get('/auth0', async (req, res) => {
     var request = require("request");
 
     var options = {

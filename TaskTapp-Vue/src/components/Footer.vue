@@ -15,7 +15,7 @@
   </footer>
 </template>
 
-<style>
+<style scoped>
 /**Footer */
 footer {
   grid-column: 1/4;
