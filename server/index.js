@@ -57,7 +57,7 @@ app.put('/updateAccount/:id', async (req, res) => {
     try {
         const data = {
             "name": req.body.name,
-            "phone_Number": req.body.phoneNumber,
+            "email": req.body.email,
         }
 
         const ManagementClient = require('auth0').ManagementClient;
