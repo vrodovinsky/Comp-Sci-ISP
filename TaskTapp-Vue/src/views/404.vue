@@ -34,9 +34,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        overflow: hidden;
     }
     .textDiv{
-        text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
         z-index: 2;
         top: -75vh;
     }
@@ -45,6 +48,7 @@
         max-width: 100vw;
         z-index: 1;
     }
+ 
 
     .textDiv h1{
         font-size:200px;
@@ -58,8 +62,7 @@
         font-weight: 700;
     }
     .cta {
-        position: absolute;
-    bottom: -25px;
+    bottom: 25px;
     display: inline-block;
     padding: 5px 5px;
     font-size: 1.5rem;
@@ -71,7 +74,28 @@
     width: 20%;
     text-align: center;
     box-sizing: border-box;
-    left: 40%;
     }
+
+    @media only screen and (max-width: 600px) {
+
+      svg {
+        min-width: 300%;
+        min-height: 300%;
+        left: -100%;
+  }
+  .textDiv h1 {
+    font-size: 8rem;
+  }
+  .textDiv h2 {
+    font-size: 1rem;
+  }
+  .cta {
+    width: 50%;
+  }
+}
+
+footer {
+  display: none;
+}
     
 </style>
