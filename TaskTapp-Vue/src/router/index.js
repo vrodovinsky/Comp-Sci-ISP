@@ -66,6 +66,11 @@ const router = createRouter({
       path: '/Navbar',
       name: 'navbar',
       component: () => import('../components/Navbar.vue')
+    },
+    {
+      path: '/404',
+      name: '404',
+      component: () => import('../views/404.vue')
     }
   ]
 })
