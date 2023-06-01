@@ -32,10 +32,10 @@ const service_providers = new Schema({
     },
     Location: {
         Latitude: {
-            type: Schema.Types.Decimal128
+            type: Schema.Types.Double
         },
         Longitude: {
-            type: Schema.Types.Decimal128
+            type: Schema.Types.Double
         }
     },
 });
