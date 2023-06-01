@@ -53,7 +53,7 @@ export default {
         </div>
       </div>
 
-      <div id="filter" class="mb-3">
+      <!-- <div id="filter" class="mb-3">
         <h1 style="font-family: Montserrat">Filter by</h1>
         <div class="select">
           <select>
@@ -63,7 +63,7 @@ export default {
             <option style="font-family: Montserrat">Price</option>
           </select>
         </div>
-      </div>
+      </div> -->
 
       <div id="displayProviders">
         <ul>
