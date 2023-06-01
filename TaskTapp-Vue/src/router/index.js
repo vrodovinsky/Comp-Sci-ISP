@@ -31,11 +31,6 @@ const router = createRouter({
       component: () => import('../views/searchMap.vue')
     },
     {
-      path: '/header',
-      name: 'header',
-      component: () => import('../components/Header.vue')
-    },
-    {
       path: "/callback",
       name: "callback",
       component: () => import("../views/callback.vue")
@@ -53,24 +48,14 @@ const router = createRouter({
       beforeEnter: authGuard,
     },
     {
-      path: "/:catchAll(.*)",
-      name: "Not Found",
-      component: () => import('../views/HomeView.vue'),
-    },
-    {
       path: '/profile',
       name: 'profile',
       component: () => import('../views/profile.vue')
     },
     {
-      path: '/Navbar',
-      name: 'navbar',
-      component: () => import('../components/Navbar.vue')
-    },
-    {
-      path: '/404',
-      name: '404',
-      component: () => import('../views/404.vue')
+      path: "/:catchAll(.*)",
+      name: "Not Found",
+      component: () => import('../views/404.vue'),
     }
   ]
 })
