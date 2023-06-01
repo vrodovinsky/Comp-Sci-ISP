@@ -63,10 +63,10 @@ const router = createRouter({
       component: () => import('../views/profile.vue')
     },
     {
-      path: '/Navbar',
-      name: 'navbar',
-      component: () => import('../components/Navbar.vue')
-    }
+      path: '/user',
+      name: 'user',
+      component: () => import('../views/userType.vue')
+    },
   ]
 })
 

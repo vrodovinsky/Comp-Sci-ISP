@@ -79,6 +79,8 @@ export default {
                   {{ service.Name }} - {{ service.Description }}
                   <br />
                   {{ service.Price }}
+                  <br>
+                  <!-- {{ provider.email }} -->
                 </p>
               </li>
             </div>

@@ -100,34 +100,6 @@ main{
   padding: 10px;
 }
 
-img {
-  width: 40px;
-  cursor: pointer;
-}
-
-figure {
-  margin: 0;
-}
-
-figcaption {
-  font-size: 1.3em;
-  font-weight: bold;
-}
-
-.active {
-  position: absolute;
-  /* display: block; */
-  /* background: #fff; */
-  width: 50%;
-  left: 0;
-  top: 0;
-  height: 100%;
-}
-
-.activeList {
-  /* background-color: white; */
-}
-
 #title {
   /* margin: 0; */
   padding: 20px 0px;
@@ -149,25 +121,6 @@ figcaption {
     background: white url('../assets/images/bg.svg') no-repeat bottom right;
     background-size: 70%;
     height: 100vh;
-  }
-
-  #avatar {
-    border-radius: 50%;
-    background: #fff;
-    width: 50px;
-    height: 50px;
-    margin: 2em auto 1em auto;
-  }
-
-  figcaption {
-    text-align: center;
-    color: #000;
-  }
-
-  .cta {
-    display: inline-block;
-    font-size: 1.3em;
-    padding: 0.8em 3em;
   }
 }
 

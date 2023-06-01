@@ -20,7 +20,7 @@ export default {
             Discover trusted professionals, compare prices, and schedule appointments on TaskTapp -
             all in one convenient place.
           </p>
-          <router-link to="/login" class="cta">Get Started Now</router-link>
+          <router-link to="/search" class="cta">Search our Services</router-link>
         </div>
       </div>
 

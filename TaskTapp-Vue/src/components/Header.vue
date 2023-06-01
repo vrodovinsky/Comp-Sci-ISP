@@ -16,7 +16,7 @@ const { isLoading } = useAuth0()
       <ul>
         <li id="links"><RouterLink to="/search">Search Services</RouterLink></li>
         <li id="links"><RouterLink to="/searchMap">Map Search</RouterLink></li>
-        <li id="links"><RouterLink to="/dashboard">Dashboard</RouterLink></li>
+        <li id="links"><RouterLink to="/profile">Profile</RouterLink></li>
         <div v-if="isLoading" class="page-layout">
           <PageLoader />
         </div>
