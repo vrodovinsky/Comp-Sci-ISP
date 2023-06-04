@@ -36,24 +36,9 @@ html {
   font-family: 'Montserrat';
 }
 
-/* .aside {
-  color: #fff;
-  display: flex;
-  /* grid-template-columns: auto 40px; */
-  /* display: flex; 
-}
-.container {
-  justify-content: center;
-} */
-
 img {
   width: 40px;
   cursor: pointer;
-}
-
-#figure {
-  /* height: 200px;*/
-  background: #eec9f4;
 }
 
 figure {

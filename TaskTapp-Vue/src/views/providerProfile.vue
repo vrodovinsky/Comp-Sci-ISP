@@ -46,22 +46,37 @@ export default {
     
 
     <main>
-      <h1 id="title" class="is-size-1 has-text-weight-bold pl-3">Account</h1>
-      <!-- <section id="section-1"> -->
+      <h1 id="title" class="is-size-1 has-text-weight-bold pl-3">Service Information</h1>
       <div class="userInfo">
         <div id="username">
-          <div class="field">
-            <label class="label is-size-4 has-text-weight-semibold">Display Name</label>
+            <label class="label is-size-4 has-text-weight-semibold">Company Name</label>
             <div class="control">
-              <input v-model="user.name" id="name" class="input" type="text" />
+              <input v-model="com" id="name" placeholder="Ex. John Smith Plumbing" class="input" type="text" />
             </div>
-          </div>
         </div>
         <div id="email">
-          <label class="label is-size-4 has-text-weight-semibold">Email</label>
-          <div class="control"  id="info">
+            <label class="label is-size-4 has-text-weight-semibold">Email</label>
+            <div class="control" id="info">
             <input v-model="user.email" class="input email" type="text" />
-          </div>
+            </div>
+        </div>
+        <div id="service">
+            <label class="label is-size-4 has-text-weight-semibold">Service</label>
+            <div class="control" id="info">
+            <input class="input" placeholder="Ex. Plumber" type="text" /> <!-- v-model="" --> 
+            </div>
+        </div>
+        <div id="price">
+            <label class="label is-size-4 has-text-weight-semibold">Price</label>
+            <div class="control" id="info">
+            <input class="input" placeholder="Ex. $190" type="text" /> <!-- v-model="" --> 
+            </div>
+        </div>
+        <div id="description">
+            <label class="label is-size-4 has-text-weight-semibold">Description</label>
+            <div class="control" id="info">
+                <textarea id="freeform" placeholder="Ex. My name is John and I am a skilled plumber..." name="freeform" rows="4" cols="50"></textarea>   
+            </div>   
         </div>
       </div>
       <div id="button">
@@ -79,11 +94,14 @@ main{
 #button{
   padding: 10px;
 }
-
 .userInfo {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+input{
+    width: 80%;
 }
 
 #info {
@@ -96,14 +114,30 @@ main{
   padding: 10px;
 }
 
+#price{
+    padding: 10px;
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+#service{
+    grid-column: 2/3;
+    padding: 10px;
+}
+
 #email {
   grid-row: 2/3;
   grid-column: 1/2;
   padding: 10px;
 }
 
-#showPass {
-  padding: 10px;
+#description{
+    grid-column: 1/3;
+    padding: 10px;
+}
+
+textarea{
+    width: 70%;
 }
 
 #title {
@@ -139,5 +173,3 @@ main{
 }
 
 </style>
-
-
