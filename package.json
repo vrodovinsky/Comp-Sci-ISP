@@ -12,6 +12,7 @@
     "express-list-endpoints": "^6.0.0",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.3",
+    "mongoose-double": "^0.0.1",
     "request": "^2.88.2",
     "validator": "^13.9.0",
     "vee-validate": "^4.8.6",

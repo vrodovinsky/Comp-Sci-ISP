@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+require('mongoose-double')(mongoose);
 const Schema = mongoose.Schema;
 
 const service_providers = new Schema({
