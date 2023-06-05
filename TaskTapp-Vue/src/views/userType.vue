@@ -1,12 +1,36 @@
 <script>
 import Navbar from '../components/Navbar.vue'
+import axios from 'axios'
 
 export default {
   name: 'Home',
   components: {
     Navbar
-  }
+  },
+    data() {
+        return {
+            userRole: '',
+            user: this.$auth0.user,
+    }
+    },
+    methods: {
+        isProvider() {
+            axios.put('http://localhost:3000/userRole/'+ this.$auth0.user._value.sub,{
+                "role": this.userRole
+            })
+                .then((response) => {
+                    const data = response.data
+                    console.log(data._id)
+                    const redirectPath = this.$route.query.redirect || '/'
+                    this.$router.push(redirectPath)
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
+        }
+    }
 }
+
 </script>
 
 <template>
@@ -20,16 +44,16 @@ export default {
         <form>
         <div id="checks" class="field is-size-3">
             <label id="first" for="">
-                <input class="check" id="isProvider" type="checkbox">
+                <input class="check" v-model="userRole" value="rol_Qyye4GcdiGS4c6hu" name="userType" type="radio">
                 Sell my services
                 </label>
             <label for="">
-                <input class="check" id="isUser" type="checkbox">
+                <input class="check" v-model="userRole" value= "rol_sn3XBo7RlfuZixOf" name="userType" type="radio">
                 Find Service Providers
             </label>
         </div>
 
-        <button class="button is-block is-dark is-large"  style="font-family: Montserrat">Get Started</button>
+        <button class="button is-block is-dark is-large" @click = "isProvider"  style="font-family: Montserrat">Get Started</button>
     </form>
     </main>
 </template>

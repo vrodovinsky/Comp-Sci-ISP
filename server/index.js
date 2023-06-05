@@ -33,6 +33,34 @@ app.get('/users/:id', async (req, res) => {
     }
 });
 
+app.put('/userRole/:id', async (req, res) => {
+    try {
+        const data = {
+            roles: [req.body.role],
+        };
+
+        const ManagementClient = require('auth0').ManagementClient;
+        const management = new ManagementClient({
+            domain: '{YOUR_ACCOUNT}.auth0.com',
+            clientId: '{ YOUR_NON_INTERACTIVE_CLIENT_ID }',
+            clientSecret: '{YOUR_NON_INTERACTIVE_CLIENT_SECRET}',
+            scope: 'read:users update:users',
+        });
+
+        const params = { id: req.params.id };
+
+        management.assignRolestoUser(params, data, function (err) {
+            if (err) {
+                console.log(err)
+            }
+
+            res.json({});
+        });
+    } catch (err) {
+        res.status(500).json;
+    }
+});
+
 app.post('/users', async (req, res) => {
     try {
         const users = await Users(req.body);
@@ -109,23 +137,6 @@ app.get('/service_providers', async (req, res) => {
     }
 });
 
-// app.get('/api/service_providers/services/:service_name', async (req, res) => {
-//     try {
-//         const query = {
-//             Services: {
-//                 '$elemMatch': {
-//                     Name: req.params.service_name
-//                 }
-//             }
-//         };
-//         console.log('Searching Providers' + req.params.service_name)
-//         const service_providers = await Service_providers.find(query);
-//         res.json(service_providers);
-
-//     } catch (err) {
-//         res.status(500).json({ error: err.message });
-//     }
-// });
 
 app.get('/service_providers/:id', async (req, res) => {
     try {
