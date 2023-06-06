@@ -33,7 +33,8 @@ const router = createRouter({
     {
       path: "/callback",
       name: "callback",
-      component: () => import("../views/callback.vue")
+      component: () => import("../views/callback.vue"),
+      beforeEnter: authGuard,
     },
     {
       path: '/dashboard',
