@@ -15,7 +15,7 @@ export default {
   methods: {
     findProviders() {
       axios
-        .get('https://tasktapp.com/api/service_providers', {
+        .get('https://api.tasktapp.com/service_providers', {
           params: { service_name: this.searchServices }
         })
         .then((response) => {
@@ -35,7 +35,6 @@ export default {
   <body>
     <Header></Header>
     <div class="box" id="body">
-      <!-- <h1>Search Service Providers</h1> -->
       <div id="search">
         <div class="field" id="searchBar">
           <div class="control">
@@ -54,7 +53,7 @@ export default {
         </div>
       </div>
 
-      <div id="filter" class="mb-3">
+      <!-- <div id="filter" class="mb-3">
         <h1 style="font-family: Montserrat">Filter by</h1>
         <div class="select">
           <select>
@@ -64,7 +63,7 @@ export default {
             <option style="font-family: Montserrat">Price</option>
           </select>
         </div>
-      </div>
+      </div> -->
 
       <div id="displayProviders">
         <ul>
@@ -80,6 +79,8 @@ export default {
                   {{ service.Name }} - {{ service.Description }}
                   <br />
                   {{ service.Price }}
+                  <br>
+                  <!-- {{ provider.email }} -->
                 </p>
               </li>
             </div>
@@ -98,11 +99,12 @@ body {
 #body {
   position: absolute;
   top: 140px;
-  width: 100%;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
+  width: 80%;
+  left: 10%;
+  /* left: 0;
+  right: 0; */
+  /* margin-left: auto;
+  margin-right: auto; */
 }
 
 #searchBar {
@@ -120,6 +122,7 @@ body {
 }
 
 .field {
-  width: 90%;
+  width: 80%;
+  margin-right: 10px;
 }
 </style>

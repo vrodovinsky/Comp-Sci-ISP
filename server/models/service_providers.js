@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+require('mongoose-double')(mongoose);
 const Schema = mongoose.Schema;
 
 const service_providers = new Schema({
@@ -32,10 +33,10 @@ const service_providers = new Schema({
     },
     Location: {
         Latitude: {
-            type: Schema.Types.Decimal128
+            type: Schema.Types.Double
         },
         Longitude: {
-            type: Schema.Types.Decimal128
+            type: Schema.Types.Double
         }
     },
 });

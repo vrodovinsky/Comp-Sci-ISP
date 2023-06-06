@@ -20,19 +20,41 @@ export default {
             Discover trusted professionals, compare prices, and schedule appointments on TaskTapp -
             all in one convenient place.
           </p>
-          <router-link to="/login" class="cta">Get Started Now</router-link>
+          <router-link to="/search" class="cta">Search our Services</router-link>
         </div>
       </div>
 
       <div class="info-boxes">
         <div class="info-box">
           <h2>About Us</h2>
+          <hr>
+          <div id="info">
+                <p>TaskTapp is your ultimate destination for finding the perfect service providers for all your needs. We understand that finding reliable professionals can often be a daunting task, and that's why we're here to simplify the process.</p>
+                <br>
+                <p>At TaskTapp, we've curated a vast network of highly skilled and trusted service providers across various industries, ensuring that you have access to top-quality professionals right at your fingertips. Whether you're looking for plumbers, electricians, tutors, photographers, or any other service, we've got you covered.</p>
+              </div> 
         </div>
+        <br>
         <div class="info-box">
           <h2>FAQ</h2>
-        </div>
-        <div class="info-box">
-          <h2>What We Do</h2>
+          <hr>
+          <div id="info">
+            <p class="has-text-weight-semibold">How does TaspTapp work?</p>
+              <br>
+              <p>TaskTapp is a user-friendly platform that simplifies the process of finding service providers. To use our service, simply search for your desired service and we will provide you with the most suitable professionals in your area. You can browse through their profiles, read reviews, compare quotes, and make an informed decision.</p>
+              <br>
+            <p class="has-text-weight-semibold">Is TaskTapp free to use?</p>
+              <br>
+              <p>Yes, TaspTapp is completely free for users. There are no hidden charges or fees when using our platform to find service providers.</p>
+              <br>
+            <p class="has-text-weight-semibold">How do you ensure the reliability of service providers?</p>
+              <br>
+              <p>We prioritize reliability and quality. Every service provider listed on our platform undergoes a thorough screening process. We verify their credentials, check for licenses and certifications, and review their performance history. Additionally, users have the opportunity to leave reviews and ratings based on their experiences, helping to maintain a high standard of service.</p>
+              <br>
+            <p class="has-text-weight-semibold">How do I contact a service provider?</p>
+              <br>
+              <p>Once you've found a service provider you're interested in, you can contact them directly through the contact information provided on their profile. TaskTapp does not mediate the communication between users and service providers.</p>
+            </div>
         </div>
       </div>
     </div>
@@ -79,16 +101,10 @@ export default {
   margin-right: auto;
 }
 
-body,
-html {
-  height: calc(100% - 2em);
-  margin: 0;
-  font-family: 'Montserrat';
-  color: black;
-}
-
 body {
+  height: 100%;
   background-color: #eec9f4;
+  font-family: 'Montserrat';
 }
 
 header {
@@ -97,12 +113,6 @@ header {
   left: 0;
   width: 100%;
   z-index: 100;
-}
-
-.svgHeader {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 
 nav {
@@ -197,20 +207,31 @@ nav a:hover {
   width: 100%;
 }
 
+.info-boxes {
+  align-items: center;
+  width: 70%;
+}
+
 .info-box {
-  width: 80%;
-  max-width: 600px;
+  width: 100%;
   background-color: white;
   margin: 20px 0;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
-}
+  line-height: 1.6;
+  }
+
+  p{
+    font-size: 17px;
+  }
 
 .info-box h2 {
   margin: 0;
   padding: 0;
-  font-size: 28px;
+  font-size: 30px;
 }
+
+
 </style>

@@ -9,7 +9,9 @@ export default {
 }
 </script>
 
-<script setup></script>
+<script setup>
+  // location.reload()
+</script>
 
 <template>
   <div class="navbar">
@@ -70,56 +72,16 @@ export default {
 </template>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
-
-body,
-html {
-  height: calc(100% - 2em);
-  margin: 0;
-  font-family: 'Montserrat' !important;
-}
-
-body {
-  background: #823696; /* Old browsers */
-  background: -moz-linear-gradient(45deg, #32279e 0%, #b756a3 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    45deg,
-    #32279e 0%,
-    #b756a3 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    45deg,
-    #32279e 0%,
-    #b756a3 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32279E', endColorstr='#B756A3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  padding-left: 20%;
-}
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700'); */
 
 main {
   margin-left: 17vw;
 }
 
-img {
-  width: 40px;
-  cursor: pointer;
-}
-
-figure {
-  margin: 0;
-}
-
-figcaption {
-  font-size: 1.3em;
-  font-weight: bold;
-}
-
-main {
+/* main {
   background: #fff;
   padding: 1em 1.4em;
-}
+} */
 
 h1 {
   margin: 0;
@@ -131,11 +93,11 @@ p {
 }
 
 @media only screen and (min-width: 768px) {
-  body {
+  /* body {
     display: grid;
     grid-template-columns: 20% auto;
     padding: 2em;
-  }
+  } */
 
   img {
     display: none;
@@ -177,12 +139,6 @@ p {
     background: none;
   }
 
-  .cta {
-    display: inline-block;
-    font-size: 1.3em;
-    padding: 0.8em 3em;
-  }
-
   h1 {
     font-size: 3em;
     margin-top: 2em;
@@ -193,41 +149,6 @@ p {
   }
 }
 
-/* .line-graph_box {
-    width: 320px;
-    padding: 10px;
-    border: 5px solid gray;
-    margin: 0;
-  }
-*/
-
-.line-graph_box {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  max-width: 600px;
-  margin: 20px auto;
-  transition: box-shadow 0.3s ease-in-out;
-}
-
-.line-graph_box:hover {
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-}
-
-.chart-container {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  max-width: 600px;
-  margin: 20px auto;
-  transition: box-shadow 0.3s ease-in-out;
-}
-
-.chart-container:hover {
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-}
 
 .sales-widget {
   background-color: white;
@@ -238,20 +159,6 @@ p {
   margin-top: 20px;
   transition: box-shadow 0.3s ease-in-out;
   flex: 0 0 250px;
-}
-
-/** sales widget GLASS MORPHISM if you decide to go that way */
-
-.sales-widget-GLASSMORPH {
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
-  border-radius: 10px; /* Rounded corners */
-  padding: 20px;
-  max-width: 100%;
-  margin: 20px auto;
-  flex: 0 0 250px;
-  backdrop-filter: blur(10px); /* Blur the background behind the element */
-  -webkit-backdrop-filter: blur(10px); /* For Safari compatibility */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle drop shadow */
 }
 
 .sales-widget:hover {
@@ -328,75 +235,10 @@ p {
   }
 }
 
-.large-widget {
-  width: 100%;
-  background: #fff;
-  margin-bottom: 30px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.large-widget .header {
-  background: #f6f6f6;
-  padding: 15px;
-  text-align: left;
-}
-
-.large-widget .header h3 {
-  font-size: 18px;
-  color: #555;
-  margin: 0;
-}
-
-.large-widget .header hr {
-  border: 0;
-  height: 1px;
-  background: #ddd;
-  margin-top: 10px;
-}
-
-.large-widget .content {
-  padding: 15px;
-}
-
-/**
- * profile & settings
- */
-
-.userInfo {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-}
 
 #info {
   display: flex;
   align-items: center;
-}
-
-#edit {
-  margin: auto;
-}
-
-#username {
-  grid-column: 1/2;
-}
-
-#number {
-  grid-column: 2/3;
-}
-
-#email {
-  grid-row: 2/3;
-  grid-column: 1/2;
-}
-
-#postal {
-  grid-column: 3/4;
-}
-
-#showPass {
 }
 
 .navbar {
