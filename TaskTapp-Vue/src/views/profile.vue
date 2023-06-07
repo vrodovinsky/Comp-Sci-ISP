@@ -10,25 +10,24 @@ export default {
   },
   data() {
     return {
-      user: this.$auth0.user,
+      user: this.$auth0.user
     }
   },
   methods: {
     updateInfo() {
-      const name = document.querySelector("#name").value
-      const email = document.querySelector(".email").value
-      const phoneNumber = document.querySelector("#phoneNumber").value
+      const name = document.querySelector('#name').value
+      const email = document.querySelector('.email').value
+      const phoneNumber = document.querySelector('#phoneNumber').value
       console.log(this.$auth0)
       console.log(this.$auth0.user)
       console.log(JSON.stringify(this.$auth0.user))
       console.log(JSON.stringify())
-      axios.put('http://localhost:3000/updateAccount/' + this.$auth0.user._value.sub, {
-        "name": name,
-        "email": email,
-      })
-        .then((response) => {
-          
+      axios
+        .put('https://api.tasktapp.com/updateAccount/' + this.$auth0.user._value.sub, {
+          name: name,
+          email: email
         })
+        .then((response) => {})
         .catch((err) => {
           console.log(err)
         })
@@ -40,43 +39,41 @@ export default {
 <script setup></script>
 
 <template>
-    <div class="navbar">
-      <navbar></navbar>
-    </div>
-    
+  <div class="navbar">
+    <navbar></navbar>
+  </div>
 
-    <main>
-      <h1 id="title" class="is-size-1 has-text-weight-bold pl-3">Account</h1>
-      <!-- <section id="section-1"> -->
-      <div class="userInfo">
-        <div id="username">
-          <div class="field">
-            <label class="label is-size-4 has-text-weight-semibold">Display Name</label>
-            <div class="control">
-              <input v-model="user.name" id="name" class="input" type="text" />
-            </div>
-          </div>
-        </div>
-        <div id="email">
-          <label class="label is-size-4 has-text-weight-semibold">Email</label>
-          <div class="control"  id="info">
-            <input v-model="user.email" class="input email" type="text" />
+  <main>
+    <h1 id="title" class="is-size-1 has-text-weight-bold pl-3">Account</h1>
+    <!-- <section id="section-1"> -->
+    <div class="userInfo">
+      <div id="username">
+        <div class="field">
+          <label class="label is-size-4 has-text-weight-semibold">Display Name</label>
+          <div class="control">
+            <input v-model="user.name" id="name" class="input" type="text" />
           </div>
         </div>
       </div>
-      <div id="button">
-        <button class="button">Update Info</button>
+      <div id="email">
+        <label class="label is-size-4 has-text-weight-semibold">Email</label>
+        <div class="control" id="info">
+          <input v-model="user.email" class="input email" type="text" />
+        </div>
       </div>
-    </main>
+    </div>
+    <div id="button">
+      <button class="button">Update Info</button>
+    </div>
+  </main>
 </template>
 
 <style scoped>
-
-main{
+main {
   margin-left: 17vw;
 }
 
-#button{
+#button {
   padding: 10px;
 }
 
@@ -137,7 +134,4 @@ main{
   height: 100%;
   z-index: 100;
 }
-
 </style>
-
-
