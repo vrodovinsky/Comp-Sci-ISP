@@ -1,0 +1,969 @@
+{
+    "modelName": "New Model",
+    "collections": [
+        {
+            "collectionName": "appointments",
+            "type": "object",
+            "properties": [
+                {
+                    "code": "",
+                    "name": "_id",
+                    "isActivated": true,
+                    "type": "objectId",
+                    "primaryKey": true,
+                    "GUID": "a7a9473a-560c-40a0-8683-8b939205788c",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "code": "",
+                    "name": "Booking_date",
+                    "isActivated": true,
+                    "type": "date",
+                    "primaryKey": false,
+                    "GUID": "ca181657-026b-4536-8a0e-59dc9270e681",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "code": "",
+                    "name": "Client_id",
+                    "isActivated": true,
+                    "type": "objectId",
+                    "primaryKey": false,
+                    "GUID": "c35239a6-09cc-4464-b23e-170b7a056133",
+                    "required": true,
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "fbd702eb-ddd8-40e3-a0c9-a5d0e1e2b97c",
+                    "foreignField": [
+                        "fbd702eb-ddd8-40e3-a0c9-a5d0e1e2b97c",
+                        "875a3f9b-96ab-4191-98c5-fa44f9dc8af2"
+                    ],
+                    "parentRelationship": "4f4ea656-088f-4bbc-b43c-beb31b984147"
+                },
+                {
+                    "code": "",
+                    "name": "Location",
+                    "isActivated": true,
+                    "type": "string",
+                    "primaryKey": false,
+                    "GUID": "ca46d01e-b0d6-4961-a90a-6c60e70b9a6e",
+                    "required": true,
+                    "sample": "43.759064676921696, -79.35225231420536",
+                    "error": {}
+                },
+                {
+                    "code": "",
+                    "name": "Provider_id",
+                    "isActivated": true,
+                    "type": "objectId",
+                    "primaryKey": false,
+                    "GUID": "fb96fa3a-2849-4c8f-a970-377674a4cdb3",
+                    "required": true,
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "888be93c-29e0-4c61-a78c-84164f525e09",
+                    "foreignField": [
+                        "888be93c-29e0-4c61-a78c-84164f525e09",
+                        "7b81042d-dd57-444b-8cb6-84110a1f5b8b"
+                    ],
+                    "parentRelationship": "6fe1ea10-c428-4dda-9427-f7a79aa3ad3d"
+                },
+                {
+                    "code": "",
+                    "name": "Registered_date",
+                    "isActivated": true,
+                    "type": "date",
+                    "primaryKey": false,
+                    "GUID": "f909f0d1-0d3b-417e-991a-54ec222b7075",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "code": "",
+                    "name": "Type",
+                    "isActivated": true,
+                    "type": "string",
+                    "primaryKey": false,
+                    "GUID": "94bad94b-d81b-469e-b9d5-129898bc0172",
+                    "required": true,
+                    "sample": "Plumbing",
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "GUID": "a30b352f-e6d6-4d0c-ab38-fe23bedeb8b9",
+                "properties": []
+            },
+            "isActivated": true,
+            "additionalProperties": true,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [
+                {
+                    "key": [
+                        {
+                            "keyId": "a7a9473a-560c-40a0-8683-8b939205788c",
+                            "type": "ascending"
+                        }
+                    ],
+                    "name": "_id_",
+                    "GUID": "e7f5419a-460e-414e-9c8c-bb81f9126223"
+                }
+            ],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "5f30012f-41b7-418b-810a-dbdca0963ed5",
+            "bucketId": "6178aac9-d5bc-4a9a-aea3-6c3cd1ead534",
+            "code": "",
+            "hackoladeMeta": {
+                "validationErrors": {}
+            }
+        },
+        {
+            "collectionName": "reviews",
+            "type": "object",
+            "properties": [
+                {
+                    "code": "",
+                    "name": "_id",
+                    "isActivated": true,
+                    "type": "objectId",
+                    "primaryKey": true,
+                    "GUID": "98abd4fe-e5de-4515-a6de-0c8b0e685889",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "code": "",
+                    "name": "Body",
+                    "isActivated": true,
+                    "type": "string",
+                    "primaryKey": false,
+                    "GUID": "2db2ad5f-7440-4288-8ce0-a9cbfe6c3278",
+                    "required": true,
+                    "sample": "COOPER SUCKS, would NOT recommend.",
+                    "error": {}
+                },
+                {
+                    "code": "",
+                    "name": "Provider_id",
+                    "isActivated": true,
+                    "type": "objectId",
+                    "primaryKey": false,
+                    "GUID": "166470f1-df70-4ee8-977c-ebfa9df1a9b8",
+                    "required": true,
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "888be93c-29e0-4c61-a78c-84164f525e09",
+                    "foreignField": [
+                        "888be93c-29e0-4c61-a78c-84164f525e09",
+                        "7b81042d-dd57-444b-8cb6-84110a1f5b8b"
+                    ],
+                    "parentRelationship": "456bac4a-00de-4352-a678-8b68820139c5"
+                },
+                {
+                    "code": "",
+                    "name": "Rating",
+                    "isActivated": true,
+                    "type": "numeric",
+                    "primaryKey": false,
+                    "GUID": "686a519a-c2de-4817-9f6d-76ca2dc936a0",
+                    "required": true,
+                    "mode": "integer32",
+                    "sample": 1,
+                    "error": {}
+                },
+                {
+                    "code": "",
+                    "name": "Subject",
+                    "isActivated": true,
+                    "type": "string",
+                    "primaryKey": false,
+                    "GUID": "e07345be-7d9c-481a-84c2-636a190180cc",
+                    "required": true,
+                    "sample": "WORST SERVICE EVER",
+                    "error": {}
+                },
+                {
+                    "code": "",
+                    "name": "User_id",
+                    "isActivated": true,
+                    "type": "objectId",
+                    "primaryKey": false,
+                    "GUID": "e7fcedf8-1b81-4807-9bb5-37db2d6c96d3",
+                    "required": true,
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "fbd702eb-ddd8-40e3-a0c9-a5d0e1e2b97c",
+                    "foreignField": [
+                        "fbd702eb-ddd8-40e3-a0c9-a5d0e1e2b97c",
+                        "875a3f9b-96ab-4191-98c5-fa44f9dc8af2"
+                    ],
+                    "parentRelationship": "0f840ab4-4f7a-46f3-abd9-a04da433b7a2"
+                },
+                {
+                    "code": "",
+                    "name": "User_name",
+                    "isActivated": true,
+                    "type": "string",
+                    "primaryKey": false,
+                    "GUID": "75599358-17d9-49a6-ad99-fd8d51408f34",
+                    "required": true,
+                    "sample": "Tristan Merkley",
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "fbd702eb-ddd8-40e3-a0c9-a5d0e1e2b97c",
+                    "foreignField": [
+                        "fbd702eb-ddd8-40e3-a0c9-a5d0e1e2b97c",
+                        "3ed3c56a-9659-42e2-bbcd-decba0350ea5"
+                    ],
+                    "parentRelationship": "5e019f2c-6e1e-4145-97c6-b4311b65d8e3"
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "GUID": "c1b05b13-d6c1-44ca-a704-113313131d40",
+                "properties": []
+            },
+            "isActivated": true,
+            "additionalProperties": true,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [
+                {
+                    "key": [
+                        {
+                            "keyId": "98abd4fe-e5de-4515-a6de-0c8b0e685889",
+                            "type": "ascending"
+                        }
+                    ],
+                    "name": "_id_",
+                    "GUID": "bf3bdd1e-daa8-43d2-a17b-f94bbfb55bf4"
+                }
+            ],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "e617bce8-1191-46d8-9044-37a4e40d090e",
+            "bucketId": "6178aac9-d5bc-4a9a-aea3-6c3cd1ead534",
+            "code": "",
+            "hackoladeMeta": {
+                "validationErrors": {}
+            }
+        },
+        {
+            "collectionName": "service_provider",
+            "type": "object",
+            "properties": [
+                {
+                    "code": "",
+                    "name": "_id",
+                    "isActivated": true,
+                    "type": "objectId",
+                    "primaryKey": true,
+                    "GUID": "7b81042d-dd57-444b-8cb6-84110a1f5b8b",
+                    "required": true,
+                    "error": {},
+                    "childRelationships": [
+                        "456bac4a-00de-4352-a678-8b68820139c5",
+                        "6fe1ea10-c428-4dda-9427-f7a79aa3ad3d"
+                    ]
+                },
+                {
+                    "code": "",
+                    "name": "Description",
+                    "isActivated": true,
+                    "type": "string",
+                    "primaryKey": false,
+                    "GUID": "b24805e4-cebe-4cb6-b8e9-283eba8ba0e4",
+                    "required": true,
+                    "sample": "Cooper Lumley is a multi-talented professional who possesses expertise in two vastly different fields - web development and plumbing. As a web developer, Cooper has a passion for creating stunning and functional websites that meet the needs of his clients. He is well-versed in various programming languages and is always up-to-date with the latest web development trends and techniques. Cooper has a keen eye for detail and takes pride in delivering high-quality work that exceeds his clients' expectations.\nIn addition to his web development skills, Cooper is also a skilled plumber. He has extensive knowledge of plumbing systems and fixtures, and is experienced in diagnosing and repairing a wide range of plumbing issues. Whether it's a leaky faucet, a clogged drain, or a more complex plumbing problem, Cooper is always up for the challenge. He is known for his prompt and reliable service, and his ability to find innovative solutions to even the most difficult plumbing problems.\nOverall, Cooper Lumley is a unique professional who combines technical expertise in web development with hands-on skills in plumbing. His clients appreciate his diverse skill set and his commitment to delivering high-quality work in both of his areas of expertise.\n",
+                    "error": {}
+                },
+                {
+                    "code": "",
+                    "name": "Name",
+                    "isActivated": true,
+                    "type": "string",
+                    "primaryKey": false,
+                    "GUID": "7572fd53-0e74-43ae-8c72-84c7f9ca1001",
+                    "required": true,
+                    "sample": "Cooper Lumley",
+                    "error": {}
+                },
+                {
+                    "code": "",
+                    "name": "Services",
+                    "isActivated": true,
+                    "type": "array",
+                    "properties": [
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "c2a50254-cf4a-4d0f-8a90-382b912c96ca",
+                            "arrayItem": true,
+                            "arrayParentType": "array",
+                            "sample": "Website Builder",
+                            "error": {}
+                        }
+                    ],
+                    "additionalItems": true,
+                    "primaryKey": false,
+                    "GUID": "6ee32ef3-c74c-4ab6-ae77-dfc6a21bc53e",
+                    "required": true,
+                    "error": {}
+                },
+                {
+                    "code": "",
+                    "name": "User_id",
+                    "isActivated": true,
+                    "type": "objectId",
+                    "primaryKey": false,
+                    "GUID": "9f9f488f-471c-48ef-bdf1-16ad792b36d7",
+                    "required": true,
+                    "error": {},
+                    "childRelationships": [
+                        "5492baf1-244f-47b3-8152-6e30c7d77729"
+                    ]
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "GUID": "2b92c639-7f54-4ae7-9f9f-b7e66d5f3d7b",
+                "properties": []
+            },
+            "isActivated": true,
+            "additionalProperties": true,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [
+                {
+                    "key": [
+                        {
+                            "keyId": "7b81042d-dd57-444b-8cb6-84110a1f5b8b",
+                            "type": "ascending"
+                        }
+                    ],
+                    "name": "_id_",
+                    "GUID": "a212b55b-cd8e-45e9-afe1-d99e853a4321"
+                }
+            ],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "888be93c-29e0-4c61-a78c-84164f525e09",
+            "bucketId": "6178aac9-d5bc-4a9a-aea3-6c3cd1ead534",
+            "code": "",
+            "hackoladeMeta": {
+                "validationErrors": {}
+            }
+        },
+        {
+            "collectionName": "users",
+            "type": "object",
+            "properties": [
+                {
+                    "code": "",
+                    "name": "_id",
+                    "isActivated": true,
+                    "type": "objectId",
+                    "primaryKey": true,
+                    "GUID": "875a3f9b-96ab-4191-98c5-fa44f9dc8af2",
+                    "required": true,
+                    "error": {},
+                    "relationshipType": "Foreign Key",
+                    "foreignCollection": "888be93c-29e0-4c61-a78c-84164f525e09",
+                    "foreignField": [
+                        "888be93c-29e0-4c61-a78c-84164f525e09",
+                        "9f9f488f-471c-48ef-bdf1-16ad792b36d7"
+                    ],
+                    "parentRelationship": "5492baf1-244f-47b3-8152-6e30c7d77729",
+                    "childRelationships": [
+                        "0f840ab4-4f7a-46f3-abd9-a04da433b7a2",
+                        "4f4ea656-088f-4bbc-b43c-beb31b984147"
+                    ]
+                },
+                {
+                    "code": "",
+                    "name": "Name",
+                    "isActivated": true,
+                    "type": "string",
+                    "primaryKey": false,
+                    "GUID": "3ed3c56a-9659-42e2-bbcd-decba0350ea5",
+                    "required": true,
+                    "sample": "Cooper Lumley",
+                    "error": {},
+                    "childRelationships": [
+                        "5e019f2c-6e1e-4145-97c6-b4311b65d8e3"
+                    ]
+                },
+                {
+                    "code": "",
+                    "name": "User_type",
+                    "isActivated": true,
+                    "type": "string",
+                    "primaryKey": false,
+                    "GUID": "fcc77df6-976c-4735-82ff-379e060006a0",
+                    "required": true,
+                    "sample": "Provider",
+                    "error": {}
+                },
+                {
+                    "code": "",
+                    "name": "Location",
+                    "isActivated": true,
+                    "type": "string",
+                    "primaryKey": false,
+                    "GUID": "456af338-99af-4339-8080-0c7fb2376f7d",
+                    "required": true,
+                    "sample": "",
+                    "error": {}
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "GUID": "e2edcded-f7fd-4e88-b983-fb9a4e8f1c4a",
+                "properties": []
+            },
+            "isActivated": true,
+            "additionalProperties": true,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [
+                {
+                    "key": [
+                        {
+                            "keyId": "875a3f9b-96ab-4191-98c5-fa44f9dc8af2",
+                            "type": "ascending"
+                        }
+                    ],
+                    "name": "_id_",
+                    "GUID": "3ed308b4-0973-49cc-b317-f17317e35855"
+                }
+            ],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "fbd702eb-ddd8-40e3-a0c9-a5d0e1e2b97c",
+            "bucketId": "6178aac9-d5bc-4a9a-aea3-6c3cd1ead534",
+            "code": "",
+            "hackoladeMeta": {
+                "validationErrors": {}
+            }
+        }
+    ],
+    "buckets": [
+        {
+            "name": "main",
+            "type": "bucket",
+            "collectionIds": [
+                "5f30012f-41b7-418b-810a-dbdca0963ed5",
+                "e617bce8-1191-46d8-9044-37a4e40d090e",
+                "888be93c-29e0-4c61-a78c-84164f525e09",
+                "fbd702eb-ddd8-40e3-a0c9-a5d0e1e2b97c"
+            ],
+            "backgroundColor": {
+                "r": 216,
+                "g": 0,
+                "b": 115,
+                "a": 1
+            },
+            "show": true,
+            "isActivated": true,
+            "GUID": "6178aac9-d5bc-4a9a-aea3-6c3cd1ead534",
+            "hackoladeMeta": {},
+            "code": ""
+        }
+    ],
+    "views": [],
+    "relationships": [
+        {
+            "name": "User_Id",
+            "relationshipType": "Foreign Key",
+            "parentField": [],
+            "parentCardinality": "1",
+            "childField": [],
+            "childCardinality": "1",
+            "GUID": "fdc8553e-175e-4886-b712-6595df846a77"
+        },
+        {
+            "name": "fk users._id to service_provider.User_id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "888be93c-29e0-4c61-a78c-84164f525e09",
+                    "9f9f488f-471c-48ef-bdf1-16ad792b36d7"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "fbd702eb-ddd8-40e3-a0c9-a5d0e1e2b97c",
+                    "875a3f9b-96ab-4191-98c5-fa44f9dc8af2"
+                ]
+            ],
+            "childCardinality": "1",
+            "parentCollection": "888be93c-29e0-4c61-a78c-84164f525e09",
+            "childCollection": "fbd702eb-ddd8-40e3-a0c9-a5d0e1e2b97c",
+            "GUID": "5492baf1-244f-47b3-8152-6e30c7d77729",
+            "hackoladeStyles": {
+                "GUID": "bf048520-4b5d-4fd0-8122-9662a48f745d",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 473,
+                        "y": 134
+                    },
+                    {
+                        "x": 403,
+                        "y": 134
+                    },
+                    {
+                        "x": 403,
+                        "y": 144
+                    },
+                    {
+                        "x": 333,
+                        "y": 144
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "fk reviews.Provider_id to service_provider._id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "888be93c-29e0-4c61-a78c-84164f525e09",
+                    "7b81042d-dd57-444b-8cb6-84110a1f5b8b"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "e617bce8-1191-46d8-9044-37a4e40d090e",
+                    "166470f1-df70-4ee8-977c-ebfa9df1a9b8"
+                ]
+            ],
+            "childCardinality": "1",
+            "parentCollection": "888be93c-29e0-4c61-a78c-84164f525e09",
+            "childCollection": "e617bce8-1191-46d8-9044-37a4e40d090e",
+            "GUID": "456bac4a-00de-4352-a678-8b68820139c5",
+            "hackoladeStyles": {
+                "GUID": "b2c9108e-8875-4d41-b5eb-d55bca89d5a9",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 503,
+                        "y": 395
+                    },
+                    {
+                        "x": 418,
+                        "y": 395
+                    },
+                    {
+                        "x": 418,
+                        "y": 190
+                    },
+                    {
+                        "x": 333,
+                        "y": 190
+                    }
+                ],
+                "sides": [
+                    "left",
+                    "right"
+                ]
+            }
+        },
+        {
+            "name": "fk reviews.User_id to users._id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "fbd702eb-ddd8-40e3-a0c9-a5d0e1e2b97c",
+                    "875a3f9b-96ab-4191-98c5-fa44f9dc8af2"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "e617bce8-1191-46d8-9044-37a4e40d090e",
+                    "e7fcedf8-1b81-4807-9bb5-37db2d6c96d3"
+                ]
+            ],
+            "childCardinality": "1",
+            "parentCollection": "fbd702eb-ddd8-40e3-a0c9-a5d0e1e2b97c",
+            "childCollection": "e617bce8-1191-46d8-9044-37a4e40d090e",
+            "GUID": "0f840ab4-4f7a-46f3-abd9-a04da433b7a2",
+            "hackoladeStyles": {
+                "GUID": "2446499e-0a18-4964-bdb3-324ffe31639b",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 587,
+                        "y": 317
+                    },
+                    {
+                        "x": 587,
+                        "y": 259.5
+                    },
+                    {
+                        "x": 556.3333333333334,
+                        "y": 259.5
+                    },
+                    {
+                        "x": 556.3333333333334,
+                        "y": 202
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "bottom"
+                ]
+            }
+        },
+        {
+            "name": "fk reviews.User_name to users.Name",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "fbd702eb-ddd8-40e3-a0c9-a5d0e1e2b97c",
+                    "3ed3c56a-9659-42e2-bbcd-decba0350ea5"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "e617bce8-1191-46d8-9044-37a4e40d090e",
+                    "75599358-17d9-49a6-ad99-fd8d51408f34"
+                ]
+            ],
+            "childCardinality": "1",
+            "parentCollection": "fbd702eb-ddd8-40e3-a0c9-a5d0e1e2b97c",
+            "childCollection": "e617bce8-1191-46d8-9044-37a4e40d090e",
+            "GUID": "5e019f2c-6e1e-4145-97c6-b4311b65d8e3",
+            "hackoladeStyles": {
+                "GUID": "b0a18b4e-0a73-4847-a7aa-7d080c473b0b",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 671,
+                        "y": 317
+                    },
+                    {
+                        "x": 671,
+                        "y": 259.5
+                    },
+                    {
+                        "x": 639.6666666666666,
+                        "y": 259.5
+                    },
+                    {
+                        "x": 639.6666666666666,
+                        "y": 202
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "bottom"
+                ]
+            }
+        },
+        {
+            "name": "fk appointments.Client_id to users._id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "fbd702eb-ddd8-40e3-a0c9-a5d0e1e2b97c",
+                    "875a3f9b-96ab-4191-98c5-fa44f9dc8af2"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "5f30012f-41b7-418b-810a-dbdca0963ed5",
+                    "c35239a6-09cc-4464-b23e-170b7a056133"
+                ]
+            ],
+            "childCardinality": "1",
+            "parentCollection": "fbd702eb-ddd8-40e3-a0c9-a5d0e1e2b97c",
+            "childCollection": "5f30012f-41b7-418b-810a-dbdca0963ed5",
+            "GUID": "4f4ea656-088f-4bbc-b43c-beb31b984147",
+            "hackoladeStyles": {
+                "GUID": "c59abb7c-efd8-4758-9666-2c97fb917f70",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 377,
+                        "y": 375
+                    },
+                    {
+                        "x": 425,
+                        "y": 375
+                    },
+                    {
+                        "x": 425,
+                        "y": 168
+                    },
+                    {
+                        "x": 473,
+                        "y": 168
+                    }
+                ],
+                "sides": [
+                    "right",
+                    "left"
+                ]
+            }
+        },
+        {
+            "name": "fk appointments.Provider_id to service_provider._id",
+            "relationshipType": "Foreign Key",
+            "parentField": [
+                [
+                    "888be93c-29e0-4c61-a78c-84164f525e09",
+                    "7b81042d-dd57-444b-8cb6-84110a1f5b8b"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childField": [
+                [
+                    "5f30012f-41b7-418b-810a-dbdca0963ed5",
+                    "fb96fa3a-2849-4c8f-a970-377674a4cdb3"
+                ]
+            ],
+            "childCardinality": "1",
+            "parentCollection": "888be93c-29e0-4c61-a78c-84164f525e09",
+            "childCollection": "5f30012f-41b7-418b-810a-dbdca0963ed5",
+            "GUID": "6fe1ea10-c428-4dda-9427-f7a79aa3ad3d",
+            "hackoladeStyles": {
+                "GUID": "38e9a23a-42f7-430e-9c2c-0b7e4473bdac",
+                "autoPositioning": true,
+                "type": "Orthogonal",
+                "thickness": 2,
+                "color": "#79c4ff",
+                "dataType": "",
+                "shape": [
+                    {
+                        "x": 240,
+                        "y": 297
+                    },
+                    {
+                        "x": 240,
+                        "y": 266.5
+                    },
+                    {
+                        "x": 211.5,
+                        "y": 266.5
+                    },
+                    {
+                        "x": 211.5,
+                        "y": 236
+                    }
+                ],
+                "sides": [
+                    "top",
+                    "bottom"
+                ]
+            }
+        }
+    ],
+    "users": [],
+    "diagramViews": [],
+    "idToNameHashTable": {
+        "6178aac9-d5bc-4a9a-aea3-6c3cd1ead534": "main",
+        "a7a9473a-560c-40a0-8683-8b939205788c": "_id",
+        "ca181657-026b-4536-8a0e-59dc9270e681": "Booking_date",
+        "c35239a6-09cc-4464-b23e-170b7a056133": "Client_id",
+        "ca46d01e-b0d6-4961-a90a-6c60e70b9a6e": "Location",
+        "fb96fa3a-2849-4c8f-a970-377674a4cdb3": "Provider_id",
+        "f909f0d1-0d3b-417e-991a-54ec222b7075": "Registered_date",
+        "94bad94b-d81b-469e-b9d5-129898bc0172": "Type",
+        "5f30012f-41b7-418b-810a-dbdca0963ed5": "appointments",
+        "98abd4fe-e5de-4515-a6de-0c8b0e685889": "_id",
+        "2db2ad5f-7440-4288-8ce0-a9cbfe6c3278": "Body",
+        "166470f1-df70-4ee8-977c-ebfa9df1a9b8": "Provider_id",
+        "686a519a-c2de-4817-9f6d-76ca2dc936a0": "Rating",
+        "e07345be-7d9c-481a-84c2-636a190180cc": "Subject",
+        "e7fcedf8-1b81-4807-9bb5-37db2d6c96d3": "User_id",
+        "75599358-17d9-49a6-ad99-fd8d51408f34": "User_name",
+        "e617bce8-1191-46d8-9044-37a4e40d090e": "reviews",
+        "7b81042d-dd57-444b-8cb6-84110a1f5b8b": "_id",
+        "b24805e4-cebe-4cb6-b8e9-283eba8ba0e4": "Description",
+        "7572fd53-0e74-43ae-8c72-84c7f9ca1001": "Name",
+        "6ee32ef3-c74c-4ab6-ae77-dfc6a21bc53e": "Services",
+        "9f9f488f-471c-48ef-bdf1-16ad792b36d7": "User_id",
+        "888be93c-29e0-4c61-a78c-84164f525e09": "service_provider",
+        "875a3f9b-96ab-4191-98c5-fa44f9dc8af2": "_id",
+        "3ed3c56a-9659-42e2-bbcd-decba0350ea5": "Name",
+        "fcc77df6-976c-4735-82ff-379e060006a0": "User_type",
+        "456af338-99af-4339-8080-0c7fb2376f7d": "Location",
+        "fbd702eb-ddd8-40e3-a0c9-a5d0e1e2b97c": "users",
+        "fdc8553e-175e-4886-b712-6595df846a77": "User_Id",
+        "5492baf1-244f-47b3-8152-6e30c7d77729": "fk users._id to service_provider.User_id",
+        "456bac4a-00de-4352-a678-8b68820139c5": "fk reviews.Provider_id to service_provider._id",
+        "0f840ab4-4f7a-46f3-abd9-a04da433b7a2": "fk reviews.User_id to users._id",
+        "5e019f2c-6e1e-4145-97c6-b4311b65d8e3": "fk reviews.User_name to users.Name",
+        "4f4ea656-088f-4bbc-b43c-beb31b984147": "fk appointments.Client_id to users._id",
+        "6fe1ea10-c428-4dda-9427-f7a79aa3ad3d": "fk appointments.Provider_id to service_provider._id"
+    },
+    "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "b02b9d00-e887-4e3b-ae78-2a422e390aca"
+    },
+    "polyglotDefinitions": {
+        "type": "polyglotDefinitions",
+        "properties": [],
+        "GUID": "f79bb298-2037-4797-aaff-04e1a577f6c7"
+    },
+    "externalDefinitions": {
+        "type": "externalDefinitions",
+        "properties": [],
+        "GUID": "0bf38ddf-f65a-49c3-aa92-6997c0648e85"
+    },
+    "sources": [],
+    "decorativeSymbols": [],
+    "dbVersion": "v5.0",
+    "dbVendor": "MongoDB",
+    "appTarget": "MONGODB",
+    "creationTS": "2023-03-31T13:06:47.203Z",
+    "GUID": "628b117f-8c33-4bd0-a7a1-81f52afab7b2",
+    "isLineageEnabled": false,
+    "lastModifTS": "2023-04-06T12:46:42.630Z",
+    "persistenceSchemaVersion": "6",
+    "isCreatedByPlugin": true,
+    "pluginInformation": {
+        "pluginEngineVersion": "1.0.0"
+    },
+    "applicationInformation": {
+        "version": "6.9.8"
+    },
+    "hackoladeMeta": {},
+    "settings": {
+        "centralPane": {
+            "dbLevel": {
+                "erd": [
+                    {
+                        "GUID": "5f30012f-41b7-418b-810a-dbdca0963ed5",
+                        "x": 103,
+                        "y": 297,
+                        "width": 274,
+                        "height": 156,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "e617bce8-1191-46d8-9044-37a4e40d090e",
+                        "x": 503,
+                        "y": 317,
+                        "width": 252,
+                        "height": 156,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "888be93c-29e0-4c61-a78c-84164f525e09",
+                        "x": 90,
+                        "y": 98,
+                        "width": 243,
+                        "height": 138,
+                        "color": {}
+                    },
+                    {
+                        "GUID": "fbd702eb-ddd8-40e3-a0c9-a5d0e1e2b97c",
+                        "x": 473,
+                        "y": 100,
+                        "width": 250,
+                        "height": 102,
+                        "color": {}
+                    }
+                ],
+                "erdDefinitions": {
+                    "erd": [],
+                    "rootPath": [],
+                    "entities": [],
+                    "decorativeSymbols": []
+                },
+                "buckets": [
+                    {
+                        "x": 50,
+                        "y": 58,
+                        "GUID": "6178aac9-d5bc-4a9a-aea3-6c3cd1ead534"
+                    }
+                ],
+                "collapsedNodes": [],
+                "activeRelationship": "",
+                "activeRelationshipFields": {
+                    "childField": [],
+                    "parentField": []
+                },
+                "selectedCollections": [],
+                "displayColorPicker": false,
+                "graphView": {
+                    "erd": [],
+                    "buckets": [],
+                    "decorativeSymbols": [],
+                    "forceLayout": true,
+                    "defaultLinkLength": 300
+                },
+                "diagramViews": [],
+                "decorativeSymbols": [],
+                "nestedCollectionsLayout": "horizontal",
+                "options": [],
+                "relationshipUpdateDisabled": false,
+                "displayOptions": {}
+            },
+            "collectionLevel": {},
+            "changed": false
+        },
+        "dtDiagram": {
+            "collapsedNodes": [],
+            "shouldDistributeCollections": false
+        }
+    }
+}

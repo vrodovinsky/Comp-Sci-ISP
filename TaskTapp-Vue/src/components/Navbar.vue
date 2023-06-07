@@ -1,17 +1,22 @@
 <script>
-// export default{
-//   computed: {
-
-//   }
-// }
+export default {
+  data() {
+    return {
+      user: this.$auth0.user._value
+    }
+  }
+}
 </script>
 
 <template>
   <aside>
     <figure>
-      <div id="avatar">
-        <img :src="user.picture" />
-      </div>
+      <div
+        id="avatar"
+        class="pfp"
+        :style="{ backgroundImage: `url(${user.picture})` }"
+        @error="$event.target.style.backgroundImage = '/src/assets/profile.webp'"
+      ></div>
       <figcaption>{{ user.name }}</figcaption>
     </figure>
     <img src="../assets/images/menu.svg" />
@@ -28,6 +33,11 @@
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+.pfp {
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+}
 
 body,
 html {
@@ -194,7 +204,6 @@ p {
     font-size: 1.5em;
   }
 }
-
 </style>
 
 <script setup>

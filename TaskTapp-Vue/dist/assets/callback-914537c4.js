@@ -1,1 +1,0 @@
-import{_ as a}from"./Header-6a6e5320.js";import{o as t,c as o,a as s,b as c,K as r}from"./index-a6e31d5d.js";import"./logo1-07e3e1a8.js";const _={class:"page-layout"},l={class:"page-layout__content"},u={__name:"callback",setup(n){return(e,p)=>(t(),o("div",_,[s(a),c("div",l,[r(e.$slots,"default")])]))}};export{u as default};
